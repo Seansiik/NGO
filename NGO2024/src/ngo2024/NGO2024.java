@@ -17,6 +17,7 @@ public class NGO2024 {
     //tyson
     //test
     //hej
+    //hallå irani
     public static void main(String[] args) {
         // TODO code application logic here
     }
