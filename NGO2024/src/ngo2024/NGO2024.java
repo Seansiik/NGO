@@ -13,6 +13,7 @@ public class NGO2024 {
     /**
      * @param args the command line arguments
      */
+    //test
     public static void main(String[] args) {
         // TODO code application logic here
     }
