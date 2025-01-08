@@ -81,22 +81,28 @@ public class Meny extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        
-        InfDB idb = new InfDB("path_to_your_database");
-        String inloggadAnvandare = "user@example.com";
-        
-        
-        
-        
+   public static void main(String args[]) {
+   
+    InfDB idb = null;
+    String inloggadAnvandare = "user@example.com"; 
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Meny(idb, inloggadAnvandare).setVisible(true);
-            }
-        });
+   
+    try {
+        idb = new InfDB("databas.db");
+        System.out.println("Anslutning till databasen lyckades!");
+    } catch (InfException ex) {
+        System.out.println("Fel vid anslutning till databasen: " + ex.getMessage());
+        return;  
     }
+    
+   
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            
+            new Meny(idb, inloggadAnvandare).setVisible(true);
+        }
+    });
+} 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMinaUpp;
