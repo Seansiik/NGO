@@ -93,7 +93,7 @@ public class Meny extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Meny().setVisible(true);
+                new Meny(idb, inloggadAnvandare).setVisible(true);
             }
         });
     }
