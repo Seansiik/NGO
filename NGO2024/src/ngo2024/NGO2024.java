@@ -4,22 +4,31 @@
  */
 package ngo2024;
 
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author seansiik
  */
 public class NGO2024 {
+    
+    private static InfDB idb;
 
     /**
      * @param args the command line arguments
      */
-    
-    //tyson
-    //test
-    //hej
-    //hallå irani
     public static void main(String[] args) {
-        // TODO code application logic here
+     
+        try{
+            idb = new InfDB("ngo_2024", "3306", "dbAdmin2024", "dbAdmin2024PW");
+            new Inloggning(idb).setVisible(true);
+            
+        } catch (InfException ex){
+            System.out.println (ex.getMessage());
+                   
+        }
     }
     
 }
+ 
