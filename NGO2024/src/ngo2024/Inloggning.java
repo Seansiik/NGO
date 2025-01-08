@@ -130,7 +130,7 @@ public class Inloggning extends javax.swing.JFrame {
            
            }
            else{
-                       lblFelmeddelande.setVisible(true);
+                   lblFelmeddelande.setVisible(true);
            }
                    
         } catch (InfException ex){
