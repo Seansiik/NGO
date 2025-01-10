@@ -118,7 +118,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
+                //new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
             }/* Create and display the form */
         
         });
