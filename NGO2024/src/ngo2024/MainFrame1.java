@@ -4,6 +4,13 @@
  */
 package ngo2024;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -47,6 +54,16 @@ public class MainFrame1 extends javax.swing.JFrame {
         tableMedarbetare = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dashboard");
+        setMinimumSize(new java.awt.Dimension(812, 563));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -140,6 +157,11 @@ public class MainFrame1 extends javax.swing.JFrame {
         btnRadera.setForeground(new java.awt.Color(255, 51, 51));
         btnRadera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/trash.png"))); // NOI18N
         btnRadera.setText("Radera");
+        btnRadera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaderaActionPerformed(evt);
+            }
+        });
 
         tableMedarbetare.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tableMedarbetare.setModel(new javax.swing.table.DefaultTableModel(
@@ -231,8 +253,66 @@ public class MainFrame1 extends javax.swing.JFrame {
     private void btnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRensaActionPerformed
         tfNamn.setText("");
         tfEpost.setText("");
-        tf
+        tfTelefon.setText("");
+        tfAdress.setText("");
     }//GEN-LAST:event_btnRensaActionPerformed
+
+    private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
+        int row = tableMedarbetare.getSelectedRow();
+        
+        if (row < 0) {
+            JOptionPane.showMessageDialog(this,
+                                        "Inget fält har blivit valt! Var god, välj ett fält",
+                                         "Välj fält",
+                                         JOptionPane.ERROR_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+            model.removeRow(row);
+        }  
+    }//GEN-LAST:event_btnRaderaActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+        Vector<Vector> tableData = model.getDataVector();
+        
+        try {
+            FileOutputStream file = new FileOutputStream("file.bin");
+            ObjectOutputStream output = new ObjectOutputStream(file);
+            
+            
+            
+             output.writeObject(tableData);
+            
+            
+          
+            output.close();
+            file.close();
+        }  catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        try {
+            FileInputStream file = new FileInputStream ("file.bin");
+            ObjectInputStream input = new ObjectInputStream (file);
+            
+            Vector<Vector> tableData = (Vector<Vector>)input.readObject();
+            
+            
+            input.close();
+            file.close();
+            
+            
+            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+            for (int i = 0; i < tableData.size(); i++) {
+                Vector row = tableData.get(i);
+                model.addRow(new Object []{row.get(0), row.get(1), row.get(2), row.get(3)});
+            }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -278,4 +358,12 @@ public class MainFrame1 extends javax.swing.JFrame {
     private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfTelefon;
     // End of variables declaration//GEN-END:variables
+
+    private void close() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private ObjectOutputStream output() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
