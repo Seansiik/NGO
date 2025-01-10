@@ -31,7 +31,7 @@ public class MainFrame1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
         javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
         tfNamn = new javax.swing.JTextField();
         javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
@@ -83,6 +83,11 @@ public class MainFrame1 extends javax.swing.JFrame {
         btnRensa.setForeground(new java.awt.Color(255, 0, 0));
         btnRensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/rubber.png"))); // NOI18N
         btnRensa.setText("Rensa");
+        btnRensa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRensaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -223,6 +228,12 @@ public class MainFrame1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
+    private void btnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRensaActionPerformed
+        tfNamn.setText("");
+        tfEpost.setText("");
+        tf
+    }//GEN-LAST:event_btnRensaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,7 +271,6 @@ public class MainFrame1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableMedarbetare;
     private javax.swing.JTextField tfAdress;
