@@ -4,27 +4,33 @@
  */
 package ngo2024;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+import java.util.HashMap;
+import java.util.ArrayList;
 
-/**
- *
- * @author Tyson
- */
-public class MainFrame1 extends javax.swing.JFrame {
 
+
+public class Mainframe1 extends javax.swing.JFrame {
+
+    
+    private InfDB db;
     /**
      * Creates new form MainFrame1
      */
-    public MainFrame1() {
+    public Mainframe1() {
         initComponents();
+         try {
+        db = new InfDB("C:\\path\\to\\database.fdb"); // Se till att ange rätt sökväg
+    } catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Databasanslutning misslyckades: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+    }
+
     }
 
     /**
@@ -235,18 +241,31 @@ public class MainFrame1 extends javax.swing.JFrame {
                                     "Försök igen",
                                     JOptionPane.ERROR_MESSAGE);
         } else {
-            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-            model.addRow(new Object []{namn, ePost, telefon, adress});
+            try {
+            // SQL-insert
+            String query = "INSERT INTO Medarbetare (Namn, Epost, Telefon, Adress) VALUES ('" + namn + "', '" + ePost + "', '" + telefon + "', '" + adress + "')";
+            db.insert(query);
+            
+            // Lägg till i JTable
+            DefaultTableModel model = new DefaultTableModel (new Object []{namn, ePost, telefon, adress}, 0);
+            tableMedarbetare.setModel(model);
+            tableMedarbetare.revalidate();
+            tableMedarbetare.repaint();
+           
         
+            // Rensa fälten
             tfNamn.setText("");
             tfEpost.setText("");
             tfTelefon.setText("");
             tfAdress.setText("");
             
-            
+            JOptionPane.showMessageDialog(this, "Medarbetare har lagts till!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } catch (InfException ex) {
+            JOptionPane.showMessageDialog(this, "Kunde inte lägga till medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+    
         }
         
-        
+      }   
         
     }//GEN-LAST:event_btnLaggTillActionPerformed
 
@@ -267,8 +286,19 @@ public class MainFrame1 extends javax.swing.JFrame {
                                          JOptionPane.ERROR_MESSAGE);
         } else {
             DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-            model.removeRow(row);
-        }  
+            String namn = model.getValueAt(row, 0).toString();
+
+            try {
+                String query = "DELETE FROM Medarbetare WHERE Namn = '" + namn + "'";
+                db.delete(query);
+                model.removeRow(row); // Ta bort från GUI-tabellen
+                JOptionPane.showMessageDialog(this, "Medarbetare raderad!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } catch (InfException ex) {
+                JOptionPane.showMessageDialog(this, "Kunde inte radera medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+        
+                
+        }
+      }  
     }//GEN-LAST:event_btnRaderaActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -294,26 +324,23 @@ public class MainFrame1 extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
-            FileInputStream file = new FileInputStream ("file.bin");
-            ObjectInputStream input = new ObjectInputStream (file);
+             DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+             model.setRowCount(0); // Rensa tabellen
             
-            Vector<Vector> tableData = (Vector<Vector>)input.readObject();
-            
-            
-            input.close();
-            file.close();
-            
-            
-            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-            for (int i = 0; i < tableData.size(); i++) {
-                Vector row = tableData.get(i);
-                model.addRow(new Object []{row.get(0), row.get(1), row.get(2), row.get(3)});
-            }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-        }
-    }//GEN-LAST:event_formWindowOpened
+             String query = "SELECT Namn, Epost, Telefon, Adress FROM Medarbetare";
+             ArrayList<HashMap<String, String>> medarbetare = db.fetchRows(query);
 
+             if (medarbetare != null) {
+                 for (HashMap<String, String> row : medarbetare) {
+                      model.addRow(new Object[]{row.get("Namn"), row.get("Epost"), row.get("Telefon"), row.get("Adress")});
+                 }
+             }
+          } catch (Exception ex) {
+               JOptionPane.showMessageDialog(this, "Kunde inte hämta medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+
+          }
+    }//GEN-LAST:event_formWindowOpened
+ 
     /**
      * @param args the command line arguments
      */
@@ -331,20 +358,23 @@ public class MainFrame1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame1().setVisible(true);
+                new Mainframe1().setVisible(true);
             }
         });
     }
@@ -359,11 +389,11 @@ public class MainFrame1 extends javax.swing.JFrame {
     private javax.swing.JTextField tfTelefon;
     // End of variables declaration//GEN-END:variables
 
-    private void close() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    //private void close() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    //}
 
-    private ObjectOutputStream output() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    //private ObjectOutputStream output() {
+       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    //}
 }
