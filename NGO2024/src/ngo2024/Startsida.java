@@ -36,12 +36,13 @@ public class Startsida extends javax.swing.JFrame {
         BtnHandlaggare = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 255, 102));
+        setBackground(new java.awt.Color(0, 102, 102));
 
-        jLValkommen.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLValkommen.setBackground(new java.awt.Color(255, 255, 255));
+        jLValkommen.setFont(new java.awt.Font("Xingkai SC", 1, 100)); // NOI18N
         jLValkommen.setText("Välkommen");
 
-        BtnAdmin.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        BtnAdmin.setFont(new java.awt.Font("Times New Roman", 1, 100)); // NOI18N
         BtnAdmin.setText("Administratör");
         BtnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +50,7 @@ public class Startsida extends javax.swing.JFrame {
             }
         });
 
-        BtnHandlaggare.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        BtnHandlaggare.setFont(new java.awt.Font("Times New Roman", 1, 100)); // NOI18N
         BtnHandlaggare.setText("Handläggare");
         BtnHandlaggare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,26 +63,28 @@ public class Startsida extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addComponent(BtnAdmin)
-                .addGap(28, 28, 28)
-                .addComponent(BtnHandlaggare)
-                .addGap(112, 112, 112))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(447, 447, 447)
+                        .addComponent(jLValkommen))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(BtnAdmin))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(355, 355, 355)
+                        .addComponent(BtnHandlaggare)))
+                .addContainerGap(825, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnHandlaggare)
-                    .addComponent(BtnAdmin))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addGap(95, 95, 95)
+                .addComponent(jLValkommen)
+                .addGap(142, 142, 142)
+                .addComponent(BtnAdmin)
+                .addGap(69, 69, 69)
+                .addComponent(BtnHandlaggare)
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         pack();
