@@ -39,30 +39,107 @@ public class HandlaggareMeny extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        BtnMinaUpp = new javax.swing.JButton();
+        BtnProjekt = new javax.swing.JButton();
+        BtnAvdelning = new javax.swing.JButton();
+        BtnHallbarhetsmal = new javax.swing.JButton();
+        BtnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Handläggare meny");
+
+        BtnMinaUpp.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnMinaUpp.setText("Mina Uppgifter");
+        BtnMinaUpp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMinaUppActionPerformed(evt);
+            }
+        });
+
+        BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnProjekt.setText("Mina projekt");
+        BtnProjekt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnProjektActionPerformed(evt);
+            }
+        });
+
+        BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnAvdelning.setText("Min avdelning");
+
+        BtnHallbarhetsmal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHallbarhetsmal.setText("Hållbarhetsmål");
+
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTillbaka.setText("Tillbaka");
+        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTillbakaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnMinaUpp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BtnHallbarhetsmal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(144, 144, 144))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(337, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(301, 301, 301))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnTillbaka)
+                .addGap(282, 282, 282))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel1)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnMinaUpp)
+                    .addComponent(BtnProjekt))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAvdelning)
+                    .addComponent(BtnHallbarhetsmal))
+                .addGap(36, 36, 36)
+                .addComponent(BtnTillbaka)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
+        HandlaggareInloggning meny =new HandlaggareInloggning(idb);
+            meny.setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_BtnTillbakaActionPerformed
+
+    private void BtnMinaUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMinaUppActionPerformed
+        new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
+    }//GEN-LAST:event_BtnMinaUppActionPerformed
+
+    private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
+        new MinaProjekt(idb, inloggadAnvandare).setVisible(true);
+    }//GEN-LAST:event_BtnProjektActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,6 +177,11 @@ public class HandlaggareMeny extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAvdelning;
+    private javax.swing.JButton BtnHallbarhetsmal;
+    private javax.swing.JButton BtnMinaUpp;
+    private javax.swing.JButton BtnProjekt;
+    private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

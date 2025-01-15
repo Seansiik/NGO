@@ -176,7 +176,11 @@ public class MinaUppgifter extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSparaAndringActionPerformed
 
     private void BtnTbxMenyAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxMenyAdminActionPerformed
+<<<<<<< Updated upstream
         MenyAdmin meny = new MenyAdmin(idb);
+=======
+        HandlaggareMeny meny = new HandlaggareMeny(idb, inloggadAnvandare);
+>>>>>>> Stashed changes
         meny.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxMenyAdminActionPerformed
