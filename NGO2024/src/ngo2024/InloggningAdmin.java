@@ -148,7 +148,7 @@ public class InloggningAdmin extends javax.swing.JFrame {
            System.out.println(sqlFraga);
            String dbLosen = idb.fetchSingle(sqlFraga);
            if(losen.equals(dbLosen)){
-               new MenyAdmin(idb, ePost).setVisible(true);
+               new MenyAdmin(idb).setVisible(true);
                this.setVisible(false);
            
            }

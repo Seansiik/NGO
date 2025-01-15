@@ -16,22 +16,17 @@ import java.util.ArrayList;
 
 
 
-public class Mainframe1 extends javax.swing.JFrame {
+public class AdminMedarbetare extends javax.swing.JFrame {
 
     
     private InfDB idb;
+
     /**
      * Creates new form MainFrame1
      */
-    public Mainframe1(InfDB idb) {
+    public AdminMedarbetare(InfDB idb) {
         initComponents();
         this.idb = idb;
-        try {
-        idb = new InfDB("C:\\path\\to\\database.fdb"); // Se till att ange rätt sökväg
-    } catch (InfException ex) {
-        JOptionPane.showMessageDialog(this, "Databasanslutning misslyckades: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
-    }
-
     }
 
     /**
@@ -217,13 +212,13 @@ public class Mainframe1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRadera)
                             .addComponent(jButton1))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(399, Short.MAX_VALUE))
         );
@@ -254,37 +249,21 @@ public class Mainframe1 extends javax.swing.JFrame {
         String telefon = tfTelefon.getText();
         String adress = tfAdress.getText();
         
-        if (namn.isEmpty() || ePost.isEmpty() || telefon.isEmpty() || adress.isEmpty()){
-            
+        if (namn.isEmpty() || ePost.isEmpty() || telefon.isEmpty() || adress.isEmpty()){    
         JOptionPane.showMessageDialog(this,
                                     "Var god fyll i alla fält",
                                     "Försök igen",
                                     JOptionPane.ERROR_MESSAGE);
         } else {
-            try {
-            // SQL-insert
-            String query = "INSERT INTO Medarbetare (Namn, Epost, Telefon, Adress) VALUES ('" + namn + "', '" + ePost + "', '" + telefon + "', '" + adress + "')";
-            idb.insert(query);
+            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+            model.addRow(new Object [] {namn, ePost, telefon, adress} );
             
-            // Lägg till i JTable
-            DefaultTableModel model = new DefaultTableModel (new Object []{namn, ePost, telefon, adress}, 0);
-            tableMedarbetare.setModel(model);
-            tableMedarbetare.revalidate();
-            tableMedarbetare.repaint();
-           
-        
             // Rensa fälten
             tfNamn.setText("");
             tfEpost.setText("");
             tfTelefon.setText("");
             tfAdress.setText("");
-            
-            JOptionPane.showMessageDialog(this, "Medarbetare har lagts till!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } catch (InfException ex) {
-            JOptionPane.showMessageDialog(this, "Kunde inte lägga till medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
-    
-        }
-        
+
       }   
         
     }//GEN-LAST:event_btnLaggTillActionPerformed
@@ -382,14 +361,18 @@ public class Mainframe1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Mainframe1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -398,7 +381,7 @@ public class Mainframe1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Mainframe1().setVisible(true);
+                //new AdminMedarbetare().setVisible(true);
             }
         });
     }

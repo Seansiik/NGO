@@ -17,12 +17,11 @@ public class MinaUppgifter extends javax.swing.JFrame {
      * Creates new form MinaUppgifter
      */
     private InfDB idb;
-    private String inloggadAnvandare;
+    
 
     public MinaUppgifter(InfDB idb, String inloggadAnvandare) {
         initComponents();
         this.idb = idb;
-        this.inloggadAnvandare = inloggadAnvandare;
     
     }
     
@@ -177,7 +176,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSparaAndringActionPerformed
 
     private void BtnTbxMenyAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxMenyAdminActionPerformed
-        MenyAdmin meny = new MenyAdmin(idb, inloggadAnvandare);
+        MenyAdmin meny = new MenyAdmin(idb);
         meny.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxMenyAdminActionPerformed
