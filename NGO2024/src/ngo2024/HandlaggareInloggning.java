@@ -169,6 +169,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
         Startsida startsida = new Startsida(idb);
         startsida.setVisible(true);
         this.dispose();
+        //hej
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**
