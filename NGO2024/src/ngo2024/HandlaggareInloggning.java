@@ -44,10 +44,10 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblLosenord.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblLosenord.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         lblLosenord.setText("Lösenord");
 
-        tfEPost.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tfEPost.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         tfEPost.setText("john.smith@example.com");
         tfEPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +55,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             }
         });
 
-        tfLosenord.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        tfLosenord.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         tfLosenord.setText("password456");
         tfLosenord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,11 +63,11 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             }
         });
 
-        lblFelmeddelande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblFelmeddelande.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         lblFelmeddelande.setForeground(new java.awt.Color(255, 0, 0));
         lblFelmeddelande.setText("Felaktig epost eller lösenord");
 
-        btnLoggaIn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLoggaIn.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         btnLoggaIn.setText("Logga in");
         btnLoggaIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,10 +75,10 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             }
         });
 
-        lblEPost.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEPost.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         lblEPost.setText("E-Post");
 
-        btnTillbaka.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTillbaka.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         btnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
         btnTillbaka.setText("Tillbaka");
         btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
@@ -92,26 +92,23 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(76, 199, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLosenord)
-                    .addComponent(lblEPost))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfEPost, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(245, 245, 245))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(btnTillbaka)
-                        .addGap(83, 83, 83)
-                        .addComponent(btnLoggaIn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(lblFelmeddelande)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblFelmeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLoggaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblLosenord)
+                                .addComponent(lblEPost, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(75, 75, 75)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tfEPost, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                                .addComponent(tfLosenord)))))
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,13 +121,13 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLosenord)
                     .addComponent(tfLosenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(lblFelmeddelande)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblFelmeddelande, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTillbaka)
                     .addComponent(btnLoggaIn))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
