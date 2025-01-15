@@ -35,23 +35,23 @@ public class MenyAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         lblInloggadAnvandare = new javax.swing.JLabel();
-        btnMinaUpp = new javax.swing.JButton();
+        BtnMinaUpp = new javax.swing.JButton();
         jLMenyAdmin = new javax.swing.JLabel();
         BtnAvdelning = new javax.swing.JButton();
         BtnProjekt = new javax.swing.JButton();
         BtnAnstallda = new javax.swing.JButton();
         BtnPartners = new javax.swing.JButton();
         BtnTillbakaInloggning = new javax.swing.JButton();
-        BtnLand = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
 
-        btnMinaUpp.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        btnMinaUpp.setText("Mina Uppgifter");
-        btnMinaUpp.addActionListener(new java.awt.event.ActionListener() {
+        BtnMinaUpp.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnMinaUpp.setText("Mina Uppgifter");
+        BtnMinaUpp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMinaUppActionPerformed(evt);
+                BtnMinaUppActionPerformed(evt);
             }
         });
 
@@ -99,42 +99,35 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnLand.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        BtnLand.setText("Länder");
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        jButton1.setText("Land");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(lblInloggadAnvandare))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(355, 355, 355)
-                        .addComponent(jLMenyAdmin)))
+                .addGap(355, 355, 355)
+                .addComponent(jLMenyAdmin)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnMinaUpp, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(318, 318, 318)
+                        .addComponent(lblInloggadAnvandare)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnMinaUpp, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(BtnAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(BtnAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnLand, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BtnPartners, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                            .addComponent(BtnProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
@@ -143,39 +136,42 @@ public class MenyAdmin extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addComponent(jLMenyAdmin)
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnAvdelning)
-                    .addComponent(BtnLand))
-                .addGap(18, 18, 18)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAnstallda)
                     .addComponent(BtnPartners))
-                .addGap(18, 18, 18)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnProjekt)
-                    .addComponent(BtnTillbakaInloggning))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                .addComponent(lblInloggadAnvandare)
-                .addGap(18, 18, 18)
-                .addComponent(btnMinaUpp)
-                .addGap(189, 189, 189))
+                    .addComponent(BtnTillbakaInloggning)
+                    .addComponent(BtnProjekt))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(lblInloggadAnvandare))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(BtnMinaUpp)))
+                .addGap(229, 229, 229))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMinaUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinaUppActionPerformed
+    private void BtnMinaUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMinaUppActionPerformed
             new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
 
-    }//GEN-LAST:event_btnMinaUppActionPerformed
+    }//GEN-LAST:event_BtnMinaUppActionPerformed
 
     private void BtnPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPartnersActionPerformed
-            new AdminPartner(idb).setVisible(true);        
+                  
 
     }//GEN-LAST:event_BtnPartnersActionPerformed
 
     private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
-            new AdminProjekt(idb).setVisible(true);        
+                    
 
     }//GEN-LAST:event_BtnProjektActionPerformed
 
@@ -190,7 +186,7 @@ public class MenyAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTillbakaInloggningActionPerformed
 
     private void BtnAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningActionPerformed
-            new AdminAvdelning(idb).setVisible(true);        
+                  
     }//GEN-LAST:event_BtnAvdelningActionPerformed
 
     /**
@@ -221,11 +217,11 @@ public class MenyAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnstallda;
     private javax.swing.JButton BtnAvdelning;
-    private javax.swing.JButton BtnLand;
+    private javax.swing.JButton BtnMinaUpp;
     private javax.swing.JButton BtnPartners;
     private javax.swing.JButton BtnProjekt;
     private javax.swing.JButton BtnTillbakaInloggning;
-    private javax.swing.JButton btnMinaUpp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLMenyAdmin;
     private javax.swing.JLabel lblInloggadAnvandare;
     // End of variables declaration//GEN-END:variables
