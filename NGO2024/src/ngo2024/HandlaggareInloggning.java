@@ -23,9 +23,6 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
         lblFelmeddelande.setVisible(false);
     }
 
-    HandlaggareInloggning(InfDB idb, String inloggadAnvandare) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,7 +153,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             System.out.println(sqlFraga);
             String dbLosen = idb.fetchSingle(sqlFraga);
             if(losen.equals(dbLosen)){
-                new HandlaggareMeny(idb, ePost).setVisible(true);
+                new HandlaggareMeny(idb).setVisible(true);
                 this.setVisible(false);
 
             }

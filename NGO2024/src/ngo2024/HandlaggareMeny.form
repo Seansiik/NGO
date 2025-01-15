@@ -112,6 +112,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Min avdelning"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAvdelningActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtnHallbarhetsmal">
       <Properties>
@@ -120,6 +123,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="H&#xe5;llbarhetsm&#xe5;l"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnHallbarhetsmalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtnTillbaka">
       <Properties>

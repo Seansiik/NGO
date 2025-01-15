@@ -15,15 +15,13 @@ public class HandlaggareMeny extends javax.swing.JFrame {
 
     
      private InfDB idb;
-     private String inloggadAnvandare;
 
     /**
      * Creates new form HandlaggareMeny
      */
-    public HandlaggareMeny(InfDB idb, String inloggadAnvandare) {
+    public HandlaggareMeny(InfDB idb) {
         initComponents();
         this.idb = idb;
-        this.inloggadAnvandare = inloggadAnvandare;
 
         
 
@@ -69,9 +67,19 @@ public class HandlaggareMeny extends javax.swing.JFrame {
 
         BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnAvdelning.setText("Min avdelning");
+        BtnAvdelning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAvdelningActionPerformed(evt);
+            }
+        });
 
         BtnHallbarhetsmal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnHallbarhetsmal.setText("Hållbarhetsmål");
+        BtnHallbarhetsmal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHallbarhetsmalActionPerformed(evt);
+            }
+        });
 
         BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
@@ -134,12 +142,20 @@ public class HandlaggareMeny extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     private void BtnMinaUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMinaUppActionPerformed
-        new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
+        new MinaUppgifter(idb).setVisible(true);
     }//GEN-LAST:event_BtnMinaUppActionPerformed
 
     private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
-        new MinaProjekt(idb, inloggadAnvandare).setVisible(true);
+        new MinaProjekt(idb).setVisible(true);
     }//GEN-LAST:event_BtnProjektActionPerformed
+
+    private void BtnHallbarhetsmalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHallbarhetsmalActionPerformed
+        new Hallbarhetsmal(idb).setVisible(true);
+    }//GEN-LAST:event_BtnHallbarhetsmalActionPerformed
+
+    private void BtnAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningActionPerformed
+        new HandlaggareAvdelning(idb).setVisible(true);
+    }//GEN-LAST:event_BtnAvdelningActionPerformed
 
     /**
      * @param args the command line arguments

@@ -19,7 +19,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
     private InfDB idb;
     
 
-    public MinaUppgifter(InfDB idb, String inloggadAnvandare) {
+    public MinaUppgifter(InfDB idb) {
         initComponents();
         this.idb = idb;
     
@@ -45,7 +45,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         lblEpost1 = new javax.swing.JLabel();
         lblLosen1 = new javax.swing.JLabel();
-        BtnTbxMenyAdmin = new javax.swing.JButton();
+        BtnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,12 +86,12 @@ public class MinaUppgifter extends javax.swing.JFrame {
         lblLosen1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         lblLosen1.setText("Lösenord");
 
-        BtnTbxMenyAdmin.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        BtnTbxMenyAdmin.setForeground(new java.awt.Color(0, 0, 102));
-        BtnTbxMenyAdmin.setText("Tillbaka");
-        BtnTbxMenyAdmin.addActionListener(new java.awt.event.ActionListener() {
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTillbaka.setText("Tillbaka");
+        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTbxMenyAdminActionPerformed(evt);
+                BtnTillbakaActionPerformed(evt);
             }
         });
 
@@ -119,8 +119,8 @@ public class MinaUppgifter extends javax.swing.JFrame {
                                     .addGap(62, 62, 62))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(BtnTbxMenyAdmin)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
+                                        .addComponent(BtnTillbaka)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                                         .addComponent(BtnSparaAndring))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +161,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(BtnTbxMenyAdmin))
+                        .addComponent(BtnTillbaka))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(BtnSparaAndring)))
@@ -175,15 +175,12 @@ public class MinaUppgifter extends javax.swing.JFrame {
       
     }//GEN-LAST:event_BtnSparaAndringActionPerformed
 
-    private void BtnTbxMenyAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxMenyAdminActionPerformed
-<<<<<<< Updated upstream
-        MenyAdmin meny = new MenyAdmin(idb);
-=======
-        HandlaggareMeny meny = new HandlaggareMeny(idb, inloggadAnvandare);
->>>>>>> Stashed changes
+    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
+
+        HandlaggareMeny meny = new HandlaggareMeny(idb);
         meny.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_BtnTbxMenyAdminActionPerformed
+    }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,7 +219,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSparaAndring;
-    private javax.swing.JButton BtnTbxMenyAdmin;
+    private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
