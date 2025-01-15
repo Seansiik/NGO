@@ -8,10 +8,8 @@ package ngo2024;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
-/**
- *
- * @author Tyson
- */
+
+ 
 public class HandlaggareInloggning extends javax.swing.JFrame {
 
     
@@ -151,7 +149,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             System.out.println(sqlFraga);
             String dbLosen = idb.fetchSingle(sqlFraga);
             if(losen.equals(dbLosen)){
-               //new MenyHandlaggare(idb).setVisible(true);
+                new HandlaggareMeny(idb, ePost).setVisible(true);
                 this.setVisible(false);
 
             }
@@ -169,7 +167,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
         Startsida startsida = new Startsida(idb);
         startsida.setVisible(true);
         this.dispose();
-        //hej
+        
     }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**

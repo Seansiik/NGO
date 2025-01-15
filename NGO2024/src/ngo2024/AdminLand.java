@@ -5,7 +5,7 @@
 package ngo2024;
 
 import oru.inf.InfDB;
-//import oru.inf.InfException;
+import oru.inf.InfException;
 
 public class AdminLand extends javax.swing.JFrame {
 

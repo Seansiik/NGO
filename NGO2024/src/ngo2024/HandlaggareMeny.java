@@ -4,17 +4,29 @@
  */
 package ngo2024;
 
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author Tyson
  */
 public class HandlaggareMeny extends javax.swing.JFrame {
 
+    
+     private InfDB idb;
+     private String inloggadAnvandare;
+
     /**
      * Creates new form HandlaggareMeny
      */
-    public HandlaggareMeny() {
+    public HandlaggareMeny(InfDB idb, String inloggadAnvandare) {
         initComponents();
+        this.idb = idb;
+        this.inloggadAnvandare = inloggadAnvandare;
+
+        
+
     }
 
     /**
@@ -26,17 +38,27 @@ public class HandlaggareMeny extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(337, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(301, 301, 301))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(jLabel1)
+                .addContainerGap(368, Short.MAX_VALUE))
         );
 
         pack();
@@ -72,11 +94,12 @@ public class HandlaggareMeny extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HandlaggareMeny().setVisible(true);
+                //new HandlaggareMeny().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
