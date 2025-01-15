@@ -46,7 +46,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         lblEpost1 = new javax.swing.JLabel();
         lblLosen1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BtnTbxMenyAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,9 +87,14 @@ public class MinaUppgifter extends javax.swing.JFrame {
         lblLosen1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         lblLosen1.setText("Lösenord");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 102));
-        jButton1.setText("Tillbaka");
+        BtnTbxMenyAdmin.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnTbxMenyAdmin.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTbxMenyAdmin.setText("Tillbaka");
+        BtnTbxMenyAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTbxMenyAdminActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +120,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
                                     .addGap(62, 62, 62))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jButton1)
+                                        .addComponent(BtnTbxMenyAdmin)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                                         .addComponent(BtnSparaAndring))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -144,23 +149,20 @@ public class MinaUppgifter extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLosen)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tfEpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblEpost1)
-                        .addGap(48, 48, 48)))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfEpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEpost1))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLosen1))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jButton1))
+                        .addComponent(BtnTbxMenyAdmin))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(BtnSparaAndring)))
@@ -173,6 +175,12 @@ public class MinaUppgifter extends javax.swing.JFrame {
     private void BtnSparaAndringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSparaAndringActionPerformed
       
     }//GEN-LAST:event_BtnSparaAndringActionPerformed
+
+    private void BtnTbxMenyAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxMenyAdminActionPerformed
+        MenyAdmin meny = new MenyAdmin(idb, inloggadAnvandare);
+        meny.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnTbxMenyAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,7 +219,7 @@ public class MinaUppgifter extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSparaAndring;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnTbxMenyAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;

@@ -42,6 +42,7 @@ public class MenyAdmin extends javax.swing.JFrame {
         BtnAnstallda = new javax.swing.JButton();
         BtnPartners = new javax.swing.JButton();
         BtnTillbakaInloggning = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
@@ -59,6 +60,11 @@ public class MenyAdmin extends javax.swing.JFrame {
 
         BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         BtnAvdelning.setText("Avdelning");
+        BtnAvdelning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAvdelningActionPerformed(evt);
+            }
+        });
 
         BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         BtnProjekt.setText("Projekt");
@@ -93,78 +99,98 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        jButton1.setText("Länder");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(318, 318, 318)
                         .addComponent(lblInloggadAnvandare))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnAnstallda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnPartners, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMinaUpp, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
-                        .addGap(127, 127, 127)
-                        .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                        .addGap(355, 355, 355)
+                        .addComponent(jLMenyAdmin)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLMenyAdmin)
-                .addGap(257, 257, 257))
+                .addComponent(btnMinaUpp, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(49, 49, 49)
                 .addComponent(jLMenyAdmin)
-                .addGap(81, 81, 81)
-                .addComponent(BtnAvdelning)
-                .addGap(18, 18, 18)
-                .addComponent(BtnAnstallda)
-                .addGap(18, 18, 18)
-                .addComponent(BtnPartners)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(BtnProjekt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblInloggadAnvandare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMinaUpp)
+                    .addComponent(BtnAvdelning)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnAnstallda)
+                    .addComponent(BtnPartners))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnProjekt)
                     .addComponent(BtnTillbakaInloggning))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(lblInloggadAnvandare)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(btnMinaUpp)
+                .addGap(106, 106, 106))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMinaUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinaUppActionPerformed
-         new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
+            new MinaUppgifter(idb, inloggadAnvandare).setVisible(true);
 
     }//GEN-LAST:event_btnMinaUppActionPerformed
 
     private void BtnPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPartnersActionPerformed
-        // TODO add your handling code here:
+            new AdminPartner(idb).setVisible(true);        
+
     }//GEN-LAST:event_BtnPartnersActionPerformed
 
     private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
-        // TODO add your handling code here:
+            new AdminProjekt(idb).setVisible(true);        
+
     }//GEN-LAST:event_BtnProjektActionPerformed
 
     private void BtnAnstalldaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnstalldaActionPerformed
-        new Mainframe1(idb).setVisible(true);        // TODO add your handling code here:
+            new Mainframe1(idb).setVisible(true);        
     }//GEN-LAST:event_BtnAnstalldaActionPerformed
 
     private void BtnTillbakaInloggningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaInloggningActionPerformed
-        InloggningAdmin inloggning = new InloggningAdmin(idb);
-        inloggning.setVisible(true);
-        this.dispose();
+            InloggningAdmin inloggning = new InloggningAdmin(idb);
+            inloggning.setVisible(true);
+            this.dispose();
     }//GEN-LAST:event_BtnTillbakaInloggningActionPerformed
+
+    private void BtnAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningActionPerformed
+            new AdminAvdelning(idb).setVisible(true);        
+    }//GEN-LAST:event_BtnAvdelningActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,6 +225,7 @@ public class MenyAdmin extends javax.swing.JFrame {
     private javax.swing.JButton BtnProjekt;
     private javax.swing.JButton BtnTillbakaInloggning;
     private javax.swing.JButton btnMinaUpp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLMenyAdmin;
     private javax.swing.JLabel lblInloggadAnvandare;
     // End of variables declaration//GEN-END:variables
