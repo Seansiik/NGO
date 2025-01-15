@@ -11,14 +11,14 @@ import oru.inf.InfException;
  *
  * @author seansiik
  */
-public class Meny extends javax.swing.JFrame {
+public class MenyAdmin extends javax.swing.JFrame {
 
         private InfDB idb;
         private String inloggadAnvandare;
     /**
      * Creates new form Meny
      */
-    public Meny(InfDB idb, String inloggadAnvandare) {
+    public MenyAdmin(InfDB idb, String inloggadAnvandare) {
         initComponents();
         this.idb = idb;
         this.inloggadAnvandare = inloggadAnvandare;
@@ -36,11 +36,11 @@ public class Meny extends javax.swing.JFrame {
 
         lblInloggadAnvandare = new javax.swing.JLabel();
         btnMinaUpp = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLMenyAdmin = new javax.swing.JLabel();
+        BtnAvdelning = new javax.swing.JButton();
+        BtnProjekt = new javax.swing.JButton();
+        BtnAnstallda = new javax.swing.JButton();
+        BtnPartners = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
@@ -53,28 +53,33 @@ public class Meny extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Meny Administratörer:");
+        jLMenyAdmin.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLMenyAdmin.setText("Meny Administratör");
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton1.setText("Avdelning");
+        BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        BtnAvdelning.setText("Avdelning");
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton2.setText("Projekt");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        BtnProjekt.setText("Projekt");
+        BtnProjekt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnProjektActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton3.setText("Anställda");
-
-        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jButton4.setText("Partners");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        BtnAnstallda.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        BtnAnstallda.setText("Anställda");
+        BtnAnstallda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BtnAnstalldaActionPerformed(evt);
+            }
+        });
+
+        BtnPartners.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        BtnPartners.setText("Partners");
+        BtnPartners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPartnersActionPerformed(evt);
             }
         });
 
@@ -87,34 +92,34 @@ public class Meny extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMinaUpp))
                         .addGap(133, 133, 133)
                         .addComponent(lblInloggadAnvandare))
-                    .addComponent(jLabel1)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLMenyAdmin)
+                    .addComponent(BtnAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel1)
+                .addComponent(jLMenyAdmin)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(BtnAnstallda)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(BtnPartners)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(BtnAvdelning)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(BtnProjekt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMinaUpp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblInloggadAnvandare)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,13 +130,17 @@ public class Meny extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnMinaUppActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BtnPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPartnersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_BtnPartnersActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtnProjektActionPerformed
+
+    private void BtnAnstalldaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnstalldaActionPerformed
+        new Mainframe1(idb).setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAnstalldaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,18 +163,18 @@ public class Meny extends javax.swing.JFrame {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
             
-            //new Meny(idb, inloggadAnvandare).setVisible(true);
+            //new MenyAdmin(idb, inloggadAnvandare).setVisible(true);
         }
     });
 } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAnstallda;
+    private javax.swing.JButton BtnAvdelning;
+    private javax.swing.JButton BtnPartners;
+    private javax.swing.JButton BtnProjekt;
     private javax.swing.JButton btnMinaUpp;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLMenyAdmin;
     private javax.swing.JLabel lblInloggadAnvandare;
     // End of variables declaration//GEN-END:variables
 }

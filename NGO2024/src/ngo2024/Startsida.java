@@ -36,7 +36,7 @@ public class Startsida extends javax.swing.JFrame {
         BtnHandlaggare = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 102, 102));
+        setBackground(new java.awt.Color(102, 255, 102));
 
         jLValkommen.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLValkommen.setText("Välkommen");
@@ -57,39 +57,38 @@ public class Startsida extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(BtnAdmin)
-                        .addGap(194, 194, 194)
-                        .addComponent(BtnHandlaggare)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(216, 216, 216)
+                .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(BtnAdmin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addComponent(BtnHandlaggare)
+                .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(82, 82, 82)
                 .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAdmin)
-                    .addComponent(BtnHandlaggare))
-                .addContainerGap(99, Short.MAX_VALUE))
+                    .addComponent(BtnHandlaggare)
+                    .addComponent(BtnAdmin))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAdminActionPerformed
-        new Inloggning(idb).setVisible(true);
+        new InloggningAdmin(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnAdminActionPerformed
     
     private void BtnHandlaggareActionPerformed(java.awt.event.ActionEvent evt) {
-        new Inloggning(idb).setVisible(true);
+        new InloggningAdmin(idb).setVisible(true);
         this.dispose();
 
     }

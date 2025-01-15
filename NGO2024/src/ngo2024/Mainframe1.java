@@ -19,14 +19,15 @@ import java.util.ArrayList;
 public class Mainframe1 extends javax.swing.JFrame {
 
     
-    private InfDB db;
+    private InfDB idb;
     /**
      * Creates new form MainFrame1
      */
-    public Mainframe1() {
+    public Mainframe1(InfDB idb) {
         initComponents();
-         try {
-        db = new InfDB("C:\\path\\to\\database.fdb"); // Se till att ange rätt sökväg
+        this.idb = idb;
+        try {
+        idb = new InfDB("C:\\path\\to\\database.fdb"); // Se till att ange rätt sökväg
     } catch (InfException ex) {
         JOptionPane.showMessageDialog(this, "Databasanslutning misslyckades: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
     }
@@ -244,7 +245,7 @@ public class Mainframe1 extends javax.swing.JFrame {
             try {
             // SQL-insert
             String query = "INSERT INTO Medarbetare (Namn, Epost, Telefon, Adress) VALUES ('" + namn + "', '" + ePost + "', '" + telefon + "', '" + adress + "')";
-            db.insert(query);
+            idb.insert(query);
             
             // Lägg till i JTable
             DefaultTableModel model = new DefaultTableModel (new Object []{namn, ePost, telefon, adress}, 0);
@@ -290,7 +291,7 @@ public class Mainframe1 extends javax.swing.JFrame {
 
             try {
                 String query = "DELETE FROM Medarbetare WHERE Namn = '" + namn + "'";
-                db.delete(query);
+                idb.delete(query);
                 model.removeRow(row); // Ta bort från GUI-tabellen
                 JOptionPane.showMessageDialog(this, "Medarbetare raderad!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } catch (InfException ex) {
@@ -328,7 +329,7 @@ public class Mainframe1 extends javax.swing.JFrame {
              model.setRowCount(0); // Rensa tabellen
             
              String query = "SELECT Namn, Epost, Telefon, Adress FROM Medarbetare";
-             ArrayList<HashMap<String, String>> medarbetare = db.fetchRows(query);
+             ArrayList<HashMap<String, String>> medarbetare = idb.fetchRows(query);
 
              if (medarbetare != null) {
                  for (HashMap<String, String> row : medarbetare) {
@@ -374,7 +375,7 @@ public class Mainframe1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mainframe1().setVisible(true);
+                //new Mainframe1().setVisible(true);
             }
         });
     }
