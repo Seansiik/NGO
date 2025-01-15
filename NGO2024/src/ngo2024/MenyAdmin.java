@@ -42,7 +42,7 @@ public class MenyAdmin extends javax.swing.JFrame {
         BtnAnstallda = new javax.swing.JButton();
         BtnPartners = new javax.swing.JButton();
         BtnTillbakaInloggning = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BtnLand = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
@@ -99,8 +99,8 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jButton1.setText("Länder");
+        BtnLand.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnLand.setText("Länder");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +119,7 @@ public class MenyAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtnPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnLand, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99))
             .addGroup(layout.createSequentialGroup()
@@ -144,7 +144,7 @@ public class MenyAdmin extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAvdelning)
-                    .addComponent(jButton1))
+                    .addComponent(BtnLand))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAnstallda)
@@ -212,8 +212,7 @@ public class MenyAdmin extends javax.swing.JFrame {
    
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            
-            //new MenyAdmin(idb, inloggadAnvandare).setVisible(true);
+            //new MenyAdmin().setVisible(true);
         }
     });
 } 
@@ -221,11 +220,11 @@ public class MenyAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnstallda;
     private javax.swing.JButton BtnAvdelning;
+    private javax.swing.JButton BtnLand;
     private javax.swing.JButton BtnPartners;
     private javax.swing.JButton BtnProjekt;
     private javax.swing.JButton BtnTillbakaInloggning;
     private javax.swing.JButton btnMinaUpp;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLMenyAdmin;
     private javax.swing.JLabel lblInloggadAnvandare;
     // End of variables declaration//GEN-END:variables
