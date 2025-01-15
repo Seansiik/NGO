@@ -25,8 +25,8 @@ public class AdminMedarbetare extends javax.swing.JFrame {
      * Creates new form MainFrame1
      */
     public AdminMedarbetare(InfDB idb) {
-        initComponents();
         this.idb = idb;
+        //initComponents();
     }
 
     /**
@@ -39,19 +39,19 @@ public class AdminMedarbetare extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
-        javax.swing.JLabel jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         tfNamn = new javax.swing.JTextField();
-        javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         tfEpost = new javax.swing.JTextField();
-        javax.swing.JLabel jLabel4 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         tfTelefon = new javax.swing.JTextField();
-        javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         tfAdress = new javax.swing.JTextField();
-        javax.swing.JButton btnLaggTill = new javax.swing.JButton();
-        javax.swing.JButton btnRensa = new javax.swing.JButton();
-        javax.swing.JButton btnRadera = new javax.swing.JButton();
+        btnLaggTill = new javax.swing.JButton();
+        btnRensa = new javax.swing.JButton();
+        btnRadera = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableMedarbetare = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -197,13 +197,13 @@ public class AdminMedarbetare extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(173, 173, 173)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 50, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1))
+                        .addGap(0, 62, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -212,93 +212,30 @@ public class AdminMedarbetare extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRadera)
                             .addComponent(jButton1))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(399, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
-        String namn = tfNamn.getText();
-        String ePost = tfEpost.getText();
-        String telefon = tfTelefon.getText();
-        String adress = tfAdress.getText();
-        
-        if (namn.isEmpty() || ePost.isEmpty() || telefon.isEmpty() || adress.isEmpty()){    
-        JOptionPane.showMessageDialog(this,
-                                    "Var god fyll i alla fält",
-                                    "Försök igen",
-                                    JOptionPane.ERROR_MESSAGE);
-        } else {
-            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-            model.addRow(new Object [] {namn, ePost, telefon, adress} );
-            
-            // Rensa fälten
-            tfNamn.setText("");
-            tfEpost.setText("");
-            tfTelefon.setText("");
-            tfAdress.setText("");
-
-      }   
-        
-    }//GEN-LAST:event_btnLaggTillActionPerformed
-
-    private void btnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRensaActionPerformed
-        tfNamn.setText("");
-        tfEpost.setText("");
-        tfTelefon.setText("");
-        tfAdress.setText("");
-    }//GEN-LAST:event_btnRensaActionPerformed
-
-    private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
-        int row = tableMedarbetare.getSelectedRow();
-        
-        if (row < 0) {
-            JOptionPane.showMessageDialog(this,
-                                        "Inget fält har blivit valt! Var god, välj ett fält",
-                                         "Välj fält",
-                                         JOptionPane.ERROR_MESSAGE);
-        } else {
-            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-            String namn = model.getValueAt(row, 0).toString();
-
-            try {
-                String query = "DELETE FROM Medarbetare WHERE Namn = '" + namn + "'";
-                idb.delete(query);
-                model.removeRow(row); // Ta bort från GUI-tabellen
-                JOptionPane.showMessageDialog(this, "Medarbetare raderad!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } catch (InfException ex) {
-                JOptionPane.showMessageDialog(this, "Kunde inte radera medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
-        
-                
-        }
-      }  
-    }//GEN-LAST:event_btnRaderaActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
@@ -343,6 +280,62 @@ public class AdminMedarbetare extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
+        int row = tableMedarbetare.getSelectedRow();
+
+        if (row < 0) {
+            JOptionPane.showMessageDialog(this,
+                "Inget fält har blivit valt! Var god, välj ett fält",
+                "Välj fält",
+                JOptionPane.ERROR_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+            String namn = model.getValueAt(row, 0).toString();
+
+            try {
+                String query = "DELETE FROM Medarbetare WHERE Namn = '" + namn + "'";
+                idb.delete(query);
+                model.removeRow(row); // Ta bort från GUI-tabellen
+                JOptionPane.showMessageDialog(this, "Medarbetare raderad!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (InfException ex) {
+                JOptionPane.showMessageDialog(this, "Kunde inte radera medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+
+            }
+        }
+    }//GEN-LAST:event_btnRaderaActionPerformed
+
+    private void btnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRensaActionPerformed
+        tfNamn.setText("");
+        tfEpost.setText("");
+        tfTelefon.setText("");
+        tfAdress.setText("");
+    }//GEN-LAST:event_btnRensaActionPerformed
+
+    private void btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillActionPerformed
+        String namn = tfNamn.getText();
+        String ePost = tfEpost.getText();
+        String telefon = tfTelefon.getText();
+        String adress = tfAdress.getText();
+
+        if (namn.isEmpty() || ePost.isEmpty() || telefon.isEmpty() || adress.isEmpty()){
+            JOptionPane.showMessageDialog(this,
+                "Var god fyll i alla fält",
+                "Försök igen",
+                JOptionPane.ERROR_MESSAGE);
+        } else {
+            DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
+            model.addRow(new Object [] {namn, ePost, telefon, adress} );
+
+            // Rensa fälten
+            tfNamn.setText("");
+            tfEpost.setText("");
+            tfTelefon.setText("");
+            tfAdress.setText("");
+
+        }
+
+    }//GEN-LAST:event_btnLaggTillActionPerformed
  
     /**
      * @param args the command line arguments
@@ -387,8 +380,17 @@ public class AdminMedarbetare extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLaggTill;
+    private javax.swing.JButton btnRadera;
+    private javax.swing.JButton btnRensa;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableMedarbetare;
     private javax.swing.JTextField tfAdress;

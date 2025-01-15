@@ -149,7 +149,8 @@ public class MenyAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPartnersActionPerformed
-                  
+            new AdminPartner(idb).setVisible(true); 
+            this.dispose();      
 
     }//GEN-LAST:event_BtnPartnersActionPerformed
 
@@ -159,10 +160,10 @@ public class MenyAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnProjektActionPerformed
 
     private void BtnAnstalldaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnstalldaActionPerformed
-             new AdminMedarbetare(idb).setVisible(true); 
+            AdminMedarbetare adminMedarbetare = new AdminMedarbetare(idb); // Skapar nytt fönster
+            adminMedarbetare.setVisible(true); // Visar fönstret
+            this.dispose();
 
-
-            
     }//GEN-LAST:event_BtnAnstalldaActionPerformed
 
     private void BtnTillbakaInloggningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaInloggningActionPerformed
@@ -172,11 +173,15 @@ public class MenyAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTillbakaInloggningActionPerformed
 
     private void BtnAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningActionPerformed
-                  
+            new AdminAvdelning(idb).setVisible(true); 
+            this.dispose();
+
     }//GEN-LAST:event_BtnAvdelningActionPerformed
 
     private void BtnLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLandActionPerformed
             new AdminLand(idb).setVisible(true); 
+            this.dispose();
+
     }//GEN-LAST:event_BtnLandActionPerformed
 
     /**
