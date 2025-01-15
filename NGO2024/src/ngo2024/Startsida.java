@@ -51,6 +51,11 @@ public class Startsida extends javax.swing.JFrame {
 
         BtnHandlaggare.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         BtnHandlaggare.setText("Handläggare");
+        BtnHandlaggare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHandlaggareActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,16 +91,16 @@ public class Startsida extends javax.swing.JFrame {
         new InloggningAdmin(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnAdminActionPerformed
-    
-    private void BtnHandlaggareActionPerformed(java.awt.event.ActionEvent evt) {
-        new InloggningAdmin(idb).setVisible(true);
-        this.dispose();
 
-    }
+    private void BtnHandlaggareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHandlaggareActionPerformed
+        new HandlaggareInloggning(idb).setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_BtnHandlaggareActionPerformed
+
+
     
     
-    
-   
     /**
      * @param args the command line arguments
      */

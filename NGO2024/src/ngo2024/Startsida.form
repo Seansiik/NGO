@@ -82,6 +82,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Handl&#xe4;ggare"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnHandlaggareActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
