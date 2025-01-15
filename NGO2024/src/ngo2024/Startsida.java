@@ -38,10 +38,10 @@ public class Startsida extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 102));
 
-        jLValkommen.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLValkommen.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLValkommen.setText("Välkommen");
 
-        BtnAdmin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        BtnAdmin.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         BtnAdmin.setText("Administratör");
         BtnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +49,7 @@ public class Startsida extends javax.swing.JFrame {
             }
         });
 
-        BtnHandlaggare.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        BtnHandlaggare.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         BtnHandlaggare.setText("Handläggare");
         BtnHandlaggare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,15 +62,15 @@ public class Startsida extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addContainerGap(55, Short.MAX_VALUE)
                 .addComponent(BtnAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(BtnHandlaggare)
-                .addGap(99, 99, 99))
+                .addGap(112, 112, 112))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addComponent(jLValkommen, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +81,7 @@ public class Startsida extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnHandlaggare)
                     .addComponent(BtnAdmin))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();

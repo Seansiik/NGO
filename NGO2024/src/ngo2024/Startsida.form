@@ -26,17 +26,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
-              <Component id="jLValkommen" min="-2" pref="186" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <Component id="BtnAdmin" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="BtnHandlaggare" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-              <Component id="BtnAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="136" max="32767" attributes="0"/>
-              <Component id="BtnHandlaggare" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
+              <Component id="jLValkommen" min="-2" pref="207" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,7 +50,7 @@
                   <Component id="BtnHandlaggare" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="122" max="32767" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,7 +59,7 @@
     <Component class="javax.swing.JLabel" name="jLValkommen">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="36" style="0"/>
+          <Font name="Times New Roman" size="36" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="V&#xe4;lkommen"/>
       </Properties>
@@ -67,7 +67,7 @@
     <Component class="javax.swing.JButton" name="BtnAdmin">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="24" style="0"/>
+          <Font name="Times New Roman" size="36" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Administrat&#xf6;r"/>
       </Properties>
@@ -78,7 +78,7 @@
     <Component class="javax.swing.JButton" name="BtnHandlaggare">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="24" style="0"/>
+          <Font name="Times New Roman" size="36" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Handl&#xe4;ggare"/>
       </Properties>
