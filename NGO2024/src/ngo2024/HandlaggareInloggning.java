@@ -63,7 +63,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             }
         });
 
-        lblFelmeddelande.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        lblFelmeddelande.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFelmeddelande.setForeground(new java.awt.Color(255, 0, 0));
         lblFelmeddelande.setText("Felaktig epost eller lösenord");
 
@@ -151,7 +151,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
             System.out.println(sqlFraga);
             String dbLosen = idb.fetchSingle(sqlFraga);
             if(losen.equals(dbLosen)){
-                //new MenyHandlaggare(idb, ePost).setVisible(true);
+               //new MenyHandlaggare(idb).setVisible(true);
                 this.setVisible(false);
 
             }
