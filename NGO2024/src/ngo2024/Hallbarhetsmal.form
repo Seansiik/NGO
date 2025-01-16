@@ -23,31 +23,35 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="651" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                      <Component id="BtnTillbaka" min="-2" pref="273" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="80" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="29" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="402" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BtnTillbaka" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,15 +59,24 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="H&#xe5;llbarhetsm&#xe5;l"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="BtnTillbaka">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tillbaka"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTillbakaActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -76,8 +89,8 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="18">
-                <Column editable="true" title="Title 1" type="java.lang.Object">
+              <Table columnCount="4" rowCount="17">
+                <Column editable="true" title="M&#xe5;lnummer" type="java.lang.Object">
                   <Data value="1"/>
                   <Data value="2"/>
                   <Data value="3"/>
@@ -87,38 +100,72 @@
                   <Data value="7"/>
                   <Data value="8"/>
                   <Data value="9"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
+                  <Data value="10"/>
+                  <Data value="11"/>
+                  <Data value="12"/>
+                  <Data value="13"/>
+                  <Data value="14"/>
+                  <Data value="15"/>
+                  <Data value="16"/>
+                  <Data value="17"/>
                 </Column>
-                <Column editable="true" title="Title 2" type="java.lang.Object">
-                  <Data value=""/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
+                <Column editable="true" title="Namn" type="java.lang.Object">
+                  <Data value="Inga fattiga"/>
+                  <Data value="Noll hunger"/>
+                  <Data value="God h&#xe4;lsa och v&#xe4;lbefinnande"/>
+                  <Data value="H&#xe5;llbart jordbruk"/>
+                  <Data value="J&#xe4;mst&#xe4;lldhet"/>
+                  <Data value="Rent vatten och sanitet"/>
+                  <Data value="F&#xf6;rnybar energi"/>
+                  <Data value="Anst&#xe4;ndiga arbetsvillkor"/>
+                  <Data value="Innovation och infrastruktur"/>
+                  <Data value="Minskad oj&#xe4;mlikhet"/>
+                  <Data value="H&#xe5;llbara st&#xe4;der och samh&#xe4;llen"/>
+                  <Data value="H&#xe5;llbara konsumtions- och produktionsm&#xf6;nster"/>
+                  <Data value="Bek&#xe4;mpa klimatf&#xf6;r&#xe4;ndringarna"/>
+                  <Data value="Hav och marina resurser"/>
+                  <Data value="Livet p&#xe5; land"/>
+                  <Data value="Fredliga och inkluderande samh&#xe4;llen"/>
+                  <Data value="Samverkan och genomf&#xf6;randen"/>
                 </Column>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                <Column editable="true" title="Beskrivning" type="java.lang.Object">
+                  <Data value="Uppn&#xe5; noll hunger och utrota all form av fattigdom &#xf6;ver hela v&#xe4;rlden"/>
+                  <Data value="S&#xe4;kerst&#xe4;ll h&#xe5;llbar matproduktionssystem och fr&#xe4;mja jordbruket f&#xf6;r att uppn&#xe5; n&#xe4;ringsriktig kost f&#xf6;r alla"/>
+                  <Data value="S&#xe4;kerst&#xe4;ll h&#xe4;lsosamt liv och fr&#xe4;mja v&#xe4;lbefinnande f&#xf6;r alla i alla &#xe5;ldrar"/>
+                  <Data value="S&#xe4;kerst&#xe4;ll h&#xe5;llbar matproduktion och fr&#xe4;mja h&#xe5;llbart jordbruk"/>
+                  <Data value="Uppn&#xe5; j&#xe4;mst&#xe4;lldhet och st&#xe4;rka alla kvinnor och flickor"/>
+                  <Data value="S&#xe4;kerst&#xe4;ll tillg&#xe5;ng till rent vatten och sanitet f&#xf6;r alla"/>
+                  <Data value="S&#xe4;kerst&#xe4;ll tillg&#xe5;ng till p&#xe5;litlig, h&#xe5;llbar och modern energi f&#xf6;r alla"/>
+                  <Data value="Fr&#xe4;mja varaktig, inkluderande och h&#xe5;llbar ekonomisk tillv&#xe4;xt, full och produktiv syssels&#xe4;ttning och anst&#xe4;ndigt arbete f&#xf6;r alla"/>
+                  <Data value="Bygga robust infrastruktur, fr&#xe4;mja inkluderande och h&#xe5;llbar industrialisering och &#xf6;ka innovation"/>
+                  <Data value="Minska oj&#xe4;mlikhet inom och mellan l&#xe4;nder"/>
+                  <Data value="G&#xf6;ra st&#xe4;der och m&#xe4;nskliga bos&#xe4;ttningar inkluderande, s&#xe4;kra, motst&#xe5;ndskraftiga och h&#xe5;llbara"/>
+                  <Data value="S&#xe4;kerst&#xe4;lla h&#xe5;llbara konsumtions- och produktionsm&#xf6;nster"/>
+                  <Data value="Vidta omedelbara &#xe5;tg&#xe4;rder f&#xf6;r att bek&#xe4;mpa klimatf&#xf6;r&#xe4;ndringarna och dess p&#xe5;verkan"/>
+                  <Data value="Bevara och h&#xe5;llbart nyttja haven, haven och marina resurser f&#xf6;r h&#xe5;llbar utveckling"/>
+                  <Data value="Skydda, &#xe5;terst&#xe4;lla och fr&#xe4;mja h&#xe5;llbar anv&#xe4;ndning av ekosystem, h&#xe5;llbart skogsbruk, bek&#xe4;mpa &#xf6;kenspridning, stoppa och v&#xe4;nda markdegradering och f&#xf6;rlust av biologisk m&#xe5;ngfald"/>
+                  <Data value="Fr&#xe4;mja fredliga och inkluderande samh&#xe4;llen f&#xf6;r h&#xe5;llbar utveckling, ge tillg&#xe5;ng till r&#xe4;ttvisa f&#xf6;r alla och bygga effektiva, ansvariga och inkluderande institutioner p&#xe5; alla niv&#xe5;er"/>
+                  <Data value="St&#xe4;rka genomf&#xf6;randemedlen och revitalisera den globala partnerskapet f&#xf6;r h&#xe5;llbar utveckling"/>
+                </Column>
+                <Column editable="true" title="Prioritet" type="java.lang.Object">
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="H&#xf6;g"/>
+                  <Data value="Medel"/>
+                  <Data value="Medel"/>
+                  <Data value="Medel"/>
+                  <Data value="Medel"/>
+                  <Data value="Medel"/>
+                  <Data value="L&#xe5;g"/>
+                  <Data value="L&#xe5;g"/>
+                  <Data value="L&#xe5;g"/>
+                  <Data value="L&#xe5;g"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

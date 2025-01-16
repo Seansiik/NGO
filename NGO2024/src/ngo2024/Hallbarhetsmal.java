@@ -37,44 +37,46 @@ public Hallbarhetsmal(InfDB idb) {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BtnTillbaka = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Hållbarhetsmål");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnTillbaka.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTillbaka.setText("Tillbaka");
+        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnTillbakaActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "", null, null},
-                {"2", null, null, null},
-                {"3", null, null, null},
-                {"4", null, null, null},
-                {"5", null, null, null},
-                {"6", null, null, null},
-                {"7", null, null, null},
-                {"8", null, null, null},
-                {"9", null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"1", "Inga fattiga", "Uppnå noll hunger och utrota all form av fattigdom över hela världen", "Hög"},
+                {"2", "Noll hunger", "Säkerställ hållbar matproduktionssystem och främja jordbruket för att uppnå näringsriktig kost för alla", "Hög"},
+                {"3", "God hälsa och välbefinnande", "Säkerställ hälsosamt liv och främja välbefinnande för alla i alla åldrar", "Hög"},
+                {"4", "Hållbart jordbruk", "Säkerställ hållbar matproduktion och främja hållbart jordbruk", "Hög"},
+                {"5", "Jämställdhet", "Uppnå jämställdhet och stärka alla kvinnor och flickor", "Hög"},
+                {"6", "Rent vatten och sanitet", "Säkerställ tillgång till rent vatten och sanitet för alla", "Hög"},
+                {"7", "Förnybar energi", "Säkerställ tillgång till pålitlig, hållbar och modern energi för alla", "Hög"},
+                {"8", "Anständiga arbetsvillkor", "Främja varaktig, inkluderande och hållbar ekonomisk tillväxt, full och produktiv sysselsättning och anständigt arbete för alla", "Hög"},
+                {"9", "Innovation och infrastruktur", "Bygga robust infrastruktur, främja inkluderande och hållbar industrialisering och öka innovation", "Medel"},
+                {"10", "Minskad ojämlikhet", "Minska ojämlikhet inom och mellan länder", "Medel"},
+                {"11", "Hållbara städer och samhällen", "Göra städer och mänskliga bosättningar inkluderande, säkra, motståndskraftiga och hållbara", "Medel"},
+                {"12", "Hållbara konsumtions- och produktionsmönster", "Säkerställa hållbara konsumtions- och produktionsmönster", "Medel"},
+                {"13", "Bekämpa klimatförändringarna", "Vidta omedelbara åtgärder för att bekämpa klimatförändringarna och dess påverkan", "Medel"},
+                {"14", "Hav och marina resurser", "Bevara och hållbart nyttja haven, haven och marina resurser för hållbar utveckling", "Låg"},
+                {"15", "Livet på land", "Skydda, återställa och främja hållbar användning av ekosystem, hållbart skogsbruk, bekämpa ökenspridning, stoppa och vända markdegradering och förlust av biologisk mångfald", "Låg"},
+                {"16", "Fredliga och inkluderande samhällen", "Främja fredliga och inkluderande samhällen för hållbar utveckling, ge tillgång till rättvisa för alla och bygga effektiva, ansvariga och inkluderande institutioner på alla nivåer", "Låg"},
+                {"17", "Samverkan och genomföranden", "Stärka genomförandemedlen och revitalisera den globala partnerskapet för hållbar utveckling", "Låg"}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Målnummer", "Namn", "Beskrivning", "Prioritet"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -84,34 +86,38 @@ public Hallbarhetsmal(InfDB idb) {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton1))
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(BtnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(23, 23, 23))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BtnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
+               Hallbarhetsmal meny =new Hallbarhetsmal(idb);                               
+        
+        this.dispose();
+    }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,7 +155,7 @@ public Hallbarhetsmal(InfDB idb) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
