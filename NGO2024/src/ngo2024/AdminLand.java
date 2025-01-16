@@ -48,10 +48,12 @@ public class AdminLand extends javax.swing.JFrame {
         tfTidszon = new javax.swing.JTextField();
         tfPolitiskStruktur = new javax.swing.JTextField();
         tfSprak = new javax.swing.JTextField();
-        BtnRensa3 = new javax.swing.JButton();
         BtnLaggTill3 = new javax.swing.JButton();
         tfEkonomi = new javax.swing.JTextField();
         jLEkonomi = new javax.swing.JLabel();
+        BtnAndraLand = new javax.swing.JButton();
+        BtnHamtaLand = new javax.swing.JButton();
+        tfHamtaLand = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,11 +109,8 @@ public class AdminLand extends javax.swing.JFrame {
         jLTidszon.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLTidszon.setText("Tidszon");
 
-        BtnRensa3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnRensa3.setForeground(new java.awt.Color(255, 0, 0));
-        BtnRensa3.setText("Rensa");
-
         BtnLaggTill3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnLaggTill3.setForeground(new java.awt.Color(0, 0, 102));
         BtnLaggTill3.setText("Lägg till");
         BtnLaggTill3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +121,10 @@ public class AdminLand extends javax.swing.JFrame {
         jLEkonomi.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLEkonomi.setText("Ekonomi");
 
+        BtnAndraLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnAndraLand.setForeground(new java.awt.Color(255, 0, 0));
+        BtnAndraLand.setText("Ändra");
+
         javax.swing.GroupLayout PanelNyttLandLayout = new javax.swing.GroupLayout(PanelNyttLand);
         PanelNyttLand.setLayout(PanelNyttLandLayout);
         PanelNyttLandLayout.setHorizontalGroup(
@@ -130,10 +133,6 @@ public class AdminLand extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(PanelNyttLandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfEkonomi)
-                    .addGroup(PanelNyttLandLayout.createSequentialGroup()
-                        .addComponent(BtnRensa3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addComponent(BtnLaggTill3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tfTidszon)
                     .addGroup(PanelNyttLandLayout.createSequentialGroup()
                         .addGroup(PanelNyttLandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +146,11 @@ public class AdminLand extends javax.swing.JFrame {
                     .addComponent(tfPolitiskStruktur)
                     .addComponent(tfValuta)
                     .addComponent(tfSprak)
-                    .addComponent(tfNamn))
+                    .addComponent(tfNamn)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNyttLandLayout.createSequentialGroup()
+                        .addComponent(BtnAndraLand, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addComponent(BtnLaggTill3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         PanelNyttLandLayout.setVerticalGroup(
@@ -173,35 +176,45 @@ public class AdminLand extends javax.swing.JFrame {
                 .addComponent(jLTidszon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfTidszon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jLEkonomi)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfEkonomi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(35, 35, 35)
                 .addGroup(PanelNyttLandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnRensa3)
-                    .addComponent(BtnLaggTill3))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(BtnLaggTill3)
+                    .addComponent(BtnAndraLand))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        BtnHamtaLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHamtaLand.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaLand.setText("Hämta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(BtnTbxAdMeny1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(169, 169, 169))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelNyttLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnTbxAdMeny1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(169, 169, 169))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(PanelNyttLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tfHamtaLand, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnHamtaLand, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(49, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,16 +223,16 @@ public class AdminLand extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JlrubrikPartners)
                     .addComponent(BtnTbxAdMeny1))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(PanelNyttLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                    .addComponent(tfHamtaLand)
+                    .addComponent(BtnHamtaLand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelNyttLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -238,24 +251,24 @@ public class AdminLand extends javax.swing.JFrame {
         String namn = tfNamn.getText();
         String sprak = tfSprak.getText();
         String valuta = tfValuta.getText();
+        String politiskStruktur = tfPolitiskStruktur.getText();
         String tidszon = tfTidszon.getText();
         String ekonomi = tfEkonomi.getText();
-        String politiskStruktur = tfPolitiskStruktur.getText();
   
-    if (namn.isEmpty() || sprak.isEmpty() || tidszon.isEmpty()|| politiskStruktur.isEmpty()|| valuta.isEmpty() || ekonomi.isEmpty()) {
+    if (namn.isEmpty() || sprak.isEmpty() || valuta.isEmpty()|| politiskStruktur.isEmpty()|| tidszon.isEmpty() || ekonomi.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Fyll i alla fält!", "Fel", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
     DefaultTableModel tableModel = (DefaultTableModel) TableLand.getModel();
-    tableModel.addRow(new Object[]{namn, sprak, valuta, ekonomi, tidszon, politiskStruktur,});
+    tableModel.addRow(new Object[]{namn, sprak, valuta, politiskStruktur, tidszon, ekonomi,});
 
     tfNamn.setText("");
     tfSprak.setText("");
     tfValuta.setText("");
+    tfPolitiskStruktur.setText("");
     tfTidszon.setText("");
     tfEkonomi.setText("");
-    tfPolitiskStruktur.setText("");
     
          
     }//GEN-LAST:event_BtnLaggTill3ActionPerformed
@@ -296,8 +309,9 @@ public class AdminLand extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAndraLand;
+    private javax.swing.JButton BtnHamtaLand;
     private javax.swing.JButton BtnLaggTill3;
-    private javax.swing.JButton BtnRensa3;
     private javax.swing.JButton BtnTbxAdMeny1;
     private javax.swing.JLabel JlrubrikPartners;
     private javax.swing.JPanel PanelNyttLand;
@@ -311,6 +325,7 @@ public class AdminLand extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jlNamn;
     private javax.swing.JTextField tfEkonomi;
+    private javax.swing.JTextField tfHamtaLand;
     private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfPolitiskStruktur;
     private javax.swing.JTextField tfSprak;

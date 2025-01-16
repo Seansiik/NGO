@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,25 +23,41 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="BtnTbxFranAvd" min="-2" pref="148" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                      <Component id="JlrubrikAvdelning" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="tfHamtaAvdelning" min="-2" pref="158" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="BtnTbx" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                              <Component id="JlrubrikAvdelning" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="PanelNyAvdelning" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="BtnHamtaAvdelning" min="-2" pref="98" max="-2" attributes="0"/>
+                          <Component id="PanelAvdelning" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="BtnRadera" min="-2" pref="108" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="614" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="581" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="485" max="-2" attributes="0"/>
+                              <Component id="BtnRadera" min="-2" pref="108" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,18 +65,32 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JlrubrikAvdelning" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnTbxFranAvd" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="BtnTbx" min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="JlrubrikAvdelning" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="BtnRadera" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="PanelNyAvdelning" max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="tfHamtaAvdelning" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="BtnHamtaAvdelning" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="BtnRadera" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="87" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="PanelAvdelning" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="538" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,20 +170,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="BtnTbxFranAvd">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Tillbaka"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTbxFranAvdActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="JlrubrikAvdelning">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -163,11 +179,11 @@
         <Property name="text" type="java.lang.String" value="Lista &#xf6;ver avdelningar:"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="PanelNyAvdelning">
+    <Container class="javax.swing.JPanel" name="PanelAvdelning">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Ny avdelning">
+            <TitledBorder title="Avdelning">
               <Font PropertyName="font" name="Times New Roman" size="18" style="1"/>
             </TitledBorder>
           </Border>
@@ -181,48 +197,51 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLAvdelningschef" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfTelefon" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="jLTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLePost" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfEpost" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="tfNamn" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="jlNamn" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
-                      <Component id="tfAdress" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="jLStad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfStad" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="jLBeskrivning" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfBeskrivning" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="BtnRensa" min="-2" pref="113" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BtnLaggTill" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="BtnAndra" min="-2" pref="111" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="BtnLaggTill" min="-2" pref="116" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLAvdelningschef" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfTelefon" alignment="1" pref="264" max="32767" attributes="0"/>
+                              <Component id="jLTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLePost" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfEpost" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tfNamn" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jlNamn" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
+                              <Component id="tfAdress" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLStad" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfStad" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLBeskrivning" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfBeskrivning" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tfAvdelningschef" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="tfAvdelningschef" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="51" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jlNamn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfNamn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLePost" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfEpost" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfAdress" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLTelefon" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfTelefon" min="-2" max="-2" attributes="0"/>
@@ -234,16 +253,16 @@
                   <Component id="jLBeskrivning" min="-2" pref="21" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfBeskrivning" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLAvdelningschef" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfAvdelningschef" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BtnRensa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnLaggTill" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnAndra" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -302,21 +321,13 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfEpost">
         </Component>
-        <Component class="javax.swing.JButton" name="BtnRensa">
+        <Component class="javax.swing.JButton" name="BtnLaggTill">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Rensa"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnLaggTill">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
+              <Color blue="66" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
           </Properties>
@@ -344,7 +355,45 @@
             <Property name="text" type="java.lang.String" value="Avdelningschef"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="BtnAndra">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="BtnHamtaAvdelning">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="H&#xe4;mta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfHamtaAvdelning">
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnTbx">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tillbaka"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTbxActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

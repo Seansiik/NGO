@@ -27,9 +27,10 @@ public class AdminPartner extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BtnAndra = new javax.swing.JButton();
         BtnTbxAdMeny1 = new javax.swing.JButton();
         JlrubrikPartners = new javax.swing.JLabel();
-        PanelNyPartner = new javax.swing.JPanel();
+        PanelPartner = new javax.swing.JPanel();
         jlNamn = new javax.swing.JLabel();
         tfEpost = new javax.swing.JTextField();
         jLTelefon = new javax.swing.JLabel();
@@ -40,15 +41,21 @@ public class AdminPartner extends javax.swing.JFrame {
         tfStad = new javax.swing.JTextField();
         tfAdress = new javax.swing.JTextField();
         tfTelefon = new javax.swing.JTextField();
-        BtnRensa1 = new javax.swing.JButton();
         BtnLaggTill1 = new javax.swing.JButton();
         tfBranch = new javax.swing.JTextField();
         jLBranch = new javax.swing.JLabel();
         tfKonPerson = new javax.swing.JTextField();
         jLKontaktPers = new javax.swing.JLabel();
+        BtnAndraPart = new javax.swing.JButton();
         BtnRaderaPartner = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablePartner = new javax.swing.JTable();
+        BtnHamtaPartner = new javax.swing.JButton();
+        tfHamtaPartner = new javax.swing.JTextField();
+
+        BtnAndra.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnAndra.setForeground(new java.awt.Color(255, 0, 0));
+        BtnAndra.setText("Ändra");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,8 +72,8 @@ public class AdminPartner extends javax.swing.JFrame {
         JlrubrikPartners.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         JlrubrikPartners.setText("Lista över partners:");
 
-        PanelNyPartner.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny partner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
-        PanelNyPartner.setOpaque(false);
+        PanelPartner.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Partner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        PanelPartner.setOpaque(false);
 
         jlNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jlNamn.setText("Namn");
@@ -89,11 +96,8 @@ public class AdminPartner extends javax.swing.JFrame {
         jLStad.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLStad.setText("Stad");
 
-        BtnRensa1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnRensa1.setForeground(new java.awt.Color(255, 0, 51));
-        BtnRensa1.setText("Rensa");
-
         BtnLaggTill1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnLaggTill1.setForeground(new java.awt.Color(0, 0, 102));
         BtnLaggTill1.setText("Lägg till");
         BtnLaggTill1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,38 +111,41 @@ public class AdminPartner extends javax.swing.JFrame {
         jLKontaktPers.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLKontaktPers.setText("Kontaktperson");
 
-        javax.swing.GroupLayout PanelNyPartnerLayout = new javax.swing.GroupLayout(PanelNyPartner);
-        PanelNyPartner.setLayout(PanelNyPartnerLayout);
-        PanelNyPartnerLayout.setHorizontalGroup(
-            PanelNyPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNyPartnerLayout.createSequentialGroup()
+        BtnAndraPart.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnAndraPart.setForeground(new java.awt.Color(255, 0, 0));
+        BtnAndraPart.setText("Ändra");
+
+        javax.swing.GroupLayout PanelPartnerLayout = new javax.swing.GroupLayout(PanelPartner);
+        PanelPartner.setLayout(PanelPartnerLayout);
+        PanelPartnerLayout.setHorizontalGroup(
+            PanelPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPartnerLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(PanelNyPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfBranch, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfBranch, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLAdress)
                     .addComponent(jLePost)
                     .addComponent(jLTelefon)
-                    .addComponent(tfTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfTelefon, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfEpost, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfAdress, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLStad)
-                    .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNamn, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfStad, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfStad, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLBranch)
                     .addComponent(jLKontaktPers)
-                    .addGroup(PanelNyPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(PanelNyPartnerLayout.createSequentialGroup()
-                            .addComponent(BtnRensa1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnLaggTill1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tfKonPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(tfKonPerson, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPartnerLayout.createSequentialGroup()
+                        .addComponent(BtnAndraPart, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(BtnLaggTill1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PanelNyPartnerLayout.setVerticalGroup(
-            PanelNyPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNyPartnerLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+        PanelPartnerLayout.setVerticalGroup(
+            PanelPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPartnerLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jlNamn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,11 +173,11 @@ public class AdminPartner extends javax.swing.JFrame {
                 .addComponent(jLKontaktPers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfKonPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(PanelNyPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelPartnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnLaggTill1)
-                    .addComponent(BtnRensa1))
-                .addGap(26, 26, 26))
+                    .addComponent(BtnAndraPart))
+                .addContainerGap())
         );
 
         BtnRaderaPartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -188,42 +195,57 @@ public class AdminPartner extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TablePartner);
 
+        BtnHamtaPartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHamtaPartner.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaPartner.setText("Hämta");
+
+        tfHamtaPartner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHamtaPartnerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(PanelNyPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addComponent(BtnTbxAdMeny1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(211, 211, 211)
+                        .addGap(177, 177, 177)
+                        .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(PanelPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tfHamtaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnHamtaPartner)))
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnRaderaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnRaderaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JlrubrikPartners)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnTbxAdMeny1)
-                    .addComponent(BtnRaderaPartner))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PanelNyPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(JlrubrikPartners)
+                    .addComponent(BtnTbxAdMeny1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnRaderaPartner)
+                    .addComponent(BtnHamtaPartner)
+                    .addComponent(tfHamtaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelPartner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -267,6 +289,10 @@ public class AdminPartner extends javax.swing.JFrame {
     tfKonPerson.setText("");
     }//GEN-LAST:event_BtnLaggTill1ActionPerformed
 
+    private void tfHamtaPartnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHamtaPartnerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHamtaPartnerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,12 +329,14 @@ public class AdminPartner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAndra;
+    private javax.swing.JButton BtnAndraPart;
+    private javax.swing.JButton BtnHamtaPartner;
     private javax.swing.JButton BtnLaggTill1;
     private javax.swing.JButton BtnRaderaPartner;
-    private javax.swing.JButton BtnRensa1;
     private javax.swing.JButton BtnTbxAdMeny1;
     private javax.swing.JLabel JlrubrikPartners;
-    private javax.swing.JPanel PanelNyPartner;
+    private javax.swing.JPanel PanelPartner;
     private javax.swing.JTable TablePartner;
     private javax.swing.JLabel jLAdress;
     private javax.swing.JLabel jLBranch;
@@ -321,6 +349,7 @@ public class AdminPartner extends javax.swing.JFrame {
     private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfBranch;
     private javax.swing.JTextField tfEpost;
+    private javax.swing.JTextField tfHamtaPartner;
     private javax.swing.JTextField tfKonPerson;
     private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfStad;

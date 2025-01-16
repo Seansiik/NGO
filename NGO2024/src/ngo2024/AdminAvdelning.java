@@ -31,9 +31,8 @@ public class AdminAvdelning extends javax.swing.JFrame {
         BtnRadera = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableAvdelning = new javax.swing.JTable();
-        BtnTbxFranAvd = new javax.swing.JButton();
         JlrubrikAvdelning = new javax.swing.JLabel();
-        PanelNyAvdelning = new javax.swing.JPanel();
+        PanelAvdelning = new javax.swing.JPanel();
         jlNamn = new javax.swing.JLabel();
         tfAdress = new javax.swing.JTextField();
         jLePost = new javax.swing.JLabel();
@@ -44,12 +43,15 @@ public class AdminAvdelning extends javax.swing.JFrame {
         tfBeskrivning = new javax.swing.JTextField();
         tfTelefon = new javax.swing.JTextField();
         tfEpost = new javax.swing.JTextField();
-        BtnRensa = new javax.swing.JButton();
         BtnLaggTill = new javax.swing.JButton();
         tfStad = new javax.swing.JTextField();
         tfAvdelningschef = new javax.swing.JTextField();
         jLBeskrivning = new javax.swing.JLabel();
         jLAvdelningschef = new javax.swing.JLabel();
+        BtnAndra = new javax.swing.JButton();
+        BtnHamtaAvdelning = new javax.swing.JButton();
+        tfHamtaAvdelning = new javax.swing.JTextField();
+        BtnTbx = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,21 +70,12 @@ public class AdminAvdelning extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TableAvdelning);
 
-        BtnTbxFranAvd.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnTbxFranAvd.setForeground(new java.awt.Color(0, 0, 102));
-        BtnTbxFranAvd.setText("Tillbaka");
-        BtnTbxFranAvd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTbxFranAvdActionPerformed(evt);
-            }
-        });
-
         JlrubrikAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         JlrubrikAvdelning.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         JlrubrikAvdelning.setText("Lista över avdelningar:");
 
-        PanelNyAvdelning.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny avdelning", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
-        PanelNyAvdelning.setOpaque(false);
+        PanelAvdelning.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Avdelning", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        PanelAvdelning.setOpaque(false);
 
         jlNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jlNamn.setText("Namn");
@@ -105,11 +98,8 @@ public class AdminAvdelning extends javax.swing.JFrame {
         jLStad.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLStad.setText("Stad");
 
-        BtnRensa.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnRensa.setForeground(new java.awt.Color(255, 0, 51));
-        BtnRensa.setText("Rensa");
-
         BtnLaggTill.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnLaggTill.setForeground(new java.awt.Color(0, 0, 102));
         BtnLaggTill.setText("Lägg till");
         BtnLaggTill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,50 +113,56 @@ public class AdminAvdelning extends javax.swing.JFrame {
         jLAvdelningschef.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLAvdelningschef.setText("Avdelningschef");
 
-        javax.swing.GroupLayout PanelNyAvdelningLayout = new javax.swing.GroupLayout(PanelNyAvdelning);
-        PanelNyAvdelning.setLayout(PanelNyAvdelningLayout);
-        PanelNyAvdelningLayout.setHorizontalGroup(
-            PanelNyAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNyAvdelningLayout.createSequentialGroup()
+        BtnAndra.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnAndra.setForeground(new java.awt.Color(255, 0, 0));
+        BtnAndra.setText("Ändra");
+
+        javax.swing.GroupLayout PanelAvdelningLayout = new javax.swing.GroupLayout(PanelAvdelning);
+        PanelAvdelning.setLayout(PanelAvdelningLayout);
+        PanelAvdelningLayout.setHorizontalGroup(
+            PanelAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAvdelningLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(PanelNyAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLAvdelningschef)
-                    .addComponent(tfTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLTelefon)
-                    .addComponent(jLabel34)
-                    .addComponent(jLePost)
-                    .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLStad)
-                    .addComponent(tfStad, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLBeskrivning)
-                    .addComponent(tfBeskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelNyAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNyAvdelningLayout.createSequentialGroup()
-                            .addComponent(BtnRensa, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnLaggTill, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tfAvdelningschef, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(PanelAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAvdelningLayout.createSequentialGroup()
+                        .addComponent(BtnAndra, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnLaggTill, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelAvdelningLayout.createSequentialGroup()
+                        .addGroup(PanelAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLAvdelningschef)
+                            .addComponent(tfTelefon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                            .addComponent(jLTelefon)
+                            .addComponent(jLabel34)
+                            .addComponent(jLePost)
+                            .addComponent(tfEpost, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfNamn, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfAdress, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLStad)
+                            .addComponent(tfStad, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLBeskrivning)
+                            .addComponent(tfBeskrivning, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfAvdelningschef, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        PanelNyAvdelningLayout.setVerticalGroup(
-            PanelNyAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNyAvdelningLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+        PanelAvdelningLayout.setVerticalGroup(
+            PanelAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAvdelningLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
                 .addComponent(jlNamn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLePost)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLTelefon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,16 +174,29 @@ public class AdminAvdelning extends javax.swing.JFrame {
                 .addComponent(jLBeskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfBeskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLAvdelningschef)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfAvdelningschef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(PanelNyAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnRensa)
-                    .addComponent(BtnLaggTill))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(PanelAvdelningLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnLaggTill)
+                    .addComponent(BtnAndra))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
+
+        BtnHamtaAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHamtaAvdelning.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaAvdelning.setText("Hämta");
+
+        BtnTbx.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnTbx.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTbx.setText("Tillbaka");
+        BtnTbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTbxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,42 +206,55 @@ public class AdminAvdelning extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(BtnTbxFranAvd, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(123, 123, 123)
-                        .addComponent(JlrubrikAvdelning))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tfHamtaAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(349, 349, 349))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtnTbx)
+                                .addGap(193, 193, 193)
+                                .addComponent(JlrubrikAvdelning))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(PanelNyAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnHamtaAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(485, 485, 485)
+                                .addComponent(BtnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JlrubrikAvdelning)
-                    .addComponent(BtnTbxFranAvd))
-                .addGap(18, 18, 18)
-                .addComponent(BtnRadera)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelNyAvdelning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(BtnTbx, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JlrubrikAvdelning))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tfHamtaAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnHamtaAvdelning))
+                    .addComponent(BtnRadera))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(PanelAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BtnTbxFranAvdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxFranAvdActionPerformed
-        new MenyAdmin(idb).setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_BtnTbxFranAvdActionPerformed
-
     private void tfAdressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAdressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAdressActionPerformed
@@ -264,6 +286,12 @@ public class AdminAvdelning extends javax.swing.JFrame {
     tfBeskrivning.setText("");
     tfAvdelningschef.setText("");
     }//GEN-LAST:event_BtnLaggTillActionPerformed
+
+    private void BtnTbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxActionPerformed
+        new MenyAdmin(idb).setVisible(true);
+        this.dispose();
+                     
+    }//GEN-LAST:event_BtnTbxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,90 +329,27 @@ public class AdminAvdelning extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAndra;
+    private javax.swing.JButton BtnHamtaAvdelning;
     private javax.swing.JButton BtnLaggTill;
-    private javax.swing.JButton BtnLaggTill1;
-    private javax.swing.JButton BtnLaggTill2;
-    private javax.swing.JButton BtnLaggTill3;
-    private javax.swing.JButton BtnLaggTill4;
-    private javax.swing.JButton BtnLaggTill5;
     private javax.swing.JButton BtnRadera;
-    private javax.swing.JButton BtnRensa;
-    private javax.swing.JButton BtnRensa1;
-    private javax.swing.JButton BtnRensa2;
-    private javax.swing.JButton BtnRensa3;
-    private javax.swing.JButton BtnRensa4;
-    private javax.swing.JButton BtnRensa5;
-    private javax.swing.JButton BtnTbxFranAvd;
+    private javax.swing.JButton BtnTbx;
     private javax.swing.JLabel JlrubrikAvdelning;
-    private javax.swing.JPanel PanelNyAvdelning;
+    private javax.swing.JPanel PanelAvdelning;
     private javax.swing.JTable TableAvdelning;
     private javax.swing.JLabel jLAvdelningschef;
     private javax.swing.JLabel jLBeskrivning;
     private javax.swing.JLabel jLStad;
     private javax.swing.JLabel jLTelefon;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLePost;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel jlNamn;
     private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfAvdelningschef;
     private javax.swing.JTextField tfBeskrivning;
     private javax.swing.JTextField tfEpost;
+    private javax.swing.JTextField tfHamtaAvdelning;
     private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfStad;
     private javax.swing.JTextField tfTelefon;

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JButton" name="BtnAndra">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,27 +36,31 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="PanelNyPartner" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="658" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="BtnTbxAdMeny1" min="-2" pref="139" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                      <Component id="JlrubrikPartners" min="-2" pref="536" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="PanelPartner" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="tfHamtaPartner" min="-2" pref="185" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BtnHamtaPartner" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="JlrubrikPartners" min="-2" pref="536" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="629" max="-2" attributes="0"/>
                           <Component id="BtnRaderaPartner" min="-2" pref="159" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,18 +68,22 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="JlrubrikPartners" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="JlrubrikPartners" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnTbxAdMeny1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtnRaderaPartner" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnHamtaPartner" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfHamtaPartner" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="PanelNyPartner" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="502" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="PanelPartner" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,11 +112,11 @@
         <Property name="text" type="java.lang.String" value="Lista &#xf6;ver partners:"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="PanelNyPartner">
+    <Container class="javax.swing.JPanel" name="PanelPartner">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Ny partner">
+            <TitledBorder title="Partner">
               <Font PropertyName="font" name="Times New Roman" size="18" style="1"/>
             </TitledBorder>
           </Border>
@@ -108,37 +129,35 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="tfBranch" min="-2" pref="264" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="tfBranch" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLAdress" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLePost" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLTelefon" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfTelefon" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="tfEpost" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                      <Component id="tfAdress" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Component id="tfTelefon" alignment="1" max="32767" attributes="0"/>
+                      <Component id="tfEpost" alignment="1" max="32767" attributes="0"/>
+                      <Component id="tfAdress" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLStad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfNamn" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Component id="tfNamn" alignment="1" max="32767" attributes="0"/>
                       <Component id="jlNamn" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
-                      <Component id="tfStad" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Component id="tfStad" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLBranch" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLKontaktPers" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="BtnRensa1" min="-2" pref="119" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BtnLaggTill1" min="-2" pref="117" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="tfKonPerson" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Component id="tfKonPerson" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="BtnAndraPart" min="-2" pref="112" max="-2" attributes="0"/>
+                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <Component id="BtnLaggTill1" min="-2" pref="117" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Component id="jlNamn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfNamn" min="-2" max="-2" attributes="0"/>
@@ -166,12 +185,12 @@
                   <Component id="jLKontaktPers" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="tfKonPerson" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BtnLaggTill1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BtnRensa1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="BtnLaggTill1" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnAndraPart" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -230,21 +249,13 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfTelefon">
         </Component>
-        <Component class="javax.swing.JButton" name="BtnRensa1">
+        <Component class="javax.swing.JButton" name="BtnLaggTill1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Rensa"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnLaggTill1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
+              <Color blue="66" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
           </Properties>
@@ -270,6 +281,17 @@
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Kontaktperson"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnAndraPart">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -354,5 +376,21 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="BtnHamtaPartner">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="H&#xe4;mta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfHamtaPartner">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfHamtaPartnerActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

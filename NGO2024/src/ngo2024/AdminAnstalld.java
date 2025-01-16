@@ -4,13 +4,8 @@
  */
 package ngo2024;
 
-import java.io.FileOutputStream; 
-import java.io.ObjectOutputStream; 
-import java.util.Vector; 
 import javax.swing.JOptionPane; 
 import javax.swing.table.DefaultTableModel; 
-import java.util.HashMap; 
-import java.util.ArrayList; 
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -45,7 +40,8 @@ public class AdminAnstalld extends javax.swing.JFrame {
         javax.swing.JLabel jLAdress = new javax.swing.JLabel();
         tfAdress = new javax.swing.JTextField();
         javax.swing.JButton btnLaggTill = new javax.swing.JButton();
-        javax.swing.JButton btnRensa = new javax.swing.JButton();
+        BtnSlumpaLosen = new javax.swing.JButton();
+        tfSlumpatLosen = new javax.swing.JTextField();
         javax.swing.JButton btnRadera = new javax.swing.JButton();
         javax.swing.JLabel jLRubrik = new javax.swing.JLabel();
 
@@ -66,7 +62,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Namn", "E-Post", "Telefon", "Adress"
+                "Namn", "E-Post", "Telefon", "Adress", "Lösenord"
             }
         ));
         jScrollPane3.setViewportView(tableMedarbetare);
@@ -87,6 +83,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
         jLAdress.setText("Adress");
 
         btnLaggTill.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnLaggTill.setForeground(new java.awt.Color(0, 0, 102));
         btnLaggTill.setText("Lägg till");
         btnLaggTill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,12 +91,11 @@ public class AdminAnstalld extends javax.swing.JFrame {
             }
         });
 
-        btnRensa.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnRensa.setForeground(new java.awt.Color(255, 0, 0));
-        btnRensa.setText("Rensa");
-        btnRensa.addActionListener(new java.awt.event.ActionListener() {
+        BtnSlumpaLosen.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnSlumpaLosen.setText("Slumpa Lösenord");
+        BtnSlumpaLosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRensabtnRensaActionPerformed(evt);
+                BtnSlumpaLosenActionPerformed(evt);
             }
         });
 
@@ -107,21 +103,22 @@ public class AdminAnstalld extends javax.swing.JFrame {
         PanelNyMedarbetare.setLayout(PanelNyMedarbetareLayout);
         PanelNyMedarbetareLayout.setHorizontalGroup(
             PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNyMedarbetareLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLNamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfNamn)
-                    .addComponent(JlePost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfEpost)
-                    .addComponent(jLTelefon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfTelefon)
-                    .addComponent(jLAdress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfAdress)
-                    .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
-                        .addComponent(btnRensa, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(btnLaggTill, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfSlumpatLosen)
+                    .addComponent(btnLaggTill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLNamn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfNamn, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JlePost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfEpost, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLTelefon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfTelefon, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLAdress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfAdress, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNyMedarbetareLayout.createSequentialGroup()
+                        .addComponent(BtnSlumpaLosen)
+                        .addGap(0, 114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PanelNyMedarbetareLayout.setVerticalGroup(
@@ -143,11 +140,13 @@ public class AdminAnstalld extends javax.swing.JFrame {
                 .addComponent(jLAdress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRensa)
-                    .addComponent(btnLaggTill))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnSlumpaLosen)
+                .addGap(18, 18, 18)
+                .addComponent(tfSlumpatLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnLaggTill)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         btnRadera.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -180,7 +179,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,10 +194,10 @@ public class AdminAnstalld extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(btnRadera)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,14 +231,27 @@ public class AdminAnstalld extends javax.swing.JFrame {
     tfAdress.setText("");
     }//GEN-LAST:event_btnLaggTillbtnLaggTillActionPerformed
 
-    private void btnRensabtnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRensabtnRensaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRensabtnRensaActionPerformed
-
     private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRaderaActionPerformed
 
+    private void BtnSlumpaLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSlumpaLosenActionPerformed
+        String losenord = genereraLosenord();
+        JOptionPane.showMessageDialog(null, "Genererat lösenord: " + losenord, "Lösenord", JOptionPane.INFORMATION_MESSAGE); 
+    }//GEN-LAST:event_BtnSlumpaLosenActionPerformed
+
+    
+    private String genereraLosenord() {
+        String tecken ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&";
+        StringBuilder losenord = new StringBuilder();
+            for (int i = 0; i < 8; i++) {
+            int index = (int) (tecken.length() * Math.random());
+            losenord.append(tecken.charAt(index));
+    }
+        return losenord.toString();
+        
+}
+    
     /**
      * @param args the command line arguments
      */
@@ -277,12 +289,14 @@ public class AdminAnstalld extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnSlumpaLosen;
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tableMedarbetare;
     private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfEpost;
     private javax.swing.JTextField tfNamn;
+    private javax.swing.JTextField tfSlumpatLosen;
     private javax.swing.JTextField tfTelefon;
     // End of variables declaration//GEN-END:variables
 }
