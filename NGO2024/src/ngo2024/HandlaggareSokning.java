@@ -4,6 +4,7 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel; 
 import javax.swing.JOptionPane;
 import oru.inf.InfException;
@@ -37,139 +38,159 @@ private InfDB idb;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        BtnSok = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        TableHandlaggareSok = new javax.swing.JTable();
+        tfSokNamn = new javax.swing.JTextField();
+        jLAnge = new javax.swing.JLabel();
+        BtnTillbaka = new javax.swing.JButton();
+        jlSokning = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Sök");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnSok.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnSok.setForeground(new java.awt.Color(0, 0, 102));
+        BtnSok.setText("Sök");
+        BtnSok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnSokActionPerformed(evt);
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jTextField1.setText("Sökning av Handläggare");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableHandlaggareSok.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Aid", "Fornamn", "Efternamn", "Adress", "Epost", "Telefon", "Anstallningsdatum"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TableHandlaggareSok);
 
-        jTextField2.setActionCommand("<Not Set>");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfSokNamn.setActionCommand("<Not Set>");
+        tfSokNamn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfSokNamnActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("Ange Handläggares Namn eller E-post");
+        jLAnge.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLAnge.setText("Ange Namn eller Epost");
+
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTillbaka.setText("Tillbaka");
+        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTillbakaActionPerformed(evt);
+            }
+        });
+
+        jlSokning.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jlSokning.setText("Sökning av handläggare");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(241, 241, 241))
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnTillbaka)
+                        .addGap(153, 153, 153)
+                        .addComponent(jlSokning))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfSokNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnSok, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLAnge, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnTillbaka)
+                    .addComponent(jlSokning))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLAnge)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addComponent(tfSokNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnSok)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+                        .addGap(23, 23, 23))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-String searchInput = jTextField1.getText();
-        if
-                (searchInput.isEmpty()) {
+    private void BtnSokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSokActionPerformed
+        String searchInput = tfSokNamn.getText();
+          
+        if (searchInput.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Ange en ny e-post eller namn att söka med.");
             return;    
-        } if (!Validator.isValidName(searchInput) && !searchInput.contains("@")){
+        }
+        
+        if (!searchInput.matches("^[a-zA-ZåäöÅÄÖ ]+$") && !searchInput.contains("@")) {
             JOptionPane.showMessageDialog(this, "Ange ett giltigt namn eller epost.");
             return;
         }
+        
         try { 
         String sql = "SELECT anstalld.aid, anstalld.fornamn, anstalld.efternamn, anstalld.adress, anstalld.epost, anstalld.telefon, anstalld.anstallningsdatum, anstalld.avdelning " +
                      "FROM handlaggare " +
                      "JOIN anstalld ON handlaggare.aid = anstalld.aid " +
                      "WHERE CONCAT(anstalld.fornamn, ' ', anstalld.efternamn) LIKE '%" + searchInput + "%' OR anstalld.epost LIKE '%" + searchInput + "%'";
         
-        HashMap<String, String> employee = idb.fetchRow(sql);
+        ArrayList<HashMap<String, String>> employees = idb.fetchRows(sql);
         
-        if (employee != null && !employee.isEmpty()) {
         
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("Aid");
-        model.addColumn("Förnamn");
-        model.addColumn("Efternamn");
-        model.addColumn("Adress");
-        model.addColumn("Epost");
-        model.addColumn("Telefon");
-        model.addColumn("Anställningsdatum");
-        model.addColumn("Avdelning");
-        
-    model.addRow(new Object[] {
-    employee.get("aid"),
-    employee.get("fornamn"),
-    employee.get("efternamn"),
-    employee.get("adress"),
-    employee.get("epost"),
-    employee.get("telefon"),
-    employee.get("anstallningsdatum"),
-    employee.get("avdelning")
-});
-    jTable2.setModel(model);
-        } else {
+        DefaultTableModel model = (DefaultTableModel) TableHandlaggareSok.getModel();
+        model.setRowCount(0);
+
+        if (employees != null && !employees.isEmpty()) {
+            for (HashMap<String, String> employee : employees) {
+                model.addRow(new Object [] {
+                    employee.get("aid"),
+                    employee.get("fornamn"),
+                    employee.get("efternamn"),
+                    employee.get("adress"),
+                    employee.get("epost"),
+                    employee.get("telefon"),
+                    employee.get("anstallningsdatum"),
+                    employee.get("avdelning")
+                });
+            } 
+        }else {
             JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
         }
         
-        } catch (InfException ex) {
-          JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());  
+    } catch (InfException ex) {
+         JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());  
+        
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+         
+       
+    }//GEN-LAST:event_BtnSokActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfSokNamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSokNamnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfSokNamnActionPerformed
+
+    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
+        new HandlaggareMeny(idb).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,12 +226,13 @@ String searchInput = jTextField1.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnSok;
+    private javax.swing.JButton BtnTillbaka;
+    private javax.swing.JTable TableHandlaggareSok;
+    private javax.swing.JLabel jLAnge;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel jlSokning;
+    private javax.swing.JTextField tfSokNamn;
     // End of variables declaration//GEN-END:variables
 
     private static class Validator {
