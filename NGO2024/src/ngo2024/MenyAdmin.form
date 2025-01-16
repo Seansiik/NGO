@@ -27,58 +27,59 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
-              <Component id="jLMenyAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLMenyAdmin" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="BtnTillbakaInloggning" min="-2" pref="374" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="BtnProjekt" min="-2" pref="374" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="BtnAnstallda" min="-2" pref="374" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="lblInloggadAnvandare" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="BtnAvdelning" min="-2" pref="374" max="-2" attributes="0"/>
-                          <Component id="BtnTillbakaInloggning" alignment="1" min="-2" pref="374" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
-                      <Component id="lblInloggadAnvandare" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="BtnPartners" min="-2" pref="374" max="-2" attributes="0"/>
+                          <Component id="BtnLand" min="-2" pref="374" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="184" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="BtnPartners" alignment="0" pref="374" max="32767" attributes="0"/>
-                  <Component id="BtnProjekt" alignment="0" pref="374" max="32767" attributes="0"/>
-                  <Component id="BtnLand" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="jLMenyAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="BtnAvdelning" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtnLand" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtnLand" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnAvdelning" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="85" max="32767" attributes="0"/>
+              <Component id="lblInloggadAnvandare" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtnAnstallda" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnPartners" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BtnTillbakaInloggning" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnProjekt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnTillbakaInloggning" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-              <Component id="lblInloggadAnvandare" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,15 +90,16 @@
     <Component class="javax.swing.JLabel" name="jLMenyAdmin">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Meny Administrat&#xf6;r"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="BtnAvdelning">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Avdelning"/>
       </Properties>
@@ -108,7 +110,7 @@
     <Component class="javax.swing.JButton" name="BtnProjekt">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Projekt"/>
       </Properties>
@@ -119,7 +121,7 @@
     <Component class="javax.swing.JButton" name="BtnAnstallda">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Anst&#xe4;llda"/>
       </Properties>
@@ -130,7 +132,7 @@
     <Component class="javax.swing.JButton" name="BtnPartners">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Partners"/>
       </Properties>
@@ -141,7 +143,7 @@
     <Component class="javax.swing.JButton" name="BtnTillbakaInloggning">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -155,7 +157,7 @@
     <Component class="javax.swing.JButton" name="BtnLand">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="40" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Land"/>
       </Properties>

@@ -35,7 +35,7 @@
                       <Component id="PanelNyMedarbetare" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnRadera1" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="btnRadera" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -58,7 +58,7 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="btnRadera1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnRadera" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="PanelNyMedarbetare" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -134,17 +134,17 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLNamn" alignment="0" max="32767" attributes="0"/>
-                      <Component id="tfNamn2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="tfNamn" alignment="0" max="32767" attributes="0"/>
                       <Component id="JlePost" alignment="0" max="32767" attributes="0"/>
-                      <Component id="tfEpost2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="tfEpost" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLTelefon" alignment="0" max="32767" attributes="0"/>
-                      <Component id="tfTelefon2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="tfTelefon" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLAdress" alignment="0" max="32767" attributes="0"/>
-                      <Component id="tfAdress2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="tfAdress" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnRensa2" min="-2" pref="108" max="-2" attributes="0"/>
+                          <Component id="btnRensa" min="-2" pref="108" max="-2" attributes="0"/>
                           <EmptySpace pref="30" max="32767" attributes="0"/>
-                          <Component id="btnLaggTill2" min="-2" pref="108" max="-2" attributes="0"/>
+                          <Component id="btnLaggTill" min="-2" pref="108" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -157,23 +157,23 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLNamn" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="tfNamn2" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNamn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="JlePost" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tfEpost2" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfEpost" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="jLTelefon" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tfTelefon2" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfTelefon" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLAdress" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tfAdress2" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfAdress" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnRensa2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnLaggTill2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRensa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnLaggTill" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -193,21 +193,21 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfNamn2">
+        <Component class="javax.swing.JTextField" name="tfNamn">
         </Component>
         <Component class="javax.swing.JLabel" name="JlePost">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="E-Post"/>
+            <Property name="text" type="java.lang.String" value="Epost"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfEpost2">
+        <Component class="javax.swing.JTextField" name="tfEpost">
         </Component>
         <Component class="javax.swing.JLabel" name="jLTelefon">
           <Properties>
@@ -221,7 +221,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTelefon2">
+        <Component class="javax.swing.JTextField" name="tfTelefon">
         </Component>
         <Component class="javax.swing.JLabel" name="jLAdress">
           <Properties>
@@ -235,9 +235,9 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfAdress2">
+        <Component class="javax.swing.JTextField" name="tfAdress">
         </Component>
-        <Component class="javax.swing.JButton" name="btnLaggTill2">
+        <Component class="javax.swing.JButton" name="btnLaggTill">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
@@ -245,14 +245,14 @@
             <Property name="text" type="java.lang.String" value="L&#xe4;gg till"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLaggTill2btnLaggTillActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLaggTillbtnLaggTillActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRensa2">
+        <Component class="javax.swing.JButton" name="btnRensa">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
@@ -263,7 +263,7 @@
             <Property name="text" type="java.lang.String" value="Rensa"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRensa2btnRensaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRensabtnRensaActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
@@ -272,7 +272,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnRadera1">
+    <Component class="javax.swing.JButton" name="btnRadera">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="18" style="1"/>
@@ -283,7 +283,7 @@
         <Property name="text" type="java.lang.String" value="Radera"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRadera1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRaderaActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>

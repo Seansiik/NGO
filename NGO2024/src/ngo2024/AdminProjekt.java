@@ -78,7 +78,7 @@ public class AdminProjekt extends javax.swing.JFrame {
         JlrubrikProjekt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         JlrubrikProjekt.setText("Lista över projekt:");
 
-        PanelNyttProjekt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny avdelning", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        PanelNyttProjekt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nytt projekt", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         PanelNyttProjekt.setOpaque(false);
 
         jlNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -108,6 +108,11 @@ public class AdminProjekt extends javax.swing.JFrame {
 
         BtnLaggTill1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnLaggTill1.setText("Lägg till");
+        BtnLaggTill1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLaggTill1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelNyttProjektLayout = new javax.swing.GroupLayout(PanelNyttProjekt);
         PanelNyttProjekt.setLayout(PanelNyttProjektLayout);
@@ -213,6 +218,10 @@ public class AdminProjekt extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void BtnLaggTill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLaggTill1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnLaggTill1ActionPerformed
 
     /**
      * @param args the command line arguments

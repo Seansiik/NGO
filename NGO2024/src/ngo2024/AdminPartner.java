@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -93,6 +95,11 @@ public class AdminPartner extends javax.swing.JFrame {
 
         BtnLaggTill1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnLaggTill1.setText("Lägg till");
+        BtnLaggTill1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLaggTill1ActionPerformed(evt);
+            }
+        });
 
         jLBranch.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLBranch.setText("Branch");
@@ -173,13 +180,10 @@ public class AdminPartner extends javax.swing.JFrame {
         TablePartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TablePartner.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Namn", "Språk", "Valuta", "Tidszon"
+                "Namn", "Telefon", "Epost", "Adress", "Stad", "Branch", "Kontaktperson"
             }
         ));
         jScrollPane2.setViewportView(TablePartner);
@@ -191,32 +195,35 @@ public class AdminPartner extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BtnTbxAdMeny1)
-                        .addGap(139, 139, 139)
-                        .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(PanelNyPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(BtnTbxAdMeny1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnRaderaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(51, Short.MAX_VALUE))
+                            .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnRaderaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(JlrubrikPartners)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JlrubrikPartners)
-                    .addComponent(BtnTbxAdMeny1))
-                .addGap(22, 22, 22)
-                .addComponent(BtnRaderaPartner)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(BtnTbxAdMeny1)
+                    .addComponent(BtnRaderaPartner))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(PanelNyPartner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -230,6 +237,35 @@ public class AdminPartner extends javax.swing.JFrame {
     private void tfEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEpostActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfEpostActionPerformed
+
+    private void BtnLaggTill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLaggTill1ActionPerformed
+        
+        String namn = tfNamn.getText();
+        String epost = tfEpost.getText();
+        String telefon = tfTelefon.getText();
+        String adress = tfAdress.getText();
+        String stad = tfStad.getText();
+        String branch = tfBranch.getText();
+        String kontaktperson = tfKonPerson.getText();
+  
+    if (namn.isEmpty() || epost.isEmpty() || telefon.isEmpty() || adress.isEmpty() || stad.isEmpty() || branch.isEmpty() || kontaktperson.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Fyll i alla fält!", "Fel", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Lägg till rad i tabellen
+    DefaultTableModel tableModel = (DefaultTableModel) TablePartner.getModel();
+    tableModel.addRow(new Object[]{namn, epost, telefon, adress, stad, branch, kontaktperson});
+
+    // Rensa fälten efter tillägg
+    tfNamn.setText("");
+    tfEpost.setText("");
+    tfTelefon.setText("");
+    tfAdress.setText("");
+    tfStad.setText("");
+    tfBranch.setText("");
+    tfKonPerson.setText("");
+    }//GEN-LAST:event_BtnLaggTill1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -45,10 +45,11 @@ public class MenyAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.Blue"));
 
-        jLMenyAdmin.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        jLMenyAdmin.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
+        jLMenyAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLMenyAdmin.setText("Meny Administratör");
 
-        BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnAvdelning.setText("Avdelning");
         BtnAvdelning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +57,7 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnProjekt.setText("Projekt");
         BtnProjekt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +65,7 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnAnstallda.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnAnstallda.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnAnstallda.setText("Anställda");
         BtnAnstallda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnPartners.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnPartners.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnPartners.setText("Partners");
         BtnPartners.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +81,7 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnTillbakaInloggning.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnTillbakaInloggning.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnTillbakaInloggning.setForeground(new java.awt.Color(0, 0, 102));
         BtnTillbakaInloggning.setText("Tillbaka");
         BtnTillbakaInloggning.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +90,7 @@ public class MenyAdmin extends javax.swing.JFrame {
             }
         });
 
-        BtnLand.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnLand.setFont(new java.awt.Font("Times New Roman", 1, 40)); // NOI18N
         BtnLand.setText("Land");
         BtnLand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,47 +103,48 @@ public class MenyAdmin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(355, 355, 355)
-                .addComponent(jLMenyAdmin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLMenyAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
+                        .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(BtnAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnTillbakaInloggning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(lblInloggadAnvandare)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BtnPartners, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                    .addComponent(BtnProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                    .addComponent(BtnLand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(99, 99, 99))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblInloggadAnvandare)
+                                .addGap(75, 75, 75))
+                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtnPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnLand, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(16, 16, 16)
                 .addComponent(jLMenyAdmin)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnAvdelning)
-                    .addComponent(BtnLand))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnLand)
+                    .addComponent(BtnAvdelning))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(lblInloggadAnvandare)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAnstallda)
                     .addComponent(BtnPartners))
-                .addGap(69, 69, 69)
+                .addGap(88, 88, 88)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnTillbakaInloggning)
-                    .addComponent(BtnProjekt))
-                .addGap(91, 91, 91)
-                .addComponent(lblInloggadAnvandare)
-                .addGap(271, 271, 271))
+                    .addComponent(BtnProjekt)
+                    .addComponent(BtnTillbakaInloggning))
+                .addGap(92, 92, 92))
         );
 
         pack();

@@ -26,7 +26,7 @@ public class AdminMedarbetare extends javax.swing.JFrame {
      */
     public AdminMedarbetare(InfDB idb) {
         this.idb = idb;
-        //initComponents();
+        initComponents();
     }
 
     /**

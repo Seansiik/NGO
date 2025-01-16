@@ -24,32 +24,32 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="lblFelmeddelande" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblEPost" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblLosenord" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tfEPost" pref="464" max="32767" attributes="0"/>
+                                  <Component id="tfLosenord" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="BtnTbxStartsida" min="-2" pref="271" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnLoggaIn" min="-2" pref="296" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblEPost" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblLosenord" min="-2" pref="235" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfEPost" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfLosenord" min="-2" pref="573" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="217" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -58,24 +58,24 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="tfEPost" min="-2" max="-2" attributes="0"/>
                   <Component id="lblEPost" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfEPost" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfLosenord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Component id="lblFelmeddelande" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace pref="74" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnLoggaIn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnTbxStartsida" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="160" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,7 +84,7 @@
     <Component class="javax.swing.JLabel" name="lblEPost">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="E-Post"/>
       </Properties>
@@ -92,7 +92,7 @@
     <Component class="javax.swing.JLabel" name="lblLosenord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="L&#xf6;senord"/>
       </Properties>
@@ -100,7 +100,7 @@
     <Component class="javax.swing.JTextField" name="tfEPost">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="john.smith@example.com"/>
       </Properties>
@@ -111,7 +111,7 @@
     <Component class="javax.swing.JTextField" name="tfLosenord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="password456"/>
       </Properties>
@@ -122,7 +122,7 @@
     <Component class="javax.swing.JLabel" name="lblFelmeddelande">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -133,7 +133,7 @@
     <Component class="javax.swing.JButton" name="btnLoggaIn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Logga in"/>
       </Properties>
@@ -144,7 +144,7 @@
     <Component class="javax.swing.JButton" name="BtnTbxStartsida">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="50" style="1"/>
+          <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
