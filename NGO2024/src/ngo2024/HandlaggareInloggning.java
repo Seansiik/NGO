@@ -64,7 +64,7 @@ public class HandlaggareInloggning extends javax.swing.JFrame {
 
         lblFelmeddelande.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         lblFelmeddelande.setForeground(new java.awt.Color(255, 0, 0));
-        lblFelmeddelande.setText("Felaktig epost eller lösenord");
+        lblFelmeddelande.setText("Felaktig E-post eller lösenord");
 
         btnLoggaIn.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
         btnLoggaIn.setText("Logga in");
