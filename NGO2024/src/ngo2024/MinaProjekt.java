@@ -4,8 +4,12 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import javax.swing.JOptionPane; 
+import javax.swing.table.DefaultTableModel; 
 
 /**
  *
@@ -23,6 +27,8 @@ public class MinaProjekt extends javax.swing.JFrame {
     public MinaProjekt(InfDB idb) {
         initComponents();
         this.idb = idb;
+        
+        loadProjectData();
     }
 
     private MinaProjekt() {
@@ -126,7 +132,32 @@ public class MinaProjekt extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTbxFrånProjektActionPerformed
 
     
-    
+    private void loadProjectData() {
+    try {
+        // SQL-fråga för att hämta projektdata
+        String sql = "SELECT projektnamn, startdatum, status FROM projekt";
+        ArrayList<HashMap<String, String>> results = idb.fetchRows(sql);
+
+        if (results != null && !results.isEmpty()) {
+            // Rensa tabellen innan du fyller den
+            DefaultTableModel model = (DefaultTableModel) TableProjekt.getModel();
+            model.setRowCount(0);
+
+            // Fyll tabellen med projektdata
+            for (HashMap<String, String> row : results) {
+                model.addRow(new Object[]{
+                    row.get("projektnamn"),
+                    row.get("startdatum"),
+                    row.get("status")
+                });
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Inga projekt hittades.", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+    } catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Ett fel inträffade vid hämtning av data: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+    }
+}
     
     
     /**
