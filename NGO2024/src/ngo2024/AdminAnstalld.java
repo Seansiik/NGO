@@ -4,29 +4,16 @@
  */
 package ngo2024;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.Vector;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
 import oru.inf.InfException;
-import java.util.HashMap;
-import java.util.ArrayList;
 
+public class AdminAnstalld extends javax.swing.JFrame {
 
-
-public class AdminMedarbetare extends javax.swing.JFrame {
-
-    
     private InfDB idb;
-
-    /**
-     * Creates new form MainFrame1
-     */
-    public AdminMedarbetare(InfDB idb) {
+    
+    public AdminAnstalld(InfDB idb) {
+        initComponents();
         this.idb = idb;
-        //initComponents();
     }
 
     /**
@@ -38,7 +25,9 @@ public class AdminMedarbetare extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.JLabel jLRubrik = new javax.swing.JLabel();
+        BtnTillbaka = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableMedarbetare = new javax.swing.JTable();
         javax.swing.JPanel PanelNyMedarbetare = new javax.swing.JPanel();
         javax.swing.JLabel jLNamn = new javax.swing.JLabel();
         tfNamn2 = new javax.swing.JTextField();
@@ -51,28 +40,31 @@ public class AdminMedarbetare extends javax.swing.JFrame {
         javax.swing.JButton btnLaggTill2 = new javax.swing.JButton();
         javax.swing.JButton btnRensa2 = new javax.swing.JButton();
         javax.swing.JButton btnRadera1 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tableMedarbetare = new javax.swing.JTable();
-        BtnTillbaka = new javax.swing.JButton();
+        javax.swing.JLabel jLRubrik = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Dashboard");
-        setMinimumSize(new java.awt.Dimension(812, 563));
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
+
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTillbaka.setText("Tillbaka");
+        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTillbakaActionPerformed(evt);
             }
         });
 
-        jLRubrik.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLRubrik.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLRubrik.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/ännu bättre.png"))); // NOI18N
-        jLRubrik.setText("Lista över medarbetare:");
+        tableMedarbetare.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tableMedarbetare.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        PanelNyMedarbetare.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny medarbetare", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+            },
+            new String [] {
+                "Namn", "E-Post", "Telefon", "Adress"
+            }
+        ));
+        jScrollPane3.setViewportView(tableMedarbetare);
+
+        PanelNyMedarbetare.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny anställd", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         PanelNyMedarbetare.setOpaque(false);
 
         jLNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -88,7 +80,6 @@ public class AdminMedarbetare extends javax.swing.JFrame {
         jLAdress.setText("Adress");
 
         btnLaggTill2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnLaggTill2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/add.png"))); // NOI18N
         btnLaggTill2.setText("Lägg till");
         btnLaggTill2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +89,6 @@ public class AdminMedarbetare extends javax.swing.JFrame {
 
         btnRensa2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnRensa2.setForeground(new java.awt.Color(255, 0, 0));
-        btnRensa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/rubber.png"))); // NOI18N
         btnRensa2.setText("Rensa");
         btnRensa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +145,6 @@ public class AdminMedarbetare extends javax.swing.JFrame {
 
         btnRadera1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnRadera1.setForeground(new java.awt.Color(255, 51, 51));
-        btnRadera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ngo2024/trash.png"))); // NOI18N
         btnRadera1.setText("Radera");
         btnRadera1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,25 +152,9 @@ public class AdminMedarbetare extends javax.swing.JFrame {
             }
         });
 
-        tableMedarbetare.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        tableMedarbetare.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Namn", "E-Post", "Telefon", "Adress"
-            }
-        ));
-        jScrollPane3.setViewportView(tableMedarbetare);
-
-        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
-        BtnTillbaka.setText("Tillbaka");
-        BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTillbakaActionPerformed(evt);
-            }
-        });
+        jLRubrik.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLRubrik.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLRubrik.setText("Lista över anställda:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,7 +173,7 @@ public class AdminMedarbetare extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRadera1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,51 +191,16 @@ public class AdminMedarbetare extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-        Vector<Vector> tableData = model.getDataVector();
-        
-        try {
-            FileOutputStream file = new FileOutputStream("file.bin");
-            ObjectOutputStream output = new ObjectOutputStream(file);
-            
-            
-            
-             output.writeObject(tableData);
-            
-            
-          
-            output.close();
-            file.close();
-        }  catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }//GEN-LAST:event_formWindowClosing
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        try {
-             DefaultTableModel model = (DefaultTableModel) tableMedarbetare.getModel();
-             model.setRowCount(0); // Rensa tabellen
-            
-             String query = "SELECT Namn, Epost, Telefon, Adress FROM Medarbetare";
-             ArrayList<HashMap<String, String>> medarbetare = idb.fetchRows(query);
-
-             if (medarbetare != null) {
-                 for (HashMap<String, String> row : medarbetare) {
-                      model.addRow(new Object[]{row.get("Namn"), row.get("Epost"), row.get("Telefon"), row.get("Adress")});
-                 }
-             }
-          } catch (Exception ex) {
-               JOptionPane.showMessageDialog(this, "Kunde inte hämta medarbetare: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
-
-          }
-    }//GEN-LAST:event_formWindowOpened
+    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
+        new MenyAdmin(idb).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     private void btnLaggTill2btnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTill2btnLaggTillActionPerformed
         // TODO add your handling code here:
@@ -276,11 +214,6 @@ public class AdminMedarbetare extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRadera1ActionPerformed
 
-    private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
-        new MenyAdmin(idb).setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_BtnTillbakaActionPerformed
- 
     /**
      * @param args the command line arguments
      */
@@ -298,51 +231,32 @@ public class AdminMedarbetare extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAnstalld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAnstalld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAnstalld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminMedarbetare.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAnstalld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new AdminMedarbetare().setVisible(true);
+                //new AdminAnstalld().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnTillbaka;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tableMedarbetare;
-    private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfAdress2;
-    private javax.swing.JTextField tfEpost;
     private javax.swing.JTextField tfEpost2;
-    private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfNamn2;
-    private javax.swing.JTextField tfTelefon;
     private javax.swing.JTextField tfTelefon2;
     // End of variables declaration//GEN-END:variables
-
-    //private void close() {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    //}
-
-    //private ObjectOutputStream output() {
-       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    //}
 }

@@ -32,7 +32,7 @@ public class AdminLand extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        TableLand1 = new javax.swing.JTable();
+        TableLand = new javax.swing.JTable();
         BtnTbxAdMeny1 = new javax.swing.JButton();
         JlrubrikPartners = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -54,8 +54,8 @@ public class AdminLand extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton2.setText("Radera");
 
-        TableLand1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        TableLand1.setModel(new javax.swing.table.DefaultTableModel(
+        TableLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        TableLand.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -66,7 +66,7 @@ public class AdminLand extends javax.swing.JFrame {
                 "Namn", "Språk", "Valuta", "Tidszon"
             }
         ));
-        jScrollPane2.setViewportView(TableLand1);
+        jScrollPane2.setViewportView(TableLand);
 
         BtnTbxAdMeny1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnTbxAdMeny1.setForeground(new java.awt.Color(0, 0, 102));
@@ -79,7 +79,7 @@ public class AdminLand extends javax.swing.JFrame {
 
         JlrubrikPartners.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         JlrubrikPartners.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        JlrubrikPartners.setText("Lista över partners:");
+        JlrubrikPartners.setText("Lista över länder:");
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny avdelning", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         jPanel5.setOpaque(false);
@@ -158,7 +158,7 @@ public class AdminLand extends javax.swing.JFrame {
                 .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnLaggTill3)
                     .addComponent(BtnRensa3))
@@ -174,7 +174,7 @@ public class AdminLand extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
@@ -186,7 +186,7 @@ public class AdminLand extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(118, 118, 118)
                                 .addComponent(JlrubrikPartners, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,10 +200,13 @@ public class AdminLand extends javax.swing.JFrame {
                         .addComponent(JlrubrikPartners)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(226, Short.MAX_VALUE))
         );
 
@@ -265,7 +268,7 @@ public class AdminLand extends javax.swing.JFrame {
     private javax.swing.JButton BtnRensa3;
     private javax.swing.JButton BtnTbxAdMeny1;
     private javax.swing.JLabel JlrubrikPartners;
-    private javax.swing.JTable TableLand1;
+    private javax.swing.JTable TableLand;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

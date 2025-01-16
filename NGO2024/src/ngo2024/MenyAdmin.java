@@ -155,13 +155,13 @@ public class MenyAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnPartnersActionPerformed
 
     private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
-                    
+            new AdminProjekt(idb).setVisible(true); 
+            this.dispose();      
 
     }//GEN-LAST:event_BtnProjektActionPerformed
 
     private void BtnAnstalldaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnstalldaActionPerformed
-            AdminMedarbetare adminMedarbetare = new AdminMedarbetare(idb); // Skapar nytt fönster
-            adminMedarbetare.setVisible(true); // Visar fönstret
+            new AdminAnstalld(idb).setVisible(true); 
             this.dispose();
 
     }//GEN-LAST:event_BtnAnstalldaActionPerformed
@@ -189,7 +189,7 @@ public class MenyAdmin extends javax.swing.JFrame {
      */
    public static void main(String args[]) {
    
-    InfDB idb = null;
+        final InfDB idb;
     
 
    
@@ -204,7 +204,7 @@ public class MenyAdmin extends javax.swing.JFrame {
    
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            //new MenyAdmin().setVisible(true);
+            new MenyAdmin(idb).setVisible(true);
         }
     });
 } 
