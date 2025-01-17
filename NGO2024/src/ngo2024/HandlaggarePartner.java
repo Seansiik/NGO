@@ -4,7 +4,12 @@
  */
 package ngo2024;
 
-import oru.inf.InfDB;/**
+import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import oru.inf.InfDB;import oru.inf.InfException;
+/**
  *
  * @author Tyson
  */
@@ -15,15 +20,49 @@ public class HandlaggarePartner extends javax.swing.JFrame {
     /**
      * Creates new form HandlaggarePartner
      */
-    public HandlaggarePartner() {
+    public HandlaggarePartner(InfDB idb) {
         initComponents();
         this.idb = idb;
+        
+        loadProjectData();
     }
 
-    HandlaggarePartner(InfDB idb) {
+        HandlaggarePartner() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+        
+           private void loadProjectData() {
+    try {
+        // SQL-fråga för att hämta projektdata
+        String sql = "SELECT pid, namn, kontaktperson, kontaktepost, telefon, adress, branch, stad FROM partner";
+        ArrayList<HashMap<String, String>> results = idb.fetchRows(sql);
+
+        if (results != null && !results.isEmpty()) {
+            // Rensa tabellen innan du fyller den
+            DefaultTableModel model = (DefaultTableModel) TablePartnerHand.getModel();
+            model.setRowCount(0);
+
+            // Fyll tabellen med projektdata
+            for (HashMap<String, String> row : results) {
+                model.addRow(new Object[]{
+                    row.get("pid"),
+                    row.get("namn"),
+                    row.get("kontaktperson"),
+                    row.get("kontaktepost"),
+                    row.get("telefon"),
+                    row.get("adress"),
+                    row.get("branch"),
+                    row.get("stad"),
+                });
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Inga projekt hittades.", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+    } catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Ett fel inträffade vid hämtning av data: " + ex.getMessage(), "Fel", JOptionPane.ERROR_MESSAGE);
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,42 +73,69 @@ public class HandlaggarePartner extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablePartnerHand = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        BtnTbxx = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablePartnerHand.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PID", "Namn", "Kontaktperson", "Kontaktepost", "Telefon", "Adress", "Branch", "Stad"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablePartnerHand);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Information om partners");
+
+        BtnTbxx.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        BtnTbxx.setForeground(new java.awt.Color(0, 0, 102));
+        BtnTbxx.setText("Tillbaka");
+        BtnTbxx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTbxxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(119, 119, 119)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnTbxx)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnTbxx))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(79, 79, 79))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnTbxxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxxActionPerformed
+        new HandlaggareMenyProjekt(idb).setVisible(true);
+        this.dispose();    }//GEN-LAST:event_BtnTbxxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,13 +167,15 @@ public class HandlaggarePartner extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HandlaggarePartner().setVisible(true);
+                //new HandlaggarePartner().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnTbxx;
+    private javax.swing.JTable TablePartnerHand;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
