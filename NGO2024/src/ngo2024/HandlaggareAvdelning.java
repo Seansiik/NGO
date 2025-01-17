@@ -4,14 +4,11 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
 import oru.inf.InfException;
-import javax.swing.table.DefaultTableModel;
-import java.util.ArrayList;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-
 
 /**
  *
@@ -19,19 +16,58 @@ import java.util.HashMap;
  */
 public class HandlaggareAvdelning extends javax.swing.JFrame {
 
+    private InfDB idb;
+    private String inloggadAnvandare;
+    
     /**
      * Creates new form HandlaggareAvdelning
      */
     
-    private InfDB idb;
-    private String AID;
-    
-    public HandlaggareAvdelning(InfDB idb) {
-        initComponents();
-        this.idb = idb;
-    }
 
     
+    public HandlaggareAvdelning(InfDB idb) {
+        this.idb = idb; 
+        this.inloggadAnvandare = inloggadAnvandare; 
+        initComponents();
+        HandlaggareAvdelning();
+    }
+
+    public void HandlaggareAvdelning(){
+        try {
+    String projektsql = "SELECT projektnamn,beskrivning,startdatum,slutdatum,kostnad,status,prioritet FROM projekt "
+            + "JOIN ans_proj ON projekt.pid = ans_proj.pid "
+            + "JOIN anstalld ON ans_proj.aid = anstalld.aid "  
+            + "WHERE anstalld.avdelning = 3";
+    
+     ArrayList<HashMap<String, String>> resultat = idb.fetchRows(projektsql);
+     
+    if (resultat == null || resultat.isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Inga projekt hittades.");
+                return;
+            }
+    
+    DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Projektnamn");
+            model.addColumn("Beskrivning");
+            model.addColumn("Startdatum");
+            model.addColumn("Slutdatum");
+            model.addColumn("Kostnad");
+            model.addColumn("Status");
+            model.addColumn("Prioritet");
+        
+            
+            for (HashMap<String, String> rad : resultat) {
+                model.addRow(new Object[]{rad.get("projektnamn"), rad.get("beskrivning"), rad.get("startdatum"), rad.get("slutdatum"),
+                rad.get("kostnad"), rad.get("status"), rad.get("prioritet")});
+            }
+            
+            tblProjekt.setModel(model);
+        } catch (InfException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Fel vid hämtning av projekt: " + e.getMessage());
+             /* Skapa och visa formuläret */
+        }
+    
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,14 +79,9 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     private void initComponents() {
 
         BtnTillbaka = new javax.swing.JButton();
-        cboxProjectStatus = new javax.swing.JComboBox<>();
-        txtEnddate = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        txtDepartmentProjects = new javax.swing.JLabel();
+        LAvdelningsProjekt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblPRojects = new javax.swing.JTable();
+        tblProjekt = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,94 +92,45 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
             }
         });
 
-        cboxProjectStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pågående", "Avslutat", "Planerat" }));
-        cboxProjectStatus.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cboxProjectStatusItemStateChanged(evt);
-            }
-        });
-        cboxProjectStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboxProjectStatusActionPerformed(evt);
-            }
-        });
+        LAvdelningsProjekt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        LAvdelningsProjekt.setText("Avdelnings Projekt");
 
-        txtEnddate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEnddateActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Start date");
-
-        jLabel2.setText("End date ");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        txtDepartmentProjects.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        txtDepartmentProjects.setText("Avdelnings Projekt");
-
-        jTblPRojects.setModel(new javax.swing.table.DefaultTableModel(
+        tblProjekt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "PID", "Namn", "Beskrivning", "Start Datum", "Slut Datum", "Kostand", "Status-", "Prioritering", "Projektledare ", "Land"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTblPRojects);
+        jScrollPane1.setViewportView(tblProjekt);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtDepartmentProjects)
-                                .addGap(30, 30, 30)
-                                .addComponent(cboxProjectStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(BtnTillbaka))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEnddate, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(178, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LAvdelningsProjekt)
+                    .addComponent(BtnTillbaka))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnTillbaka)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)))
+                .addComponent(BtnTillbaka)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDepartmentProjects)
-                    .addComponent(cboxProjectStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEnddate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addComponent(LAvdelningsProjekt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,103 +142,6 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BtnTillbakaActionPerformed
-
-    private void cboxProjectStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxProjectStatusItemStateChanged
-       // displayDepartmentProjects();
-    }//GEN-LAST:event_cboxProjectStatusItemStateChanged
-
-    private void txtEnddateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnddateActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_txtEnddateActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-        
-        {
-            String startDate = jTextField1.getText().trim();
-            String endDate = txtEnddate.getText().trim();
-
-            // Check if the fields are empty
-            if (startDate.isEmpty() || endDate.isEmpty()) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Vänligen ange både start- och slutdatum!");
-                return;
-            }
-
-            // Check that the dates are in the correct format
-            if (!startDate.matches("\\d{4}-\\d{2}-\\d{2}") || !endDate.matches("\\d{4}-\\d{2}-\\d{2}")) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Datum måste vara i formatet YYYY-MM-DD!");
-                return;
-            }
-
-            // Check if the dates are valid
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            sdf.setLenient(false);
-            try {
-                sdf.parse(startDate);
-                sdf.parse(endDate);
-            } catch (ParseException e) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Datumet är ogiltigt. Använd formatet YYYY-MM-DD!");
-                return;
-            }
-
-            try {
-
-                // Get department based on user's AID
-                String department = idb.fetchSingle("SELECT avdelning AS avdid FROM anstalld WHERE AID = '" + AID + "'");
-                if (department == null) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Ingen avdelning hittades för användaren.");
-                    return;
-                }
-
-                // Build the SQL query
-                String query = "SELECT projekt.pid, projektnamn, projekt.beskrivning, startdatum, slutdatum, kostnad, status, prioritet, projektchef, land " +
-                "FROM projekt " +
-                "JOIN anstalld as projektchef on projekt.projektchef = projektchef.aid " +
-                "JOIN avdelning on projektchef.avdelning = avdelning.avdid " +
-                "WHERE avdelning = '" + department + "' " +
-                "AND startdatum >= '" + startDate + "' " +
-                "AND slutdatum <= '" + endDate + "'";
-
-                // Debugging: Print the query
-                System.out.println("Genererad SQL-fråga: " + query);
-
-                // Get the data from the database
-                ArrayList<HashMap<String, String>> results = idb.fetchRows(query);
-
-                DefaultTableModel model = (DefaultTableModel) jTblPRojects.getModel();
-                model.setRowCount(0); // Clear the table
-
-                if (results != null && !results.isEmpty()) {
-                    for (HashMap<String, String> row : results) {
-                        model.addRow(new Object[]{
-                            row.get("pid"),
-                            row.get("projektnamn"),
-                            row.get("beskrivning"),
-                            row.get("startdatum"),
-                            row.get("slutdatum"),
-                            row.get("kostnad"),
-                            row.get("status"),
-                            row.get("prioritet"),
-                            row.get("projektchef"),
-                            row.get("land")
-                        });
-                    }
-                } else {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Inga projekt hittades för angivet datumspann!");
-                }
-            } catch (InfException e) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Fel vid hämtning av projekt: " + e.getMessage());
-            }
-        }
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void cboxProjectStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxProjectStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboxProjectStatusActionPerformed
 
     
   
@@ -296,17 +181,15 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnTillbaka;
-    private javax.swing.JComboBox<String> cboxProjectStatus;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel LAvdelningsProjekt;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblPRojects;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel txtDepartmentProjects;
-    private javax.swing.JTextField txtEnddate;
+    private javax.swing.JTable tblProjekt;
     // End of variables declaration//GEN-END:variables
 
-    private void displayDepartmentProjects() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private static class string {
+
+        public string() {
+        }
     }
+
 }
