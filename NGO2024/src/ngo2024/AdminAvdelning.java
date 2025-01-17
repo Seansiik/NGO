@@ -219,9 +219,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tfHamtaAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(349, 349, 349))
+                            .addComponent(tfHamtaAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(BtnTbx)
                                 .addGap(193, 193, 193)
@@ -233,12 +231,12 @@ public class AdminAvdelning extends javax.swing.JFrame {
                             .addComponent(PanelAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(485, 485, 485)
-                                .addComponent(BtnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                                .addComponent(BtnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +325,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
         }
 
         try { 
-        String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, avdelningschef FROM avdelning"; 
+        String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, chef FROM avdelning"; 
                  
 
         ArrayList<HashMap<String, String>> departments = idb.fetchRows(sql);
@@ -344,7 +342,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
                     department.get("telefon"),
                     department.get("stad"),
                     department.get("beskrivning"),
-                    department.get("avdelningschef")
+                    department.get("chef")
             });
         }
      } else {

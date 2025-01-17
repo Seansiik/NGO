@@ -131,6 +131,11 @@ public class AdminLand extends javax.swing.JFrame {
         BtnAndraLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnAndraLand.setForeground(new java.awt.Color(255, 0, 0));
         BtnAndraLand.setText("Ändra");
+        BtnAndraLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAndraLandActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelNyttLandLayout = new javax.swing.GroupLayout(PanelNyttLand);
         PanelNyttLand.setLayout(PanelNyttLandLayout);
@@ -339,6 +344,42 @@ public class AdminLand extends javax.swing.JFrame {
         ex.printStackTrace();
       }
     }//GEN-LAST:event_BtnHamtaLandActionPerformed
+
+    private void BtnAndraLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAndraLandActionPerformed
+        //Hämtar vald rad i tabellen
+        int selectedRow = TableLand.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) TableLand.getModel();
+
+       
+        if (selectedRow != -1) { //Kontrollerar om en rad blivit vald
+          
+           // Hämtar nya värden från textFälten, men behåller den gamla infon om fältet är tomt
+           String nyttNamn = tfNamn.getText().isEmpty() ? model.getValueAt(selectedRow, 0).toString() : tfNamn.getText();
+           String nyttSprak = tfSprak.getText().isEmpty() ? model.getValueAt(selectedRow, 1).toString() : tfSprak.getText();
+           String nyValuta = tfValuta.getText().isEmpty() ? model.getValueAt(selectedRow, 2).toString() : tfValuta.getText();
+           String nyPolitiskStruktur = tfPolitiskStruktur.getText().isEmpty() ? model.getValueAt(selectedRow, 3).toString() : tfPolitiskStruktur.getText();
+           String nyTidszon = tfTidszon.getText().isEmpty() ? model.getValueAt(selectedRow, 4).toString() : tfTidszon.getText();
+           String nyEkonomi = tfEkonomi.getText().isEmpty() ? model.getValueAt(selectedRow, 5).toString() : tfEkonomi.getText();
+
+           
+           // Uppdaterar tabellens modell med de nya värdena
+           model.setValueAt(nyttNamn, selectedRow, 0);
+           model.setValueAt(nyttSprak, selectedRow, 1);
+           model.setValueAt(nyValuta, selectedRow, 2);
+           model.setValueAt(nyPolitiskStruktur, selectedRow, 3);
+           model.setValueAt(nyTidszon, selectedRow, 4);
+           model.setValueAt(nyEkonomi, selectedRow, 5);
+           
+           // Bekräftelsemeddelande
+           JOptionPane.showMessageDialog(null, "Landet har uppdaterats!", "Ändrat", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+           // Om ingen rad är vald
+           JOptionPane.showMessageDialog(null, "Välj ett land att ändra!", "Fel", JOptionPane.WARNING_MESSAGE);
+        }
+    
+
+ 
+    }//GEN-LAST:event_BtnAndraLandActionPerformed
 
     /**
      * @param args the command line arguments

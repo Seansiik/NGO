@@ -116,6 +116,11 @@ public class AdminPartner extends javax.swing.JFrame {
         BtnAndraPart.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnAndraPart.setForeground(new java.awt.Color(255, 0, 0));
         BtnAndraPart.setText("Ändra");
+        BtnAndraPart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAndraPartActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelPartnerLayout = new javax.swing.GroupLayout(PanelPartner);
         PanelPartner.setLayout(PanelPartnerLayout);
@@ -326,11 +331,11 @@ public class AdminPartner extends javax.swing.JFrame {
         }
 
         try { 
-            String sql = "SELECT namn, telefon, epost, adress, stad, branch, kontaktperson " +
+            String sql = "SELECT namn, telefon, kontaktepost, adress, stad, branch, kontaktperson " +
                     "FROM partner " +
                     "WHERE namn LIKE '%" + searchInput + "%' " +
                     "OR telefon LIKE '%" + searchInput + "%' " +
-                    "OR epost LIKE '%" + searchInput + "%'";
+                    "OR kontaktepost LIKE '%" + searchInput + "%'";
 
 
         ArrayList<HashMap<String, String>> partners = idb.fetchRows(sql);
@@ -343,7 +348,7 @@ public class AdminPartner extends javax.swing.JFrame {
                  model.addRow(new Object[]{
                     partner.get("namn"),
                     partner.get("telefon"),
-                    partner.get("epost"),
+                    partner.get("kontaktepost"),
                     partner.get("adress"),
                     partner.get("stad"),
                     partner.get("branch"),
@@ -359,6 +364,9 @@ public class AdminPartner extends javax.swing.JFrame {
     }
     
     }//GEN-LAST:event_BtnHamtaPartnerActionPerformed
+
+    private void BtnAndraPartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAndraPartActionPerformed
+    }//GEN-LAST:event_BtnAndraPartActionPerformed
 
     /**
      * @param args the command line arguments
