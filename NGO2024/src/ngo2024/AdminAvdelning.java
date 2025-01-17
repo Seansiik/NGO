@@ -327,7 +327,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
         }
 
         try { 
-        String sql = "SELECT namn, epost, adress FROM avdelning"; 
+        String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, avdelningschef FROM avdelning"; 
                  
 
         ArrayList<HashMap<String, String>> departments = idb.fetchRows(sql);
