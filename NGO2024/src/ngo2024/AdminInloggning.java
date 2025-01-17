@@ -49,7 +49,6 @@ public class AdminInloggning extends javax.swing.JFrame {
         lblLosenord.setText("Lösenord");
 
         tfEPost.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
-        tfEPost.setText("john.smith@example.com");
         tfEPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfEPostActionPerformed(evt);
@@ -78,7 +77,6 @@ public class AdminInloggning extends javax.swing.JFrame {
         });
 
         jPWlosen.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
-        jPWlosen.setText("password456");
         jPWlosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPWlosenActionPerformed(evt);

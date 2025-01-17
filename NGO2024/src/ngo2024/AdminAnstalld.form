@@ -30,7 +30,7 @@
                       <Component id="tfHamtaAnstallda" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BtnHamtaAnstalld" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="461" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="458" max="-2" attributes="0"/>
                       <Component id="btnRadera" min="-2" pref="144" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -69,10 +69,15 @@
                   <Component id="BtnHamtaAnstalld" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnRadera" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jScrollPane3" min="-2" pref="593" max="-2" attributes="0"/>
-                  <Component id="PanelNyMedarbetare" min="-2" pref="599" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="593" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="PanelNyMedarbetare" min="-2" pref="562" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
@@ -214,11 +219,7 @@
                       <Component id="tfAnstallningsDatum" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblAdress" max="32767" attributes="0"/>
-                              <Component id="lblTelefon" max="32767" attributes="0"/>
-                              <Component id="tfAdress" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="lblTelefon" max="32767" attributes="0"/>
                       </Group>
                       <Component id="tfTelefon" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -227,6 +228,8 @@
                       </Group>
                       <Component id="tfAvdelning" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblAvdelning" alignment="0" max="32767" attributes="0"/>
+                      <Component id="tfAdress" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblAdress" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -266,13 +269,13 @@
                   <Component id="BtnSlumpaLosen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tflosen" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblAvdelning" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfAvdelning" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

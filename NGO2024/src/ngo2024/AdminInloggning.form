@@ -103,7 +103,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="john.smith@example.com"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEPostActionPerformed"/>
@@ -150,7 +149,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="password456"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPWlosenActionPerformed"/>
