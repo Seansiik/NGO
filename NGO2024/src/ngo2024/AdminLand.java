@@ -208,6 +208,12 @@ public class AdminLand extends javax.swing.JFrame {
             }
         });
 
+        tfHamtaLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHamtaLandActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -380,6 +386,10 @@ public class AdminLand extends javax.swing.JFrame {
 
  
     }//GEN-LAST:event_BtnAndraLandActionPerformed
+
+    private void tfHamtaLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHamtaLandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHamtaLandActionPerformed
 
     /**
      * @param args the command line arguments

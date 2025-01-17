@@ -49,6 +49,8 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         BtnTbxFrånProjekt = new javax.swing.JButton();
         JlrubrikProjekt = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10));
+        tfHamtaPartner = new javax.swing.JTextField();
+        BtnHamtaLand = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,32 +87,61 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         JlrubrikProjekt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlrubrikProjekt.setText("Mina Projekt");
 
+        tfHamtaPartner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHamtaPartnerActionPerformed(evt);
+            }
+        });
+
+        BtnHamtaLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHamtaLand.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaLand.setText("Hämta");
+        BtnHamtaLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaLandActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(BtnTbxFrånProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(243, 243, 243)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 433, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(111, 111, 111))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tfHamtaPartner, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(BtnHamtaLand, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(BtnTbxFrånProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(131, 131, 131)))
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 479, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(JlrubrikProjekt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(BtnTbxFrånProjekt)
-                .addContainerGap(152, Short.MAX_VALUE))
             .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(JlrubrikProjekt)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfHamtaPartner)
+                    .addComponent(BtnHamtaLand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnTbxFrånProjekt)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
@@ -120,6 +151,52 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         new HandlaggareMenyProjekt(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxFrånProjektActionPerformed
+
+    private void tfHamtaPartnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHamtaPartnerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHamtaPartnerActionPerformed
+
+    private void BtnHamtaLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaLandActionPerformed
+        String searchInput = tfHamtaPartner.getText().trim();
+
+        if (searchInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ange ett land att söka efter.");
+            return;
+        }
+
+        try {
+            String sql = "SELECT pid, namn, kontaktperson, kontaktepost, telefon, adress, branch, stad" +
+            "FROM land " +
+            "WHERE namn LIKE '%" + searchInput + "%' " +
+            "OR sprak LIKE '%" + searchInput + "%' " +
+            "OR valuta LIKE '%" + searchInput + "%'";
+
+            ArrayList<HashMap<String, String>> countries = idb.fetchRows(sql);
+
+            DefaultTableModel model = (DefaultTableModel) TableLand.getModel();
+            model.setRowCount(0);
+
+            if (countries != null && !countries.isEmpty()) {
+                for (HashMap<String, String> country : countries) {
+                    model.addRow(new Object[]{
+                        country.get("namn"),
+                        country.get("sprak"),
+                        country.get("valuta"),
+                        country.get("politisk_struktur"),
+                        country.get("tidszon"),
+                        country.get("ekonomi")
+                    });
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
+
+            }
+
+        } catch (InfException ex) {
+            JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_BtnHamtaLandActionPerformed
 
     
     private void loadProjectData() {
@@ -191,10 +268,12 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnHamtaLand;
     private javax.swing.JButton BtnTbxFrånProjekt;
     private javax.swing.JLabel JlrubrikProjekt;
     private javax.swing.JTable TableProjekt;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField tfHamtaPartner;
     // End of variables declaration//GEN-END:variables
 }
