@@ -125,8 +125,6 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
-                {"10", "Projekt 10", "Beskrivning av projekt 10", "2023-10-01", "2024-03-31", "22000.00", "Planerat", "Hög", "46", "5"},
-                {"8", "Projekt 8", "Beskrivning av projekt 8", "2023-08-01", "2024-01-31", "14000.00", "Avslutat", "Medel", "20", "3"},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},

@@ -116,7 +116,7 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMinaProjektActionPerformed
 
     private void BtnProjektPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektPartnersActionPerformed
-       new HandlaggarePartner (idb).setVisible(true);
+       //new HandlaggarePartner (idb).setVisible(true);
     }//GEN-LAST:event_BtnProjektPartnersActionPerformed
 
     private void BtnAvdelningsProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningsProjektActionPerformed
