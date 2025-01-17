@@ -39,11 +39,10 @@ public class HandlaggareMeny extends javax.swing.JFrame {
         button1 = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
         BtnMinaUpp = new javax.swing.JButton();
-        BtnProjekt = new javax.swing.JButton();
-        BtnAvdelning = new javax.swing.JButton();
         BtnHallbarhetsmal = new javax.swing.JButton();
         BtnTillbaka = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         button1.setLabel("button1");
 
@@ -58,22 +57,6 @@ public class HandlaggareMeny extends javax.swing.JFrame {
         BtnMinaUpp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnMinaUppActionPerformed(evt);
-            }
-        });
-
-        BtnProjekt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnProjekt.setText("Mina projekt");
-        BtnProjekt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnProjektActionPerformed(evt);
-            }
-        });
-
-        BtnAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnAvdelning.setText("Min avdelning");
-        BtnAvdelning.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAvdelningActionPerformed(evt);
             }
         });
 
@@ -102,6 +85,14 @@ public class HandlaggareMeny extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton1.setText("Projekt");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,17 +107,16 @@ public class HandlaggareMeny extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnAvdelning, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnMinaUpp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BtnHallbarhetsmal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(144, 144, 144))))
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BtnHallbarhetsmal)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(155, 155, 155))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnTillbaka)
-                .addGap(273, 273, 273))
+                .addGap(280, 280, 280))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,16 +126,14 @@ public class HandlaggareMeny extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnMinaUpp)
-                    .addComponent(BtnProjekt))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAvdelning)
                     .addComponent(BtnHallbarhetsmal))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(BtnTillbaka)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,21 +149,17 @@ public class HandlaggareMeny extends javax.swing.JFrame {
         new MinaUppgifter(idb).setVisible(true);
     }//GEN-LAST:event_BtnMinaUppActionPerformed
 
-    private void BtnProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektActionPerformed
-        new MinaProjekt(idb).setVisible(true);
-    }//GEN-LAST:event_BtnProjektActionPerformed
-
     private void BtnHallbarhetsmalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHallbarhetsmalActionPerformed
-        new Hallbarhetsmal(idb).setVisible(true);
+        new HandlaggareHallbarhetsmal(idb).setVisible(true);
     }//GEN-LAST:event_BtnHallbarhetsmalActionPerformed
-
-    private void BtnAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningActionPerformed
-        new HandlaggareAvdelning(idb).setVisible(true);
-    }//GEN-LAST:event_BtnAvdelningActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new HandlaggareSokning(idb).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new HandlaggareMenyProjekt (idb).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,12 +197,11 @@ public class HandlaggareMeny extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAvdelning;
     private javax.swing.JButton BtnHallbarhetsmal;
     private javax.swing.JButton BtnMinaUpp;
-    private javax.swing.JButton BtnProjekt;
     private javax.swing.JButton BtnTillbaka;
     private java.awt.Button button1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

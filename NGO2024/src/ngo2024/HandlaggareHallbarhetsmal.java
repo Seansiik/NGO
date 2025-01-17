@@ -11,7 +11,7 @@ import oru.inf.InfException;
  *
  * @author Tyson
  */
-public class Hallbarhetsmal extends javax.swing.JFrame {
+public class HandlaggareHallbarhetsmal extends javax.swing.JFrame {
 
     /**
      * Creates new form Hallbarhetsmal
@@ -19,7 +19,7 @@ public class Hallbarhetsmal extends javax.swing.JFrame {
    private InfDB idb;
 
 
-public Hallbarhetsmal(InfDB idb) {
+public HandlaggareHallbarhetsmal(InfDB idb) {
         initComponents();
         this.idb = idb;
     }
@@ -114,7 +114,7 @@ public Hallbarhetsmal(InfDB idb) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
-               Hallbarhetsmal meny =new Hallbarhetsmal(idb);                               
+               HandlaggareHallbarhetsmal meny =new HandlaggareHallbarhetsmal(idb);                               
         
         this.dispose();
     }//GEN-LAST:event_BtnTillbakaActionPerformed
@@ -136,14 +136,15 @@ public Hallbarhetsmal(InfDB idb) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Hallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HandlaggareHallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Hallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HandlaggareHallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Hallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HandlaggareHallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Hallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HandlaggareHallbarhetsmal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

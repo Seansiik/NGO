@@ -155,7 +155,7 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
-        new HandlaggareMeny(idb).setVisible(true);
+        new HandlaggareMenyProjekt(idb).setVisible(true);
         this.dispose();        
 
 
