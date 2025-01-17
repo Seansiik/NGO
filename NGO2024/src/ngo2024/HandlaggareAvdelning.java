@@ -1,12 +1,16 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ngo2024;
 
+package ngo2024;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -23,7 +27,6 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
      * Creates new form HandlaggareAvdelning
      */
     
-
     
     public HandlaggareAvdelning(InfDB idb) {
         this.idb = idb; 
@@ -61,7 +64,7 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 rad.get("kostnad"), rad.get("status"), rad.get("prioritet")});
             }
             
-            tblProjekt.setModel(model);
+            tblProjektAvdelning.setModel(model);
         } catch (InfException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Fel vid hämtning av projekt: " + e.getMessage());
              /* Skapa och visa formuläret */
@@ -81,7 +84,8 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         BtnTillbaka = new javax.swing.JButton();
         LAvdelningsProjekt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblProjekt = new javax.swing.JTable();
+        tblProjektAvdelning = new javax.swing.JTable();
+        cbFilter = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,18 +99,25 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         LAvdelningsProjekt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         LAvdelningsProjekt.setText("Avdelnings Projekt");
 
-        tblProjekt.setModel(new javax.swing.table.DefaultTableModel(
+        tblProjektAvdelning.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PID", "Namn", "Beskrivning", "Start datum", "Slut Datum", "Kostnad", "Status", "Prioritet", "Projektchef", "Land"
             }
         ));
-        jScrollPane1.setViewportView(tblProjekt);
+        jScrollPane1.setViewportView(tblProjektAvdelning);
+
+        cbFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alla", "Pågående", "Planerat", "Avslutat" }));
+        cbFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFilterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,12 +126,11 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LAvdelningsProjekt)
-                    .addComponent(BtnTillbaka))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(BtnTillbaka)
+                    .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,8 +139,10 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LAvdelningsProjekt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         pack();
@@ -138,58 +150,19 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
         new HandlaggareMenyProjekt(idb).setVisible(true);
-        this.dispose();        
-
+        this.dispose();
 
     }//GEN-LAST:event_BtnTillbakaActionPerformed
 
-    
-  
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HandlaggareAvdelning.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HandlaggareAvdelning.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HandlaggareAvdelning.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HandlaggareAvdelning.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            //new HandlaggareAvdelning().setVisible(true);
-        });
-    }
+    private void cbFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFilterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbFilterActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel LAvdelningsProjekt;
+    private javax.swing.JComboBox<String> cbFilter;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblProjekt;
+    private javax.swing.JTable tblProjektAvdelning;
     // End of variables declaration//GEN-END:variables
-
-    private static class string {
-
-        public string() {
-        }
-    }
-
-}
+ }
