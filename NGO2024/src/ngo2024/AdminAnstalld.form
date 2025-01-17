@@ -25,35 +25,28 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="BtnTillbaka" min="-2" pref="135" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="tfHamtaAnstallda" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLRubrik" min="-2" pref="473" max="-2" attributes="0"/>
+                      <Component id="BtnHamtaAnstalld" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="461" max="-2" attributes="0"/>
+                      <Component id="btnRadera" min="-2" pref="144" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="PanelNyMedarbetare" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="tfHamtaAnstallda" min="-2" pref="191" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="BtnHamtaAnstalld" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="BtnTillbaka" min="-2" pref="135" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLRubrik" min="-2" pref="473" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" min="-2" pref="606" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnRadera" min="-2" pref="144" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="PanelNyMedarbetare" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="606" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="153" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,23 +63,18 @@
                       <Component id="jLRubrik" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnRadera" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfHamtaAnstallda" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtnHamtaAnstalld" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRadera" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jScrollPane3" min="-2" pref="585" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="PanelNyMedarbetare" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jScrollPane3" min="-2" pref="593" max="-2" attributes="0"/>
+                  <Component id="PanelNyMedarbetare" min="-2" pref="599" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -213,7 +201,7 @@
                       <Component id="lblFornamn" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblEfternamn" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblAID" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblAnstallningsDatum" alignment="1" pref="252" max="32767" attributes="0"/>
+                      <Component id="lblAnstallningsDatum" alignment="1" pref="251" max="32767" attributes="0"/>
                       <Component id="tfAID" alignment="0" max="32767" attributes="0"/>
                       <Component id="tfFornamn" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
@@ -247,9 +235,8 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblAID" min="-2" pref="17" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="tfAID" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblFornamn" min="-2" pref="17" max="-2" attributes="0"/>
@@ -283,9 +270,9 @@
                   <Component id="lblAvdelning" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tfAvdelning" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnLaggTill" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
