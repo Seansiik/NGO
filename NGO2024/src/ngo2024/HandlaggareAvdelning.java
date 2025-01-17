@@ -21,7 +21,6 @@ import oru.inf.InfException;
 public class HandlaggareAvdelning extends javax.swing.JFrame {
 
     private InfDB idb;
-    private String inloggadAnvandare;
     
     /**
      * Creates new form HandlaggareAvdelning
@@ -30,12 +29,11 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     
     public HandlaggareAvdelning(InfDB idb) {
         this.idb = idb; 
-        this.inloggadAnvandare = inloggadAnvandare; 
         initComponents();
-        HandlaggareAvdelning();
+        laddaProjektData();
     }
 
-    public void HandlaggareAvdelning(){
+    public void laddaProjektData(){
         try {
     String projektsql = "SELECT projektnamn,beskrivning,startdatum,slutdatum,kostnad,status,prioritet FROM projekt "
             + "JOIN ans_proj ON projekt.pid = ans_proj.pid "
@@ -72,16 +70,24 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     }
         
         private void filteraProjekt(String valdStatus) {
-        DefaultTableModel model = (DefaultTableModel) tblProjektAvdelning.getModel();
+            DefaultTableModel model = (DefaultTableModel) tblProjektAvdelning.getModel();
+        
+        if (model.getRowCount() == 0) {
+            return; 
+        }
+            
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
         tblProjektAvdelning.setRowSorter(sorter);
 
-    if (valdStatus.equals("Alla")) {
+        if (valdStatus.equals("Alla")) {
         sorter.setRowFilter(null); // Visa alla rader
     } else {
         sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 6)); // Anta att status är i kolumnindex 6
     }
-}
+    
+    
+  }
+
           
     
     /**
@@ -169,9 +175,12 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     private void cbFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFilterActionPerformed
  
         String valdStatus = (String) cbFilter.getSelectedItem();
-        filteraProjekt(valdStatus);    }//GEN-LAST:event_cbFilterActionPerformed
+        if (valdStatus != null) { 
+        filteraProjekt(valdStatus);
 
-    
+    }//GEN-LAST:event_cbFilterActionPerformed
+
+    } 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnTillbaka;
