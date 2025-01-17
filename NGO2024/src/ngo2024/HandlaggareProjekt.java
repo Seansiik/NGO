@@ -48,6 +48,7 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         TableProjekt = new javax.swing.JTable();
         BtnTbxFrånProjekt = new javax.swing.JButton();
         JlrubrikProjekt = new javax.swing.JLabel();
+        BtnPartnerUpp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,28 +85,41 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         JlrubrikProjekt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlrubrikProjekt.setText("Mina Projekt");
 
+        BtnPartnerUpp.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        BtnPartnerUpp.setForeground(new java.awt.Color(0, 0, 102));
+        BtnPartnerUpp.setText("Partners Uppgifter");
+        BtnPartnerUpp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPartnerUppActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnTbxFrånProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(43, 43, Short.MAX_VALUE))
+                            .addComponent(BtnTbxFrånProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnPartnerUpp)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(JlrubrikProjekt)
-                .addGap(53, 53, 53)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnPartnerUpp)
+                    .addComponent(JlrubrikProjekt))
+                .addGap(54, 54, 54)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(BtnTbxFrånProjekt)
@@ -119,6 +133,11 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         new HandlaggareMenyProjekt(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxFrånProjektActionPerformed
+
+    private void BtnPartnerUppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPartnerUppActionPerformed
+    new HandlaggarePartner(idb).setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_BtnPartnerUppActionPerformed
 
     
     private void loadProjectData() {
@@ -190,6 +209,7 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnPartnerUpp;
     private javax.swing.JButton BtnTbxFrånProjekt;
     private javax.swing.JLabel JlrubrikProjekt;
     private javax.swing.JTable TableProjekt;

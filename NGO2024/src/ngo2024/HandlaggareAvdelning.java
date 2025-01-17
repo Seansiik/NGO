@@ -84,7 +84,7 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         if (valdStatus.equals("Alla")) {
         sorter.setRowFilter(null); // Visa alla rader
     } else {
-        sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 5)); // Anta att status är i kolumnindex 6
+        sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 5)); 
     }
     
     
@@ -116,9 +116,10 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
             }
         });
 
-        LAvdelningsProjekt.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        LAvdelningsProjekt.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         LAvdelningsProjekt.setText("Avdelnings Projekt");
 
+        tblProjektAvdelning.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblProjektAvdelning.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -136,6 +137,7 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblProjektAvdelning);
 
+        cbFilter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cbFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alla", "Pågående", "Planerat", "Avslutat" }));
         cbFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,8 +154,8 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LAvdelningsProjekt)
-                    .addComponent(BtnTillbaka)
-                    .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,9 +166,9 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 .addComponent(LAvdelningsProjekt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();

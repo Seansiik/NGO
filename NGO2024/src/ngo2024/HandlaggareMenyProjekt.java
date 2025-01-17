@@ -34,15 +34,14 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         BtnMinaProjekt = new javax.swing.JToggleButton();
         BtnAvdelningsProjekt = new javax.swing.JToggleButton();
-        BtnProjektPartners = new javax.swing.JToggleButton();
         BtnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("PROJEKT MENY");
 
-        BtnMinaProjekt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BtnMinaProjekt.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         BtnMinaProjekt.setText("Mina Projekt");
         BtnMinaProjekt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +49,7 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
             }
         });
 
-        BtnAvdelningsProjekt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BtnAvdelningsProjekt.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         BtnAvdelningsProjekt.setText("Avdelnings Projekt");
         BtnAvdelningsProjekt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,15 +57,7 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
             }
         });
 
-        BtnProjektPartners.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BtnProjektPartners.setText("Projekt Partners");
-        BtnProjektPartners.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnProjektPartnersActionPerformed(evt);
-            }
-        });
-
-        BtnTillbaka.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         BtnTillbaka.setText("Tillbaka");
         BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,31 +72,30 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BtnMinaProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1)
-                            .addComponent(BtnAvdelningsProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(BtnProjektPartners, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(208, 208, 208)
+                        .addComponent(BtnTillbaka))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(BtnTillbaka)))
-                .addContainerGap(356, Short.MAX_VALUE))
+                        .addGap(121, 121, 121)
+                        .addComponent(BtnAvdelningsProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(BtnMinaProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(62, 62, 62)
+                .addGap(46, 46, 46)
                 .addComponent(BtnMinaProjekt)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(BtnAvdelningsProjekt)
-                .addGap(18, 18, 18)
-                .addComponent(BtnProjektPartners)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(BtnTillbaka)
-                .addGap(41, 41, 41))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,14 +103,13 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
 
     private void BtnMinaProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMinaProjektActionPerformed
         new HandlaggareProjekt(idb).setVisible(true); 
+        this.dispose();
     }//GEN-LAST:event_BtnMinaProjektActionPerformed
-
-    private void BtnProjektPartnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProjektPartnersActionPerformed
-       //new HandlaggarePartner (idb).setVisible(true);
-    }//GEN-LAST:event_BtnProjektPartnersActionPerformed
 
     private void BtnAvdelningsProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvdelningsProjektActionPerformed
         new HandlaggareAvdelning (idb).setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_BtnAvdelningsProjektActionPerformed
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
@@ -166,7 +155,6 @@ public class HandlaggareMenyProjekt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BtnAvdelningsProjekt;
     private javax.swing.JToggleButton BtnMinaProjekt;
-    private javax.swing.JToggleButton BtnProjektPartners;
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
