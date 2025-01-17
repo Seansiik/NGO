@@ -96,7 +96,7 @@ public class MinaProjekt extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Namn", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
