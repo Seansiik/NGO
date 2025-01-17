@@ -5,9 +5,9 @@
  */
 
 package ngo2024;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -69,8 +69,20 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Fel vid hämtning av projekt: " + e.getMessage());
              /* Skapa och visa formuläret */
         }
-    
     }
+        
+        private void filteraProjekt(String valdStatus) {
+        DefaultTableModel model = (DefaultTableModel) tblProjektAvdelning.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tblProjektAvdelning.setRowSorter(sorter);
+
+    if (valdStatus.equals("Alla")) {
+        sorter.setRowFilter(null); // Visa alla rader
+    } else {
+        sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 6)); // Anta att status är i kolumnindex 6
+    }
+}
+          
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -140,9 +152,9 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
                 .addComponent(LAvdelningsProjekt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addGap(87, 87, 87))
         );
 
         pack();
@@ -155,9 +167,12 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTillbakaActionPerformed
 
     private void cbFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFilterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbFilterActionPerformed
+ 
+        String valdStatus = (String) cbFilter.getSelectedItem();
+        filteraProjekt(valdStatus);    }//GEN-LAST:event_cbFilterActionPerformed
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JLabel LAvdelningsProjekt;
