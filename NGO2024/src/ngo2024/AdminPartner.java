@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
@@ -183,6 +185,11 @@ public class AdminPartner extends javax.swing.JFrame {
         BtnRaderaPartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnRaderaPartner.setForeground(new java.awt.Color(255, 0, 51));
         BtnRaderaPartner.setText("Radera");
+        BtnRaderaPartner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRaderaPartnerActionPerformed(evt);
+            }
+        });
 
         TablePartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TablePartner.setModel(new javax.swing.table.DefaultTableModel(
@@ -198,6 +205,11 @@ public class AdminPartner extends javax.swing.JFrame {
         BtnHamtaPartner.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnHamtaPartner.setForeground(new java.awt.Color(0, 0, 102));
         BtnHamtaPartner.setText("Hämta");
+        BtnHamtaPartner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaPartnerActionPerformed(evt);
+            }
+        });
 
         tfHamtaPartner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,8 +302,66 @@ public class AdminPartner extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLaggTill1ActionPerformed
 
     private void tfHamtaPartnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHamtaPartnerActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_tfHamtaPartnerActionPerformed
+
+    private void BtnRaderaPartnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRaderaPartnerActionPerformed
+        int selectedRow = TablePartner.getSelectedRow();
+        
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "välj en rad att radera!", "fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) TablePartner.getModel();
+        model.removeRow(selectedRow); 
+    }//GEN-LAST:event_BtnRaderaPartnerActionPerformed
+
+    private void BtnHamtaPartnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaPartnerActionPerformed
+        String searchInput = tfHamtaPartner.getText().trim();
+
+        if (searchInput.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ange en partner att söka efter.");
+        return;
+        }
+
+        try { 
+            String sql = "SELECT namn, telefon, epost, adress, stad, branch, kontaktperson " +
+                 "FROM Partner " +
+                 "WHERE namn LIKE '%" + searchInput + "%' " +
+                 "OR telefon LIKE '%" + searchInput + "%' " +
+                 "OR epost LIKE '%" + searchInput + "%' " +
+                 "OR adress LIKE '%" + searchInput + "%' " +
+                 "OR stad LIKE '%" + searchInput + "%' " +
+                 "OR branch LIKE '%" + searchInput + "%' " +
+                 "OR kontaktperson LIKE '%" + searchInput + "%'";
+
+        ArrayList<HashMap<String, String>> partners = idb.fetchRows(sql);
+
+        DefaultTableModel model = (DefaultTableModel) TablePartner.getModel();
+        model.setRowCount(0);
+
+        if (partners != null && !partners.isEmpty()) {
+            for (HashMap<String, String> partner : partners) {
+                 model.addRow(new Object[]{
+                    partner.get("namn"),
+                    partner.get("telefon"),
+                    partner.get("epost"),
+                    partner.get("adress"),
+                    partner.get("stad"),
+                    partner.get("branch"),
+                    partner.get("kontaktperson")
+            });
+       }
+       } else {
+        JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
+    }
+}       catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
+        ex.printStackTrace();
+    }
+    
+    }//GEN-LAST:event_BtnHamtaPartnerActionPerformed
 
     /**
      * @param args the command line arguments

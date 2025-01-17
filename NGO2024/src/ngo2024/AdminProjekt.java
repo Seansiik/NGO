@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -32,35 +34,46 @@ public class AdminProjekt extends javax.swing.JFrame {
         BtnTbxFrånProjekt = new javax.swing.JButton();
         JlrubrikProjekt = new javax.swing.JLabel();
         PanelNyttProjekt = new javax.swing.JPanel();
-        jlNamn = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        BtnRensa1 = new javax.swing.JButton();
+        jlPid = new javax.swing.JLabel();
+        tfBeskrivning = new javax.swing.JTextField();
+        jLProjektnamn = new javax.swing.JLabel();
+        jLBeskrivning = new javax.swing.JLabel();
+        jLStartdatum = new javax.swing.JLabel();
+        jLSlutdatum = new javax.swing.JLabel();
+        tfPID = new javax.swing.JTextField();
+        tfSlutdatum = new javax.swing.JTextField();
+        tfStartdatum = new javax.swing.JTextField();
+        tfProjektnamn = new javax.swing.JTextField();
         BtnLaggTill1 = new javax.swing.JButton();
+        jLStatus = new javax.swing.JLabel();
+        jLKostand = new javax.swing.JLabel();
+        jLProjektchef = new javax.swing.JLabel();
+        jLPrioritet = new javax.swing.JLabel();
+        jlLand = new javax.swing.JLabel();
+        tfStatus = new javax.swing.JTextField();
+        tfKostnad = new javax.swing.JTextField();
+        tfPrioritet = new javax.swing.JTextField();
+        tfProjektchef = new javax.swing.JTextField();
+        tfLand = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BtnRaderaProjekt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnRaderaProjekt.setForeground(new java.awt.Color(255, 0, 51));
         BtnRaderaProjekt.setText("Radera");
+        BtnRaderaProjekt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRaderaProjektActionPerformed(evt);
+            }
+        });
 
         TableProjekt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TableProjekt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Namn", "Språk", "Valuta", "Tidszon"
+                "Pid", "Projektnamn", "Beskrivning", "Startdatum", "Slutdatum", "Kostnad", "Status", "Prioritet", "Projektchef", "Land"
             }
         ));
         jScrollPane2.setViewportView(TableProjekt);
@@ -75,42 +88,82 @@ public class AdminProjekt extends javax.swing.JFrame {
         });
 
         JlrubrikProjekt.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        JlrubrikProjekt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JlrubrikProjekt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlrubrikProjekt.setText("Lista över projekt:");
 
         PanelNyttProjekt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nytt projekt", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         PanelNyttProjekt.setOpaque(false);
 
-        jlNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jlNamn.setText("Namn");
+        jlPid.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jlPid.setText("Pid");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfBeskrivning.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tfBeskrivning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfBeskrivningActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setText("jLabel3");
+        jLProjektnamn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLProjektnamn.setText("Projektnamn");
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel10.setText("jLabel4");
+        jLBeskrivning.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLBeskrivning.setText("Beskrivning");
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel11.setText("jLabel5");
+        jLStartdatum.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLStartdatum.setText("Startdatum");
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel12.setText("jLabel6");
+        jLSlutdatum.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLSlutdatum.setText("Slutdatum");
 
-        BtnRensa1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        BtnRensa1.setForeground(new java.awt.Color(255, 0, 51));
-        BtnRensa1.setText("Rensa");
+        tfPID.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfSlutdatum.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfStartdatum.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfProjektnamn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         BtnLaggTill1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnLaggTill1.setForeground(new java.awt.Color(0, 0, 102));
         BtnLaggTill1.setText("Lägg till");
         BtnLaggTill1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnLaggTill1ActionPerformed(evt);
+            }
+        });
+
+        jLStatus.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLStatus.setText("Status");
+
+        jLKostand.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLKostand.setText("Kostnad");
+
+        jLProjektchef.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLProjektchef.setText("Projektchef");
+
+        jLPrioritet.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLPrioritet.setText("Prioritet");
+
+        jlLand.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jlLand.setText("Land");
+
+        tfStatus.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfKostnad.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfPrioritet.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        tfProjektchef.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tfProjektchef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfProjektchefActionPerformed(evt);
+            }
+        });
+
+        tfLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfLandActionPerformed(evt);
             }
         });
 
@@ -119,53 +172,77 @@ public class AdminProjekt extends javax.swing.JFrame {
         PanelNyttProjektLayout.setHorizontalGroup(
             PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNyttProjektLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNyttProjektLayout.createSequentialGroup()
-                        .addComponent(BtnRensa1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnLaggTill1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel9)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jlNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLStartdatum)
+                    .addComponent(jLBeskrivning)
+                    .addComponent(jLProjektnamn)
+                    .addComponent(tfProjektnamn, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfBeskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfStartdatum, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLSlutdatum)
+                    .addComponent(tfPID, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlPid, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfSlutdatum, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLKostand)
+                    .addComponent(tfKostnad, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLStatus)
+                    .addComponent(tfPrioritet, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLPrioritet)
+                    .addComponent(jLProjektchef)
+                    .addComponent(tfProjektchef, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfLand, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlLand)
+                    .addComponent(BtnLaggTill1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         PanelNyttProjektLayout.setVerticalGroup(
             PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNyttProjektLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jlNamn)
+                .addGap(11, 11, 11)
+                .addComponent(jlPid)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfPID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addGap(12, 12, 12)
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLProjektnamn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel11)
+                .addComponent(tfProjektnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelNyttProjektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnLaggTill1)
-                    .addComponent(BtnRensa1))
-                .addGap(26, 26, 26))
+                .addComponent(jLBeskrivning)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfBeskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLStartdatum)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfStartdatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLSlutdatum)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfSlutdatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLKostand)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfKostnad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLStatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLPrioritet)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfPrioritet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLProjektchef)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfProjektchef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jlLand)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnLaggTill1)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,38 +250,34 @@ public class AdminProjekt extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(PanelNyttProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(BtnTbxFrånProjekt)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(BtnRaderaProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(BtnTbxFrånProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(139, 139, 139)
+                        .addComponent(JlrubrikProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BtnRaderaProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(PanelNyttProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JlrubrikProjekt)
+                    .addComponent(BtnTbxFrånProjekt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnRaderaProjekt)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(BtnTbxFrånProjekt))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JlrubrikProjekt)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnRaderaProjekt)))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(PanelNyttProjekt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(PanelNyttProjekt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38))
         );
 
         pack();
@@ -215,13 +288,63 @@ public class AdminProjekt extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BtnTbxFrånProjektActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfBeskrivningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBeskrivningActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfBeskrivningActionPerformed
 
     private void BtnLaggTill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLaggTill1ActionPerformed
-        // TODO add your handling code here:
+    
+            String pid = tfPID.getText();
+            String projektnamn = tfProjektnamn.getText();
+            String beskrivning = tfBeskrivning.getText();
+            String startdatum = tfStartdatum.getText();
+            String slutdatum = tfSlutdatum.getText();
+            String kostnad = tfKostnad.getText();
+            String status = tfStatus.getText();
+            String prioritet = tfPrioritet.getText();
+            String projektchef = tfProjektchef.getText();
+            String land = tfLand.getText();
+
+  
+    if (pid.isEmpty() || projektnamn.isEmpty() || beskrivning.isEmpty()|| startdatum.isEmpty()|| slutdatum.isEmpty() || kostnad.isEmpty()|| status.isEmpty() || prioritet.isEmpty()|| projektchef.isEmpty()|| land.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Fyll i alla fält!", "Fel", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+        DefaultTableModel tableModel = (DefaultTableModel) TableProjekt.getModel();
+        tableModel.addRow(new Object[]{pid, projektnamn, beskrivning, startdatum, slutdatum, kostnad, status, prioritet, projektchef, land});
+
+            tfPID.setText("");
+            tfProjektnamn.setText("");
+            tfBeskrivning.setText("");
+            tfStartdatum.setText("");
+            tfSlutdatum.setText("");
+            tfKostnad.setText("");
+            tfStatus.setText("");
+            tfPrioritet.setText("");
+            tfProjektchef.setText("");
+            tfLand.setText("");
     }//GEN-LAST:event_BtnLaggTill1ActionPerformed
+
+    private void BtnRaderaProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRaderaProjektActionPerformed
+        int selectedRow = TableProjekt.getSelectedRow();
+        
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "välj en rad att radera!", "fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+            DefaultTableModel model = (DefaultTableModel) TableProjekt.getModel();
+            model.removeRow(selectedRow); 
+    }//GEN-LAST:event_BtnRaderaProjektActionPerformed
+
+    private void tfProjektchefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfProjektchefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfProjektchefActionPerformed
+
+    private void tfLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfLandActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,21 +384,30 @@ public class AdminProjekt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnLaggTill1;
     private javax.swing.JButton BtnRaderaProjekt;
-    private javax.swing.JButton BtnRensa1;
     private javax.swing.JButton BtnTbxFrånProjekt;
     private javax.swing.JLabel JlrubrikProjekt;
     private javax.swing.JPanel PanelNyttProjekt;
     private javax.swing.JTable TableProjekt;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLBeskrivning;
+    private javax.swing.JLabel jLKostand;
+    private javax.swing.JLabel jLPrioritet;
+    private javax.swing.JLabel jLProjektchef;
+    private javax.swing.JLabel jLProjektnamn;
+    private javax.swing.JLabel jLSlutdatum;
+    private javax.swing.JLabel jLStartdatum;
+    private javax.swing.JLabel jLStatus;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel jlNamn;
+    private javax.swing.JLabel jlLand;
+    private javax.swing.JLabel jlPid;
+    private javax.swing.JTextField tfBeskrivning;
+    private javax.swing.JTextField tfKostnad;
+    private javax.swing.JTextField tfLand;
+    private javax.swing.JTextField tfPID;
+    private javax.swing.JTextField tfPrioritet;
+    private javax.swing.JTextField tfProjektchef;
+    private javax.swing.JTextField tfProjektnamn;
+    private javax.swing.JTextField tfSlutdatum;
+    private javax.swing.JTextField tfStartdatum;
+    private javax.swing.JTextField tfStatus;
     // End of variables declaration//GEN-END:variables
 }

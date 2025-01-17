@@ -29,7 +29,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
         BtnTillbaka = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tableMedarbetare = new javax.swing.JTable();
+        tableAnstallda = new javax.swing.JTable();
         javax.swing.JPanel PanelNyMedarbetare = new javax.swing.JPanel();
         javax.swing.JLabel jLNamn = new javax.swing.JLabel();
         tfNamn = new javax.swing.JTextField();
@@ -56,8 +56,8 @@ public class AdminAnstalld extends javax.swing.JFrame {
             }
         });
 
-        tableMedarbetare.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        tableMedarbetare.setModel(new javax.swing.table.DefaultTableModel(
+        tableAnstallda.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tableAnstallda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -65,7 +65,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
                 "Namn", "E-Post", "Telefon", "Adress", "Lösenord"
             }
         ));
-        jScrollPane3.setViewportView(tableMedarbetare);
+        jScrollPane3.setViewportView(tableAnstallda);
 
         PanelNyMedarbetare.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny anställd", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         PanelNyMedarbetare.setOpaque(false);
@@ -210,29 +210,38 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
     private void btnLaggTillbtnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillbtnLaggTillActionPerformed
     
-    String namn = tfNamn.getText();
-    String epost = tfEpost.getText();
-    String telefon = tfTelefon.getText();
-    String adress = tfAdress.getText();
-  
-    if (namn.isEmpty() || epost.isEmpty() || telefon.isEmpty() || adress.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Fyll i alla fält!", "Fel", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        String namn = tfNamn.getText();
+        String epost = tfEpost.getText();
+        String telefon = tfTelefon.getText();
+        String adress = tfAdress.getText();
 
-    // Lägg till rad i tabellen
-    DefaultTableModel tableModel = (DefaultTableModel) tableMedarbetare.getModel();
-    tableModel.addRow(new Object[]{namn, epost, telefon, adress});
+        if (namn.isEmpty() || epost.isEmpty() || telefon.isEmpty() || adress.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Fyll i alla fält!", "Fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    // Rensa fälten efter tillägg
-    tfNamn.setText("");
-    tfEpost.setText("");
-    tfTelefon.setText("");
-    tfAdress.setText("");
+        // Lägg till rad i tabellen
+        DefaultTableModel tableModel = (DefaultTableModel) tableAnstallda.getModel();
+        tableModel.addRow(new Object[]{namn, epost, telefon, adress});
+
+        // Rensa fälten efter tillägg
+        tfNamn.setText("");
+        tfEpost.setText("");
+        tfTelefon.setText("");
+        tfAdress.setText("");
     }//GEN-LAST:event_btnLaggTillbtnLaggTillActionPerformed
 
     private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = tableAnstallda.getSelectedRow();
+        
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "välj en rad att radera!", "fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tableAnstallda.getModel();
+        model.removeRow(selectedRow); 
+
     }//GEN-LAST:event_btnRaderaActionPerformed
 
     private void BtnSlumpaLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSlumpaLosenActionPerformed
@@ -292,11 +301,12 @@ public class AdminAnstalld extends javax.swing.JFrame {
     private javax.swing.JButton BtnSlumpaLosen;
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable tableMedarbetare;
+    private javax.swing.JTable tableAnstallda;
     private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfEpost;
     private javax.swing.JTextField tfNamn;
     private javax.swing.JTextField tfSlumpatLosen;
     private javax.swing.JTextField tfTelefon;
     // End of variables declaration//GEN-END:variables
+
 }

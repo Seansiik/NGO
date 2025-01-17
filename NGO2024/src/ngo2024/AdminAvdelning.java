@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
@@ -58,6 +60,11 @@ public class AdminAvdelning extends javax.swing.JFrame {
         BtnRadera.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnRadera.setForeground(new java.awt.Color(255, 0, 51));
         BtnRadera.setText("Radera");
+        BtnRadera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRaderaActionPerformed(evt);
+            }
+        });
 
         TableAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TableAvdelning.setModel(new javax.swing.table.DefaultTableModel(
@@ -65,7 +72,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Namn", "Epost", "Adress", "Telefon", "Beskrivning", "Avdelningschef"
+                "Namn", "Epost", "Adress", "Telefon", "Stad", "Beskrivning", "Avdelningschef"
             }
         ));
         jScrollPane2.setViewportView(TableAvdelning);
@@ -188,6 +195,11 @@ public class AdminAvdelning extends javax.swing.JFrame {
         BtnHamtaAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnHamtaAvdelning.setForeground(new java.awt.Color(0, 0, 102));
         BtnHamtaAvdelning.setText("Hämta");
+        BtnHamtaAvdelning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaAvdelningActionPerformed(evt);
+            }
+        });
 
         BtnTbx.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnTbx.setForeground(new java.awt.Color(0, 0, 102));
@@ -292,6 +304,65 @@ public class AdminAvdelning extends javax.swing.JFrame {
         this.dispose();
                      
     }//GEN-LAST:event_BtnTbxActionPerformed
+
+    private void BtnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRaderaActionPerformed
+        int selectedRow = TableAvdelning.getSelectedRow();
+        
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "välj en rad att radera!", "fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) TableAvdelning.getModel();
+        model.removeRow(selectedRow); 
+            
+    }//GEN-LAST:event_BtnRaderaActionPerformed
+
+    private void BtnHamtaAvdelningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaAvdelningActionPerformed
+        String searchInput = tfHamtaAvdelning.getText().trim();
+
+        if (searchInput.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ange en avdelning att söka efter.");
+        return;
+        }
+
+        try { 
+        String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, avdelningschef " +
+                 "FROM Avdelning " +
+                 "WHERE namn LIKE '%" + searchInput + "%' " +
+                 "OR epost LIKE '%" + searchInput + "%' " +
+                 "OR adress LIKE '%" + searchInput + "%' " +
+                 "OR telefon LIKE '%" + searchInput + "%' " +
+                 "OR stad LIKE '%" + searchInput + "%' " +
+                 "OR beskrivning LIKE '%" + searchInput + "%' " +
+                 "OR avdelningschef LIKE '%" + searchInput + "%'";
+
+        ArrayList<HashMap<String, String>> departments = idb.fetchRows(sql);
+
+        DefaultTableModel model = (DefaultTableModel) TableAvdelning.getModel();
+        model.setRowCount(0);
+
+        if (departments != null && !departments.isEmpty()) {
+            for (HashMap<String, String> department : departments) {
+                model.addRow(new Object[]{
+                    department.get("namn"),
+                    department.get("epost"),
+                    department.get("adress"),
+                    department.get("telefon"),
+                    department.get("stad"),
+                    department.get("beskrivning"),
+                    department.get("avdelningschef")
+            });
+        }
+     } else {
+        JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
+     }
+     } catch (InfException ex) {
+            JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
+            ex.printStackTrace();
+
+      }
+      }//GEN-LAST:event_BtnHamtaAvdelningActionPerformed
 
     /**
      * @param args the command line arguments

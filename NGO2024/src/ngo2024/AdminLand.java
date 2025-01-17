@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import oru.inf.InfDB;
@@ -32,7 +34,7 @@ public class AdminLand extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        BtnRaderaLand = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableLand = new javax.swing.JTable();
         BtnTbxAdMeny1 = new javax.swing.JButton();
@@ -57,9 +59,14 @@ public class AdminLand extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Radera");
+        BtnRaderaLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnRaderaLand.setForeground(new java.awt.Color(255, 0, 0));
+        BtnRaderaLand.setText("Radera");
+        BtnRaderaLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRaderaLandActionPerformed(evt);
+            }
+        });
 
         TableLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TableLand.setModel(new javax.swing.table.DefaultTableModel(
@@ -190,6 +197,11 @@ public class AdminLand extends javax.swing.JFrame {
         BtnHamtaLand.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnHamtaLand.setForeground(new java.awt.Color(0, 0, 102));
         BtnHamtaLand.setText("Hämta");
+        BtnHamtaLand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaLandActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,7 +225,7 @@ public class AdminLand extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BtnRaderaLand, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(49, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -227,7 +239,7 @@ public class AdminLand extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                     .addComponent(tfHamtaLand)
                     .addComponent(BtnHamtaLand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtnRaderaLand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(PanelNyttLand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -273,6 +285,61 @@ public class AdminLand extends javax.swing.JFrame {
          
     }//GEN-LAST:event_BtnLaggTill3ActionPerformed
 
+    private void BtnRaderaLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRaderaLandActionPerformed
+ int selectedRow = TableLand.getSelectedRow();
+        
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "välj en rad att radera!", "fel", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) TableLand.getModel();
+        model.removeRow(selectedRow); 
+    }//GEN-LAST:event_BtnRaderaLandActionPerformed
+
+    private void BtnHamtaLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaLandActionPerformed
+        String searchInput = tfHamtaLand.getText().trim();
+    
+        if (searchInput.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ange ett land att söka efter.");
+        return;    
+    }
+
+    try { 
+       String sql = "SELECT namn, sprak, valuta, politisk_struktur, tidszon, ekonomi " +
+                    "FROM land " +
+                    "WHERE namn LIKE '%" + searchInput + "%' " +
+                    "OR sprak LIKE '%" + searchInput + "%' " +
+                    "OR valuta LIKE '%" + searchInput + "%'";
+
+        ArrayList<HashMap<String, String>> countries = idb.fetchRows(sql);
+
+        DefaultTableModel model = (DefaultTableModel) TableLand.getModel();
+        model.setRowCount(0);
+
+        if (countries != null && !countries.isEmpty()) {
+           for (HashMap<String, String> country : countries) {
+             model.addRow(new Object[]{
+                  country.get("namn"),
+                  country.get("sprak"),
+                  country.get("valuta"),
+                  country.get("politisk_struktur"),
+                  country.get("tidszon"),
+                  country.get("ekonomi")
+              });
+           }
+       } else {
+             JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
+             
+       }
+
+       
+    } catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
+        ex.printStackTrace();
+      }
+    }//GEN-LAST:event_BtnHamtaLandActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -312,11 +379,11 @@ public class AdminLand extends javax.swing.JFrame {
     private javax.swing.JButton BtnAndraLand;
     private javax.swing.JButton BtnHamtaLand;
     private javax.swing.JButton BtnLaggTill3;
+    private javax.swing.JButton BtnRaderaLand;
     private javax.swing.JButton BtnTbxAdMeny1;
     private javax.swing.JLabel JlrubrikPartners;
     private javax.swing.JPanel PanelNyttLand;
     private javax.swing.JTable TableLand;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLEkonomi;
     private javax.swing.JLabel jLPolitiskStruktur;
     private javax.swing.JLabel jLSprak;
