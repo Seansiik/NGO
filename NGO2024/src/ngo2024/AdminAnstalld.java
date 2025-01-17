@@ -4,6 +4,8 @@
  */
 package ngo2024;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JOptionPane; 
 import javax.swing.table.DefaultTableModel; 
 import oru.inf.InfDB;
@@ -31,18 +33,29 @@ public class AdminAnstalld extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tableAnstallda = new javax.swing.JTable();
         javax.swing.JPanel PanelNyMedarbetare = new javax.swing.JPanel();
-        javax.swing.JLabel jLNamn = new javax.swing.JLabel();
-        tfNamn = new javax.swing.JTextField();
-        javax.swing.JLabel JlePost = new javax.swing.JLabel();
+        javax.swing.JLabel lblFornamn = new javax.swing.JLabel();
+        tfEfternamn = new javax.swing.JTextField();
+        javax.swing.JLabel lblEpost = new javax.swing.JLabel();
         tfEpost = new javax.swing.JTextField();
-        javax.swing.JLabel jLTelefon = new javax.swing.JLabel();
-        tfTelefon = new javax.swing.JTextField();
-        javax.swing.JLabel jLAdress = new javax.swing.JLabel();
+        javax.swing.JLabel lblTelefon = new javax.swing.JLabel();
+        tflosen = new javax.swing.JTextField();
+        javax.swing.JLabel lblAdress = new javax.swing.JLabel();
         tfAdress = new javax.swing.JTextField();
         javax.swing.JButton btnLaggTill = new javax.swing.JButton();
         BtnSlumpaLosen = new javax.swing.JButton();
+        javax.swing.JLabel lblAID = new javax.swing.JLabel();
+        javax.swing.JLabel lblAvdelning = new javax.swing.JLabel();
+        javax.swing.JLabel lblEfternamn = new javax.swing.JLabel();
+        javax.swing.JLabel lblAnstallningsDatum = new javax.swing.JLabel();
+        tfAID = new javax.swing.JTextField();
+        tfFornamn = new javax.swing.JTextField();
+        tfTelefon = new javax.swing.JTextField();
+        tfAnstallningsDatum = new javax.swing.JTextField();
+        tfAvdelning = new javax.swing.JTextField();
         javax.swing.JButton btnRadera = new javax.swing.JButton();
         javax.swing.JLabel jLRubrik = new javax.swing.JLabel();
+        BtnHamtaAnstalld = new javax.swing.JButton();
+        tfHamtaAnstallda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,7 +74,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Namn", "E-Post", "Telefon", "Adress"
+                "aid", "fornamn", "efternamn", "adress", "epost", "telefon", "anställningsdatum", "lösenord", "avdelning"
             }
         ));
         jScrollPane3.setViewportView(tableAnstallda);
@@ -69,17 +82,17 @@ public class AdminAnstalld extends javax.swing.JFrame {
         PanelNyMedarbetare.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ny anställd", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
         PanelNyMedarbetare.setOpaque(false);
 
-        jLNamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLNamn.setText("Namn");
+        lblFornamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblFornamn.setText("Fornamn");
 
-        JlePost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        JlePost.setText("Epost");
+        lblEpost.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblEpost.setText("Epost");
 
-        jLTelefon.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLTelefon.setText("Telefon");
+        lblTelefon.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblTelefon.setText("Telefon");
 
-        jLAdress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLAdress.setText("Adress");
+        lblAdress.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAdress.setText("Adress");
 
         btnLaggTill.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnLaggTill.setForeground(new java.awt.Color(0, 0, 102));
@@ -98,51 +111,95 @@ public class AdminAnstalld extends javax.swing.JFrame {
             }
         });
 
+        lblAID.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAID.setText("Aid");
+
+        lblAvdelning.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAvdelning.setText("Avdelning");
+
+        lblEfternamn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblEfternamn.setText("Efternamn");
+
+        lblAnstallningsDatum.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblAnstallningsDatum.setText("Anställningsdatum");
+
         javax.swing.GroupLayout PanelNyMedarbetareLayout = new javax.swing.GroupLayout(PanelNyMedarbetare);
         PanelNyMedarbetare.setLayout(PanelNyMedarbetareLayout);
         PanelNyMedarbetareLayout.setHorizontalGroup(
             PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNyMedarbetareLayout.createSequentialGroup()
+            .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLaggTill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLNamn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfNamn, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JlePost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfEpost, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLTelefon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfTelefon, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLAdress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfAdress, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNyMedarbetareLayout.createSequentialGroup()
+                .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLaggTill, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblFornamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblEfternamn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAnstallningsDatum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                    .addComponent(tfAID)
+                    .addComponent(tfFornamn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
+                        .addComponent(lblEpost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(139, 139, 139))
+                    .addComponent(tfEfternamn)
+                    .addComponent(tflosen)
+                    .addComponent(tfEpost)
+                    .addComponent(tfAnstallningsDatum, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAdress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTelefon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfAdress)))
+                    .addComponent(tfTelefon, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
                         .addComponent(BtnSlumpaLosen)
-                        .addGap(0, 114, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(tfAvdelning)
+                    .addComponent(lblAvdelning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelNyMedarbetareLayout.setVerticalGroup(
             PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNyMedarbetareLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JlePost)
+                .addContainerGap()
+                .addComponent(lblAID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(tfAID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLTelefon)
+                .addComponent(lblFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLAdress)
+                .addComponent(tfFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(lblEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAdress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(2, 2, 2)
+                .addComponent(lblEpost)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTelefon)
+                .addGap(5, 5, 5)
+                .addComponent(tfTelefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(lblAnstallningsDatum, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfAnstallningsDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BtnSlumpaLosen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tflosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfAvdelning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(btnLaggTill)
-                .addGap(35, 35, 35))
+                .addGap(21, 21, 21))
         );
 
         btnRadera.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -158,6 +215,15 @@ public class AdminAnstalld extends javax.swing.JFrame {
         jLRubrik.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLRubrik.setText("Lista över anställda:");
 
+        BtnHamtaAnstalld.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BtnHamtaAnstalld.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaAnstalld.setText("Hämta");
+        BtnHamtaAnstalld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaAnstalldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -170,12 +236,21 @@ public class AdminAnstalld extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLRubrik, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(tfHamtaAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(BtnHamtaAnstalld)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)))))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,13 +262,19 @@ public class AdminAnstalld extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLRubrik)))
-                .addGap(24, 24, 24)
-                .addComponent(btnRadera)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRadera)
+                    .addComponent(tfHamtaAnstallda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnHamtaAnstalld))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -206,9 +287,9 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
     private void btnLaggTillbtnLaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaggTillbtnLaggTillActionPerformed
     
-        String namn = tfNamn.getText();
+        String namn = tfEfternamn.getText();
         String epost = tfEpost.getText();
-        String telefon = tfTelefon.getText();
+        String telefon = tflosen.getText();
         String adress = tfAdress.getText();
 
         if (namn.isEmpty() || epost.isEmpty() || telefon.isEmpty() || adress.isEmpty()) {
@@ -221,9 +302,9 @@ public class AdminAnstalld extends javax.swing.JFrame {
         tableModel.addRow(new Object[]{namn, epost, telefon, adress});
 
         // Rensa fälten efter tillägg
-        tfNamn.setText("");
+        tfEfternamn.setText("");
         tfEpost.setText("");
-        tfTelefon.setText("");
+        tflosen.setText("");
         tfAdress.setText("");
     }//GEN-LAST:event_btnLaggTillbtnLaggTillActionPerformed
 
@@ -244,6 +325,53 @@ public class AdminAnstalld extends javax.swing.JFrame {
         String losenord = genereraLosenord();
         JOptionPane.showMessageDialog(null, "Genererat lösenord: " + losenord, "Lösenord", JOptionPane.INFORMATION_MESSAGE); 
     }//GEN-LAST:event_BtnSlumpaLosenActionPerformed
+
+    private void BtnHamtaAnstalldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaAnstalldActionPerformed
+        String searchInput = tfHamtaAnstallda.getText().trim();
+
+        if (searchInput.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Ange en anställd att söka efter.");
+        return;
+        }
+
+        try { 
+            String sql = "SELECT aid, fornamn, efternamn, adress, epost, telefon, anstallningsdatum, losenord, avdelning " +
+                    "FROM anstalld " +
+                    "WHERE fornamn LIKE '%" + searchInput + "%' " +
+                    "OR efternamn LIKE '%" + searchInput + "%' " +
+                    "OR adress LIKE '%" + searchInput + "%'";
+
+
+        ArrayList<HashMap<String, String>> partners = idb.fetchRows(sql);
+
+        DefaultTableModel model = (DefaultTableModel) tableAnstallda.getModel();
+        model.setRowCount(0);
+
+        if (partners != null && !partners.isEmpty()) {
+            for (HashMap<String, String> partner : partners) {
+                 model.addRow(new Object[]{
+                    partner.get("aid"),
+                    partner.get("fornamn"),
+                    partner.get("efternamn"),
+                    partner.get("adress"),
+                    partner.get("epost"),
+                    partner.get("telefon"),
+                    partner.get("anstallningsdatum"),
+                    partner.get("losenord"),
+                    partner.get("avdelning"),
+                    
+            });
+       }
+       } else {
+        JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
+    }
+}       catch (InfException ex) {
+        JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
+        ex.printStackTrace();
+    }
+    
+                                                   
+    }//GEN-LAST:event_BtnHamtaAnstalldActionPerformed
 
     
     private String genereraLosenord() {
@@ -294,14 +422,21 @@ public class AdminAnstalld extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnHamtaAnstalld;
     private javax.swing.JButton BtnSlumpaLosen;
     private javax.swing.JButton BtnTillbaka;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tableAnstallda;
+    private javax.swing.JTextField tfAID;
     private javax.swing.JTextField tfAdress;
+    private javax.swing.JTextField tfAnstallningsDatum;
+    private javax.swing.JTextField tfAvdelning;
+    private javax.swing.JTextField tfEfternamn;
     private javax.swing.JTextField tfEpost;
-    private javax.swing.JTextField tfNamn;
+    private javax.swing.JTextField tfFornamn;
+    private javax.swing.JTextField tfHamtaAnstallda;
     private javax.swing.JTextField tfTelefon;
+    private javax.swing.JTextField tflosen;
     // End of variables declaration//GEN-END:variables
 
 }
