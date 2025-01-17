@@ -159,9 +159,9 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
     }
 
     try { 
-       String sql = "SELECT projekt, startdatum, status" +
+       String sql = "SELECT projektnamn, startdatum, status" +
                     "FROM projekt " +
-                    "WHERE projekt LIKE '%" + searchInput + "%' " +
+                    "WHERE projektnamn LIKE '%" + searchInput + "%' " +
                     "OR startdatum LIKE '%" + searchInput + "%' " +
                     "OR status LIKE '%" + searchInput + "%'";
                    
@@ -175,7 +175,7 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
         if (countries != null && !countries.isEmpty()) {
            for (HashMap<String, String> country : countries) {
              model.addRow(new Object[]{
-                  country.get("projekt"),
+                  country.get("projektnamn"),
                   country.get("startdatum"),
                   country.get("status"),
                  //country.get(""),
