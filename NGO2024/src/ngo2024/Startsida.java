@@ -90,7 +90,7 @@ public class Startsida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAdminActionPerformed
-        new InloggningAdmin(idb).setVisible(true);
+        new AdminInloggning(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnAdminActionPerformed
 

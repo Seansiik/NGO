@@ -251,7 +251,7 @@ public class AdminLand extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTbxAdMeny1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxAdMeny1ActionPerformed
-        new MenyAdmin(idb).setVisible(true);
+        new AdminMeny(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxAdMeny1ActionPerformed
 
@@ -400,4 +400,3 @@ public class AdminLand extends javax.swing.JFrame {
     private javax.swing.JTextField tfValuta;
     // End of variables declaration//GEN-END:variables
 }
-//HEJ

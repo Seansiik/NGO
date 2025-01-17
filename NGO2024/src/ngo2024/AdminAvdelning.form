@@ -28,10 +28,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="tfHamtaAvdelning" min="-2" pref="158" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="tfHamtaAvdelning" min="-2" pref="158" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="BtnTbx" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>

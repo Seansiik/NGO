@@ -284,7 +284,7 @@ public class AdminProjekt extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTbxFrånProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxFrånProjektActionPerformed
-        new MenyAdmin(idb).setVisible(true);
+        new AdminMeny(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxFrånProjektActionPerformed
 

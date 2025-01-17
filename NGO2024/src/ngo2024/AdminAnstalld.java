@@ -200,7 +200,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
-        new MenyAdmin(idb).setVisible(true);
+        new AdminMeny(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTillbakaActionPerformed
 

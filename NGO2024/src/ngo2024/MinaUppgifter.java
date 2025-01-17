@@ -17,13 +17,16 @@ public class MinaUppgifter extends javax.swing.JFrame {
      * Creates new form MinaUppgifter
      */
     private InfDB idb;
+
     
 
     public MinaUppgifter(InfDB idb) {
         initComponents();
         this.idb = idb;
+  
+}
     
-    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,25 +42,31 @@ public class MinaUppgifter extends javax.swing.JFrame {
         tfEpo = new javax.swing.JTextField();
         BtnSparaAndring = new javax.swing.JButton();
         tfLosen = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        lblEpost1 = new javax.swing.JLabel();
-        lblLosen1 = new javax.swing.JLabel();
+        lblAndraUppgifter = new javax.swing.JLabel();
+        lblNuUppgifter = new javax.swing.JLabel();
+        tfNuLosen = new javax.swing.JTextField();
+        tfNuEpost = new javax.swing.JTextField();
+        jLEpost = new javax.swing.JLabel();
+        jLlosen = new javax.swing.JLabel();
         BtnTillbaka = new javax.swing.JButton();
+        BtnHamtaUppgifter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblEpost.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        lblEpost.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEpost.setText("E-post");
 
-        lblLosen.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        lblLosen.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblLosen.setText("Lösenord");
 
-        tfEpo.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        tfEpo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        tfEpo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEpoActionPerformed(evt);
+            }
+        });
 
-        BtnSparaAndring.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnSparaAndring.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         BtnSparaAndring.setForeground(new java.awt.Color(0, 0, 102));
         BtnSparaAndring.setText("Spara Ändring");
         BtnSparaAndring.addActionListener(new java.awt.event.ActionListener() {
@@ -66,37 +75,37 @@ public class MinaUppgifter extends javax.swing.JFrame {
             }
         });
 
-        tfLosen.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        tfLosen.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("Ändra Uppgifter:");
+        lblAndraUppgifter.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblAndraUppgifter.setForeground(new java.awt.Color(0, 0, 102));
+        lblAndraUppgifter.setText("Ändra Uppgifter:");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setText("Nuvarande uppgifter:");
+        lblNuUppgifter.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblNuUppgifter.setForeground(new java.awt.Color(0, 0, 102));
+        lblNuUppgifter.setText("Nuvarande uppgifter:");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfNuLosen.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        tfNuLosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tfNuLosenActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfNuEpost.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        tfNuEpost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfNuEpostActionPerformed(evt);
             }
         });
 
-        lblEpost1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        lblEpost1.setText("E-post");
+        jLEpost.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLEpost.setText("E-post");
 
-        lblLosen1.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
-        lblLosen1.setText("Lösenord");
+        jLlosen.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLlosen.setText("Lösenord");
 
-        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 50)); // NOI18N
+        BtnTillbaka.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         BtnTillbaka.setForeground(new java.awt.Color(0, 0, 102));
         BtnTillbaka.setText("Tillbaka");
         BtnTillbaka.addActionListener(new java.awt.event.ActionListener() {
@@ -105,77 +114,82 @@ public class MinaUppgifter extends javax.swing.JFrame {
             }
         });
 
+        BtnHamtaUppgifter.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        BtnHamtaUppgifter.setForeground(new java.awt.Color(0, 0, 102));
+        BtnHamtaUppgifter.setText("Hämta nuvarande uppgifter");
+        BtnHamtaUppgifter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHamtaUppgifterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblAndraUppgifter)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblLosen)
-                                        .addComponent(lblEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(85, 85, 85)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(62, 62, 62))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(BtnTillbaka)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                                        .addComponent(BtnSparaAndring))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblEpost1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblLosen1))
-                                        .addGap(85, 85, 85)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tfEpo, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
-                                            .addComponent(tfLosen)))))))
+                        .addComponent(lblNuUppgifter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnHamtaUppgifter, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel1)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addComponent(lblLosen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfNuLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfNuEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfEpo, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLlosen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnTillbaka)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnSparaAndring, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel2)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLosen)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEpost1))
-                .addGap(36, 36, 36)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLosen1))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(BtnTillbaka))
+                        .addComponent(lblNuUppgifter)
+                        .addGap(59, 59, 59))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(BtnSparaAndring)))
-                .addGap(96, 96, 96))
+                        .addComponent(BtnHamtaUppgifter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfNuEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEpost, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLosen)
+                    .addComponent(tfNuLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addComponent(lblAndraUppgifter)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLEpost)
+                    .addComponent(tfEpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLlosen)
+                    .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnTillbaka)
+                    .addComponent(BtnSparaAndring))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,19 +200,25 @@ public class MinaUppgifter extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSparaAndringActionPerformed
 
     private void BtnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaActionPerformed
-
         HandlaggareMeny meny = new HandlaggareMeny(idb);
         meny.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTillbakaActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfNuEpostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNuEpostActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfNuEpostActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tfNuLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNuLosenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tfNuLosenActionPerformed
+
+    private void tfEpoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEpoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfEpoActionPerformed
+
+    private void BtnHamtaUppgifterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaUppgifterActionPerformed
+    }//GEN-LAST:event_BtnHamtaUppgifterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,17 +256,20 @@ public class MinaUppgifter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnHamtaUppgifter;
     private javax.swing.JButton BtnSparaAndring;
     private javax.swing.JButton BtnTillbaka;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLEpost;
+    private javax.swing.JLabel jLlosen;
+    private javax.swing.JLabel lblAndraUppgifter;
     private javax.swing.JLabel lblEpost;
-    private javax.swing.JLabel lblEpost1;
     private javax.swing.JLabel lblLosen;
-    private javax.swing.JLabel lblLosen1;
+    private javax.swing.JLabel lblNuUppgifter;
     private javax.swing.JTextField tfEpo;
     private javax.swing.JTextField tfLosen;
+    private javax.swing.JTextField tfNuEpost;
+    private javax.swing.JTextField tfNuLosen;
     // End of variables declaration//GEN-END:variables
+
+    
 }

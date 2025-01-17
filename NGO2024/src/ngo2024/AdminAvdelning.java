@@ -300,7 +300,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLaggTillActionPerformed
 
     private void BtnTbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxActionPerformed
-        new MenyAdmin(idb).setVisible(true);
+        new AdminMeny(idb).setVisible(true);
         this.dispose();
                      
     }//GEN-LAST:event_BtnTbxActionPerformed
@@ -327,15 +327,8 @@ public class AdminAvdelning extends javax.swing.JFrame {
         }
 
         try { 
-        String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, avdelningschef " +
-                 "FROM avdelning " +
-                 "WHERE namn LIKE '%" + searchInput + "%' " +
-                 "OR epost LIKE '%" + searchInput + "%' " +
-                 "OR adress LIKE '%" + searchInput + "%' " +
-                 "OR telefon LIKE '%" + searchInput + "%' " +
-                 "OR stad LIKE '%" + searchInput + "%' " +
-                 "OR beskrivning LIKE '%" + searchInput + "%' " +
-                 "OR avdelningschef LIKE '%" + searchInput + "%'";
+        String sql = "SELECT namn, epost, adress FROM avdelning"; 
+                 
 
         ArrayList<HashMap<String, String>> departments = idb.fetchRows(sql);
 

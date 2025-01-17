@@ -11,14 +11,14 @@ import oru.inf.InfException;
  *
  * @author seansiik
  */
-public class MenyAdmin extends javax.swing.JFrame {
+public class AdminMeny extends javax.swing.JFrame {
 
         private InfDB idb;
       
     /**
      * Creates new form Meny
      */
-    public MenyAdmin(InfDB idb) {
+    public AdminMeny(InfDB idb) {
         initComponents();
         this.idb = idb;
       
@@ -169,7 +169,7 @@ public class MenyAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAnstalldaActionPerformed
 
     private void BtnTillbakaInloggningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTillbakaInloggningActionPerformed
-            InloggningAdmin inloggning = new InloggningAdmin(idb);
+            AdminInloggning inloggning = new AdminInloggning(idb);
             inloggning.setVisible(true);
             this.dispose();
     }//GEN-LAST:event_BtnTillbakaInloggningActionPerformed
@@ -206,7 +206,7 @@ public class MenyAdmin extends javax.swing.JFrame {
    
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            new MenyAdmin(idb).setVisible(true);
+            new AdminMeny(idb).setVisible(true);
         }
     });
 } 

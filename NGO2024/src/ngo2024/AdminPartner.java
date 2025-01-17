@@ -264,7 +264,7 @@ public class AdminPartner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnTbxAdMeny1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTbxAdMeny1ActionPerformed
-        new MenyAdmin(idb).setVisible(true);
+        new AdminMeny(idb).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnTbxAdMeny1ActionPerformed
 
