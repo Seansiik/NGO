@@ -328,7 +328,7 @@ public class AdminAvdelning extends javax.swing.JFrame {
 
         try { 
         String sql = "SELECT namn, epost, adress, telefon, stad, beskrivning, avdelningschef " +
-                 "FROM Avdelning " +
+                 "FROM avdelning " +
                  "WHERE namn LIKE '%" + searchInput + "%' " +
                  "OR epost LIKE '%" + searchInput + "%' " +
                  "OR adress LIKE '%" + searchInput + "%' " +

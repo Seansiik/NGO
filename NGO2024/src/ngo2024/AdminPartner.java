@@ -327,14 +327,11 @@ public class AdminPartner extends javax.swing.JFrame {
 
         try { 
             String sql = "SELECT namn, telefon, epost, adress, stad, branch, kontaktperson " +
-                 "FROM Partner " +
-                 "WHERE namn LIKE '%" + searchInput + "%' " +
-                 "OR telefon LIKE '%" + searchInput + "%' " +
-                 "OR epost LIKE '%" + searchInput + "%' " +
-                 "OR adress LIKE '%" + searchInput + "%' " +
-                 "OR stad LIKE '%" + searchInput + "%' " +
-                 "OR branch LIKE '%" + searchInput + "%' " +
-                 "OR kontaktperson LIKE '%" + searchInput + "%'";
+                    "FROM partner " +
+                    "WHERE namn LIKE '%" + searchInput + "%' " +
+                    "OR telefon LIKE '%" + searchInput + "%' " +
+                    "OR epost LIKE '%" + searchInput + "%'";
+
 
         ArrayList<HashMap<String, String>> partners = idb.fetchRows(sql);
 

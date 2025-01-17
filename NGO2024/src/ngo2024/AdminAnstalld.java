@@ -41,7 +41,6 @@ public class AdminAnstalld extends javax.swing.JFrame {
         tfAdress = new javax.swing.JTextField();
         javax.swing.JButton btnLaggTill = new javax.swing.JButton();
         BtnSlumpaLosen = new javax.swing.JButton();
-        tfSlumpatLosen = new javax.swing.JTextField();
         javax.swing.JButton btnRadera = new javax.swing.JButton();
         javax.swing.JLabel jLRubrik = new javax.swing.JLabel();
 
@@ -62,7 +61,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Namn", "E-Post", "Telefon", "Adress", "Lösenord"
+                "Namn", "E-Post", "Telefon", "Adress"
             }
         ));
         jScrollPane3.setViewportView(tableAnstallda);
@@ -106,7 +105,6 @@ public class AdminAnstalld extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNyMedarbetareLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelNyMedarbetareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tfSlumpatLosen)
                     .addComponent(btnLaggTill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLNamn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tfNamn, javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,11 +140,9 @@ public class AdminAnstalld extends javax.swing.JFrame {
                 .addComponent(tfAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnSlumpaLosen)
-                .addGap(18, 18, 18)
-                .addComponent(tfSlumpatLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLaggTill)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         btnRadera.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -179,7 +175,7 @@ public class AdminAnstalld extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRadera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,8 +192,8 @@ public class AdminAnstalld extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelNyMedarbetare, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -305,7 +301,6 @@ public class AdminAnstalld extends javax.swing.JFrame {
     private javax.swing.JTextField tfAdress;
     private javax.swing.JTextField tfEpost;
     private javax.swing.JTextField tfNamn;
-    private javax.swing.JTextField tfSlumpatLosen;
     private javax.swing.JTextField tfTelefon;
     // End of variables declaration//GEN-END:variables
 
