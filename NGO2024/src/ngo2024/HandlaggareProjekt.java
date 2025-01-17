@@ -157,45 +157,7 @@ public class HandlaggareProjekt extends javax.swing.JFrame {
     }//GEN-LAST:event_tfHamtaPartnerActionPerformed
 
     private void BtnHamtaLandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHamtaLandActionPerformed
-        String searchInput = tfHamtaPartner.getText().trim();
-
-        if (searchInput.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ange ett land att söka efter.");
-            return;
-        }
-
-        try {
-            String sql = "SELECT pid, namn, kontaktperson, kontaktepost, telefon, adress, branch, stad" +
-            "FROM land " +
-            "WHERE namn LIKE '%" + searchInput + "%' " +
-            "OR sprak LIKE '%" + searchInput + "%' " +
-            "OR valuta LIKE '%" + searchInput + "%'";
-
-            ArrayList<HashMap<String, String>> countries = idb.fetchRows(sql);
-
-            DefaultTableModel model = (DefaultTableModel) TableLand.getModel();
-            model.setRowCount(0);
-
-            if (countries != null && !countries.isEmpty()) {
-                for (HashMap<String, String> country : countries) {
-                    model.addRow(new Object[]{
-                        country.get("namn"),
-                        country.get("sprak"),
-                        country.get("valuta"),
-                        country.get("politisk_struktur"),
-                        country.get("tidszon"),
-                        country.get("ekonomi")
-                    });
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "Inga resultat hittades för: " + searchInput);
-
-            }
-
-        } catch (InfException ex) {
-            JOptionPane.showMessageDialog(this, "Ett fel inträffade vid sökning: " + ex.getMessage());
-            ex.printStackTrace();
-        }
+     
     }//GEN-LAST:event_BtnHamtaLandActionPerformed
 
     

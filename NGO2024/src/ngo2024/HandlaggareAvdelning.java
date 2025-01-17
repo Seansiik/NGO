@@ -37,8 +37,10 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         try {
     String projektsql = "SELECT projektnamn,beskrivning,startdatum,slutdatum,kostnad,status,prioritet FROM projekt "
             + "JOIN ans_proj ON projekt.pid = ans_proj.pid "
-            + "JOIN anstalld ON ans_proj.aid = anstalld.aid "  
-            + "WHERE anstalld.avdelning = 3";
+            + "JOIN anstalld ON ans_proj.aid = anstalld.aid ";  
+           
+  
+
     
      ArrayList<HashMap<String, String>> resultat = idb.fetchRows(projektsql);
      
@@ -82,7 +84,7 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
         if (valdStatus.equals("Alla")) {
         sorter.setRowFilter(null); // Visa alla rader
     } else {
-        sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 6)); // Anta att status är i kolumnindex 6
+        sorter.setRowFilter(RowFilter.regexFilter(valdStatus, 5)); // Anta att status är i kolumnindex 6
     }
     
     
@@ -119,6 +121,12 @@ public class HandlaggareAvdelning extends javax.swing.JFrame {
 
         tblProjektAvdelning.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {"10", "Projekt 10", "Beskrivning av projekt 10", "2023-10-01", "2024-03-31", "22000.00", "Planerat", "Hög", "46", "5"},
+                {"8", "Projekt 8", "Beskrivning av projekt 8", "2023-08-01", "2024-01-31", "14000.00", "Avslutat", "Medel", "20", "3"},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
