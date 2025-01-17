@@ -123,6 +123,11 @@ public class AdminAvdelning extends javax.swing.JFrame {
         BtnAndra.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnAndra.setForeground(new java.awt.Color(255, 0, 0));
         BtnAndra.setText("Ändra");
+        BtnAndra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAndraActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAvdelningLayout = new javax.swing.GroupLayout(PanelAvdelning);
         PanelAvdelning.setLayout(PanelAvdelningLayout);
@@ -354,6 +359,40 @@ public class AdminAvdelning extends javax.swing.JFrame {
 
       }
       }//GEN-LAST:event_BtnHamtaAvdelningActionPerformed
+
+    private void BtnAndraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAndraActionPerformed
+    //Hämtar vald rad i tabellen
+        int selectedRow = TableAvdelning.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) TableAvdelning.getModel();
+
+       
+        if (selectedRow != -1) { //Kontrollerar om en rad blivit vald
+          
+           // Hämtar nya värden från textFälten, men behåller den gamla infon om fältet är tomt
+           String nyttNamn = tfNamn.getText().isEmpty() ? model.getValueAt(selectedRow, 0).toString() : tfNamn.getText();
+           String nyEpost = tfEpost.getText().isEmpty() ? model.getValueAt(selectedRow, 1).toString() : tfEpost.getText();
+           String nyAdress = tfAdress.getText().isEmpty() ? model.getValueAt(selectedRow, 2).toString() : tfAdress.getText();
+           String nyTelefon = tfTelefon.getText().isEmpty() ? model.getValueAt(selectedRow, 3).toString() : tfTelefon.getText();
+           String nyStad = tfStad.getText().isEmpty() ? model.getValueAt(selectedRow, 4).toString() : tfStad.getText();
+           String nyBeskrivning = tfBeskrivning.getText().isEmpty() ? model.getValueAt(selectedRow, 5).toString() : tfBeskrivning.getText();
+           String nyAvdelningschef = tfAvdelningschef.getText().isEmpty() ? model.getValueAt(selectedRow, 5).toString() : tfAvdelningschef.getText();
+
+           
+           // Uppdaterar tabellens modell med de nya värdena
+           model.setValueAt(nyttNamn, selectedRow, 0);
+           model.setValueAt(nyEpost, selectedRow, 1);
+           model.setValueAt(nyAdress, selectedRow, 2);
+           model.setValueAt(nyTelefon, selectedRow, 3);
+           model.setValueAt(nyStad, selectedRow, 4);
+           model.setValueAt(nyBeskrivning, selectedRow, 5);
+            model.setValueAt(nyAvdelningschef, selectedRow, 6);
+           // Bekräftelsemeddelande
+           JOptionPane.showMessageDialog(null, "Avdelning har uppdaterats!", "Ändrat", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+           // Om ingen rad är vald
+           JOptionPane.showMessageDialog(null, "Välj en avdelning att ändra!", "Fel", JOptionPane.WARNING_MESSAGE);
+        }
+        }//GEN-LAST:event_BtnAndraActionPerformed
 
     /**
      * @param args the command line arguments
