@@ -374,21 +374,21 @@ public class AdminPartner extends javax.swing.JFrame {
           
            // Hämtar nya värden från textFälten, men behåller den gamla infon om fältet är tomt
            String nyttNamn = tfNamn.getText().isEmpty() ? model.getValueAt(selectedRow, 0).toString() : tfNamn.getText();
+           String nyTelefon = tfTelefon.getText().isEmpty() ? model.getValueAt(selectedRow, 3).toString() : tfTelefon.getText();
            String nyEpost = tfEpost.getText().isEmpty() ? model.getValueAt(selectedRow, 1).toString() : tfEpost.getText();
            String nyAdress = tfAdress.getText().isEmpty() ? model.getValueAt(selectedRow, 2).toString() : tfAdress.getText();
-           String nyTelefon = tfTelefon.getText().isEmpty() ? model.getValueAt(selectedRow, 3).toString() : tfTelefon.getText();
            String nyStad = tfStad.getText().isEmpty() ? model.getValueAt(selectedRow, 4).toString() : tfStad.getText();
            String nyBranch = tfBranch.getText().isEmpty() ? model.getValueAt(selectedRow, 5).toString() : tfBranch.getText();
            String nyKontaktperson = tfKonPerson.getText().isEmpty() ? model.getValueAt(selectedRow, 5).toString() : tfKonPerson.getText();
 
            
-           // Uppdaterar tabellens modell med de nya värdena
-           model.setValueAt(nyttNamn, selectedRow, 0);
-           model.setValueAt(nyEpost, selectedRow, 1);
-           model.setValueAt(nyAdress, selectedRow, 2);
-           model.setValueAt(nyTelefon, selectedRow, 3);
-           model.setValueAt(nyStad, selectedRow, 4);
-           model.setValueAt(nyBranch, selectedRow, 5);
+            // Uppdaterar tabellens modell med de nya värdena
+            model.setValueAt(nyttNamn, selectedRow, 0);
+            model.setValueAt(nyTelefon, selectedRow, 1);
+            model.setValueAt(nyAdress, selectedRow, 2);
+            model.setValueAt(nyEpost, selectedRow, 3);
+            model.setValueAt(nyStad, selectedRow, 4);
+            model.setValueAt(nyBranch, selectedRow, 5);
             model.setValueAt(nyKontaktperson, selectedRow, 6);
            // Bekräftelsemeddelande
            JOptionPane.showMessageDialog(null, "Avdelning har uppdaterats!", "Ändrat", JOptionPane.INFORMATION_MESSAGE);
